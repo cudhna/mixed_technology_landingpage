@@ -1,33 +1,31 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function BrandStory({ data }: { data: any }) {
   return (
-    <section id="story" className="relative py-24 md:py-40 bg-[#0a0a0a] overflow-hidden">
+    <section id="story" className="relative py-24 md:py-32 bg-[#0a0a0a] overflow-hidden">
       <div className="mx-auto max-w-[90rem] px-4 md:px-8">
         
-        {/* Editorial Section Marker */}
-        <div className="flex items-center gap-6 mb-16 md:mb-32">
-          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-stone-400 whitespace-nowrap">03 / ABOUT</span>
-          <div className="h-[1px] bg-stone-800 flex-grow" />
+        {/* Soft Section Marker */}
+        <div className="mb-16 md:mb-24 opacity-60">
+          <span className="text-[11px] uppercase tracking-widest text-stone-400">03 / GIỚI THIỆU</span>
         </div>
 
         {/* Manifesto Statement */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-24 md:mb-40">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-24 md:mb-32">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="col-span-1 md:col-span-9"
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="col-span-1 md:col-span-8"
           >
-            <h2 className="text-[clamp(2.5rem,6vw,6rem)] font-display font-light text-stone-50 leading-[0.9] tracking-tight uppercase">
-              WE DON&apos;T MODIFY<br/>
-              <span className="text-stone-500 italic">TECHNOLOGY.</span><br/>
-              WE REDEFINE<br/>
-              <span className="text-stone-400 italic">HOW IT FEELS.</span>
+            <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-light text-stone-100 leading-[1.2] tracking-tight text-balance">
+              CHÚNG TÔI KHÔNG CHỈ TẠO RA CÔNG NGHỆ. <br />
+              CHÚNG TÔI QUAN TÂM ĐẾN CẢM GIÁC <br />
+              <span className="text-stone-400 italic">KHI BẠN SỬ DỤNG NÓ.</span>
             </h2>
           </motion.div>
           
@@ -35,19 +33,19 @@ export default function BrandStory({ data }: { data: any }) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="col-span-1 md:col-span-3 flex items-end pb-4"
+            transition={{ duration: 1.2, delay: 0.2 }}
+            className="col-span-1 md:col-span-4 flex items-end pb-2"
           >
-            <p className="text-sm md:text-base font-light text-stone-400 leading-relaxed text-balance">
+            <p className="text-sm font-light text-stone-400 leading-relaxed text-balance">
               {data.description}
             </p>
           </motion.div>
         </div>
 
         {/* Cinematic Visual & Stats */}
-        <div className="relative w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden mb-16 md:mb-32">
+        <div className="relative w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden mb-16 md:mb-24">
           <motion.div
-            initial={{ scale: 1.05 }}
+            initial={{ scale: 1.015 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
@@ -59,42 +57,40 @@ export default function BrandStory({ data }: { data: any }) {
               fill 
               className="object-cover filter grayscale-[40%] contrast-110" 
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-80" />
-            <div className="absolute inset-0 bg-[#0a0a0a]/20 mix-blend-overlay" />
           </motion.div>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 border-t border-stone-800 pt-12 md:pt-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 pt-8">
           {data.stats?.map((stat: any, index: number) => (
             <motion.div 
               key={index}
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 1.2, delay: index * 0.1 }}
               className="flex flex-col gap-2"
             >
-              <span className="text-4xl md:text-5xl font-light text-stone-50 tracking-tighter">
+              <span className="text-3xl md:text-4xl font-light text-stone-100 tracking-tight">
                 {stat.value}
               </span>
-              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-stone-500">
+              <span className="text-[10px] uppercase tracking-widest text-stone-500 opacity-80">
                 {stat.label}
               </span>
             </motion.div>
           ))}
           <motion.div 
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 1.2, delay: 0.3 }}
             className="flex flex-col gap-2"
           >
-            <span className="text-4xl md:text-5xl font-light text-stone-50 tracking-tighter">
+            <span className="text-3xl md:text-4xl font-light text-stone-100 tracking-tight">
               100%
             </span>
-            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-stone-500">
-              CRAFTED IN VN
+            <span className="text-[10px] uppercase tracking-widest text-stone-500 opacity-80">
+              CHẾ TÁC TẠI VN
             </span>
           </motion.div>
         </div>

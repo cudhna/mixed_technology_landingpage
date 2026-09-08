@@ -15,7 +15,7 @@ export default async function Home() {
     <main>
       <Header links={config.links} />
       <Hero data={config.hero} links={config.links} />
-      <ImageBreak image={config.launcher.image} />
+      <ImageBreak image="/images/product-3.jpg" label="CHI TIẾT SẢN PHẨM" />
       <LauncherSection data={config.launcher} links={config.links} />
       <ProductGrid products={config.products} />
       <BrandStory data={config.brandStory} />

@@ -1,4 +1,4 @@
-import { getLinks, getFooter } from "@/lib/config";
+﻿import { getLinks, getFooter } from "@/lib/config";
 
 export default function Footer() {
   const footer = getFooter();
