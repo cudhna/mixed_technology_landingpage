@@ -24,10 +24,13 @@ export default function Header({ links }: { links: { facebook: string; zalo: str
           : "bg-transparent"
       )}
     >
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="/" className="flex items-center">
+      <div className="mx-auto flex h-14 max-w-[90rem] items-center justify-between px-4 sm:px-6 lg:px-8">
+        <a href="/" className="flex flex-col">
           <span className="text-[10px] uppercase font-mono tracking-widest text-stone-300">
-            MT. STUDIO
+            MIXED TECHNOLOGY
+          </span>
+          <span className="text-[9px] uppercase font-mono tracking-widest text-stone-500">
+            / 2026
           </span>
         </a>
 

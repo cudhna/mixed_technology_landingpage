@@ -1,79 +1,82 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
 
 export default function Hero({ data, links }: { data: any, links: { facebook: string, zalo: string } }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
+  const imageOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   return (
-    <section id="hero" className="relative min-h-screen bg-[#0a0a0a] pt-14 flex flex-col justify-between">
+    <section ref={ref} id="hero" className="relative min-h-screen bg-[#0a0a0a] flex flex-col justify-center overflow-hidden">
       
+      {/* Background Vignette */}
+      <div className="absolute inset-0 pointer-events-none z-20" style={{ background: "radial-gradient(circle at center, transparent 30%, #0a0a0a 100%)" }} />
+
       {/* Top Metadata */}
-      <div className="absolute top-20 left-4 md:left-8 z-10 flex gap-12">
+      <div className="absolute top-20 left-4 md:left-8 z-30 flex gap-8 md:gap-16">
         <div className="flex flex-col gap-1">
-          <span className="tech-label">SYS.01</span>
-          <span className="text-[10px] text-stone-500 uppercase tracking-widest">MIXED TECHNOLOGY</span>
+          <span className="text-[10px] font-mono uppercase tracking-widest text-stone-500">MIXED TECHNOLOGY / 001</span>
         </div>
         <div className="hidden md:flex flex-col gap-1">
-          <span className="tech-label">STAT</span>
-          <span className="text-[10px] text-stone-500 uppercase tracking-widest">ENGINEERED / MODDED / REFINED</span>
+          <span className="text-[10px] font-mono uppercase tracking-widest text-stone-500">OBJECT 01</span>
+        </div>
+        <div className="hidden lg:flex flex-col gap-1">
+          <span className="text-[10px] font-mono uppercase tracking-widest text-stone-500">ENGINEERED IN VIETNAM</span>
         </div>
       </div>
 
-      <div className="absolute top-20 right-4 md:right-8 z-10">
-        <span className="tech-label">2026</span>
+      <div className="absolute top-20 right-4 md:right-8 z-30">
+        <span className="text-[10px] font-mono uppercase tracking-widest text-stone-500">2026</span>
       </div>
 
-      {/* Main Image (Cinematic Crop) */}
-      <div className="relative w-full h-[60vh] md:h-[70vh] mt-24">
-        <motion.div
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute inset-0 w-full h-full"
-        >
-          <Image 
-            src={data.image} 
-            alt="Hero Visual" 
-            fill 
-            className="object-cover object-center filter grayscale-[20%] contrast-125"
-            priority
-          />
-          {/* Subtle noise/texture over image */}
-          <div className="absolute inset-0 bg-[#0a0a0a]/20 mix-blend-overlay"></div>
-        </motion.div>
-      </div>
+      {/* Main Image (Cinematic with Depth) */}
+      <motion.div
+        style={{ scale: imageScale, opacity: imageOpacity }}
+        className="absolute inset-0 w-full h-full z-10"
+      >
+        <Image 
+          src={data.image} 
+          alt="Hero Visual" 
+          fill 
+          className="object-cover object-center filter grayscale-[30%] contrast-125"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#0a0a0a]/30 mix-blend-overlay"></div>
+      </motion.div>
 
-      {/* Bottom Typography & CTA */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 md:px-8 py-12 flex flex-col md:flex-row justify-between items-end md:items-start gap-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="w-full md:w-2/3"
-        >
-          <h1 className="text-5xl md:text-7xl lg:text-[8rem] font-light tracking-tighter leading-[0.85] text-stone-50">
-            {data.headline || "INDUSTRIAL"}
-            <br />
-            <span className="text-stone-500">{data.subheadline?.split(" ")[0] || "PRECISION"}</span>
-          </h1>
-        </motion.div>
+      {/* Overlapping Typography Composition */}
+      <motion.div
+        style={{ y: textY }}
+        className="relative z-30 mx-auto w-full max-w-[90rem] px-4 md:px-8 mt-32 flex flex-col items-center justify-center pointer-events-none"
+      >
+        <h1 className="text-[12vw] md:text-[14vw] font-light tracking-tighter leading-[0.75] text-stone-50 text-center mix-blend-difference">
+          {data.headline || "INDUSTRIAL"}
+        </h1>
+        <h1 className="text-[12vw] md:text-[14vw] font-light tracking-tighter leading-[0.75] text-stone-400 text-center mix-blend-difference italic ml-[10vw]">
+          {data.subheadline?.split(" ")[0] || "PRECISION"}
+        </h1>
+      </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="w-full md:w-1/3 flex flex-col items-start md:items-end gap-6"
-        >
-          <p className="text-sm md:text-base text-stone-400 font-light max-w-xs md:text-right leading-relaxed">
+      {/* Bottom Metadata & CTA */}
+      <div className="absolute bottom-8 md:bottom-12 left-4 md:left-8 right-4 md:right-8 z-30 flex flex-col md:flex-row justify-between items-end gap-6">
+        <div className="max-w-xs md:max-w-sm">
+          <p className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-stone-400 leading-relaxed text-balance">
             {data.subheadline}
           </p>
-          <div className="flex gap-4">
-            <a href={links.facebook} target="_blank" rel="noopener noreferrer" className="border border-stone-700 px-6 py-3 text-[10px] font-mono tracking-widest text-stone-300 hover:bg-stone-50 hover:text-[#0a0a0a] transition-colors">
-              {data.ctaFacebook}
-            </a>
-          </div>
-        </motion.div>
+        </div>
+        
+        <a href={links.facebook} target="_blank" rel="noopener noreferrer" className="border-b border-stone-600 pb-1 text-[10px] font-mono uppercase tracking-widest text-stone-300 hover:text-stone-50 transition-colors pointer-events-auto">
+          {data.ctaFacebook} &#8594;
+        </a>
       </div>
       
     </section>
