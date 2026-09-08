@@ -40,7 +40,8 @@
       { "icon": "ACC", "text": "Premium theo tài khoản Google, lên đời máy vẫn dùng tiếp." },
       { "icon": "COM", "text": "Cộng đồng người dùng đông đảo và liên tục cập nhật." }
     ],
-    "cta": "TÌM HIỂU THÊM"
+    "cta": "TẢI XUỐNG",
+    "playStoreLink": "https://play.google.com/store/search?q=9+flip+launcher&c=apps&hl=vi"
   },
   "products": [
     {

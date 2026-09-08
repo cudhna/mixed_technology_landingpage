@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { getConfig } from "@/lib/config";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin", "vietnamese"] });
 
 export const metadata: Metadata = {
   title: "Mixed Technology",

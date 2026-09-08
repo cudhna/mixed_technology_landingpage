@@ -122,9 +122,9 @@ export default function LauncherSection({ data, links }: { data: any; links: any
         </div>
 
         <div className="mt-24 flex justify-center">
-          <a href={links.facebook} target="_blank" rel="noopener noreferrer" className="group flex flex-col w-max cursor-pointer pointer-events-auto">
+          <a href={data.playStoreLink} target="_blank" rel="noopener noreferrer" className="group flex flex-col w-max cursor-pointer pointer-events-auto">
             <span className="text-[11px] uppercase tracking-widest text-stone-400 group-hover:text-stone-100 transition-colors duration-500 mb-1 flex items-center gap-2">
-              {data.cta === "INSTALL CORE" ? "TẢI XUỐNG" : data.cta || "TẢI XUỐNG"}
+              {data.cta}
               <span className="transform transition-transform duration-500 group-hover:translate-x-1">&#8594;</span>
             </span>
           </a>

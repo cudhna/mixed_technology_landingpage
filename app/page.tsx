@@ -4,7 +4,6 @@ import Hero from "@/components/hero";
 import LauncherSection from "@/components/launcher-section";
 import ProductGrid from "@/components/product-grid";
 import BrandStory from "@/components/brand-story";
-import ImageBreak from "@/components/image-break";
 import CtaSection from "@/components/cta-section";
 import Footer from "@/components/footer";
 
@@ -15,9 +14,8 @@ export default async function Home() {
     <main>
       <Header links={config.links} />
       <Hero data={config.hero} links={config.links} />
-      <ImageBreak image="/images/product-3.jpg" label="CHI TIẾT SẢN PHẨM" />
-      <LauncherSection data={config.launcher} links={config.links} />
       <ProductGrid products={config.products} />
+      <LauncherSection data={config.launcher} links={config.links} />
       <BrandStory data={config.brandStory} />
       <CtaSection data={config.cta} links={config.links} />
       <Footer />

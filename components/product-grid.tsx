@@ -10,7 +10,7 @@ export default function ProductGrid({ products }: { products: any[] }) {
         
         {/* Soft Section Marker */}
         <div className="mb-16 md:mb-24 opacity-60">
-          <span className="text-[11px] uppercase tracking-widest text-stone-400">01 / Dá»° ÃN</span>
+          <span className="text-[11px] uppercase tracking-widest text-stone-400">01 / ĐƯỜNG ÁN</span>
         </div>
 
         {/* Softened CSS Grid Pattern */}
