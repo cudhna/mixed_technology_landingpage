@@ -1,0 +1,108 @@
+{
+  "links": {
+    "facebook": "https://www.facebook.com/profile.php?id=61590708082215",
+    "zalo": "https://zalo.me/"
+  },
+  "theme": {
+    "brand": {
+      "950": "#211a16",
+      "900": "#3e312b",
+      "800": "#4a3a33",
+      "700": "#5a463c",
+      "600": "#6e584a",
+      "500": "#836d5a"
+    },
+    "gold": {
+      "500": "#d99f18",
+      "600": "#c47f12",
+      "700": "#a36013"
+    },
+    "background": "#f5f3ef",
+    "surface": "#ffffff",
+    "text": "#211a16",
+    "textMuted": "#6e584a",
+    "border": "#d1c5b3"
+  },
+  "hero": {
+    "headline": "Kết tinh giữa kỹ nghệ phần cứng và giải pháp phần mềm tối ưu",
+    "subheadline": "Mixed Technology — nơi những chiếc điện thoại gập được khai phá trọn vẹn tiềm năng, từ phần mềm tối ưu đến từng tác phẩm độ máy thủ công.",
+    "image": "/images/hero.jpg",
+    "ctaFacebook": "Nhắn tin Fanpage",
+    "ctaZalo": "Liên hệ Zalo"
+  },
+  "launcher": {
+    "title": "Mở khóa trọn vẹn màn hình ngoài Galaxy Z Flip",
+    "description": "Tự động hiển thị và mở hầu hết ứng dụng ngay trên màn ngoài, phản chiếu màn trong linh hoạt — không cần Root, không quảng cáo, không thu thập dữ liệu.",
+    "image": "/images/launcher-mockup.jpg",
+    "features": [
+      { "icon": "🔒", "text": "100% No-Root — giữ nguyên bảo hành, Knox nguyên vẹn" },
+      { "icon": "📱", "text": "Có sẵn trên Google Play — cài đặt an toàn, vài phút là dùng được" },
+      { "icon": "⭐", "text": "Premium theo tài khoản Google — lên đời máy vẫn dùng tiếp" },
+      { "icon": "👥", "text": "Cộng đồng người dùng đông đảo, liên tục cập nhật" }
+    ],
+    "cta": "Tìm hiểu thêm trên Fanpage"
+  },
+  "products": [
+    {
+      "id": 1,
+      "name": "Z Flip 5 x BlackBerry 9981/9983",
+      "desc": "Di sản Porsche Design gặp gỡ smartphone gập hiện đại, sang trọng và nhỏ gọn.",
+      "image": "/images/product-1.jpg",
+      "alt": "Z Flip 5 x BlackBerry Porsche Design"
+    },
+    {
+      "id": 2,
+      "name": "Z Flip 5 mod mỏng",
+      "desc": "Không phải sản phẩm cho số đông, mà là lựa chọn của người có gu.",
+      "image": "/images/product-2.jpg",
+      "alt": "Z Flip 5 mod mỏng"
+    },
+    {
+      "id": 3,
+      "name": "Z Fold 2 CNC màu đỏ mod thanh",
+      "desc": "Gia công CNC không chỉ để nổi bật, mà để chắc chắn trên từng milimet.",
+      "image": "/images/product-3.jpg",
+      "alt": "Z Fold 2 CNC đỏ mod thanh"
+    },
+    {
+      "id": 4,
+      "name": "Z Fold 1 mod mini gaming",
+      "desc": "Tối ưu cảm giác cầm và tản nhiệt cho những giờ chơi game dài.",
+      "image": "/images/product-4.jpg",
+      "alt": "Z Fold 1 mod mini gaming"
+    },
+    {
+      "id": 5,
+      "name": "iPhone SE 3 độ",
+      "desc": "Ngoại hình nhỏ gọn, phần cứng được nâng cấp cho nhu cầu hiện nay.",
+      "image": "/images/product-5.jpg",
+      "alt": "iPhone SE 3 độ"
+    },
+    {
+      "id": 6,
+      "name": "Oppo Find N2 → Oppo Pad Mini",
+      "desc": "Trải nghiệm gập mở theo một góc nhìn hoàn toàn khác.",
+      "image": "/images/product-6.jpg",
+      "alt": "Oppo Find N2 → Oppo Pad Mini"
+    }
+  ],
+  "brandStory": {
+    "title": "Mỗi dự án đều bắt đầu từ rất nhiều bản phác thảo trước khi có một sản phẩm hoàn chỉnh. Chúng tôi tin rằng công nghệ hoàn mỹ nhất là công nghệ mang lại sự tự do và tiện lợi tối đa cho người dùng — dù đó là một dòng code tối ưu hay một đường phay CNC tinh xảo.",
+    "description": "Tại Mixed Technology, chúng tôi không chỉ tạo ra sản phẩm — chúng tôi kiến tạo trải nghiệm. Từ phần mềm tối ưu cho thiết bị di động đến từng tác phẩm độ máy thủ công tỉ mỉ, mỗi chi tiết đều được chăm chút đến hoàn thiện.",
+    "image": "/images/story.jpg",
+    "stats": [
+      { "value": "6+", "label": "Năm kinh nghiệm" },
+      { "value": "50+", "label": "Dự án hoàn thành" },
+      { "value": "2k+", "label": "Khách hàng tin tưởng" }
+    ]
+  },
+  "cta": {
+    "title": "Sẵn sàng trải nghiệm cùng Mixed Technology?",
+    "description": "Dù bạn đang tìm kiếm giải pháp phần mềm tối ưu cho thiết bị gập, hay một tác phẩm độ máy độc bản — Mixed Technology luôn sẵn sàng đồng hành cùng bạn.",
+    "ctaFacebook": "Nhắn tin Fanpage",
+    "ctaZalo": "Kết bạn Zalo"
+  },
+  "footer": {
+    "copyright": "Mixed Technology"
+  }
+}

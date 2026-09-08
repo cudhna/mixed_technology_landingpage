@@ -6,34 +6,41 @@
   * {
     @apply border-stone-200;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-stone-50 text-stone-900 font-body antialiased;
+    background-color: var(--color-bg, #f5f3ef);
+    color: var(--color-text, #211a16);
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-brand-950 px-8 py-4 text-xs font-semibold uppercase tracking-[0.15em] text-white transition-all duration-500 hover:bg-brand-900 hover:shadow-xl hover:shadow-brand-950/20 hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0;
+    @apply inline-flex items-center justify-center rounded-full bg-brand-950 px-8 py-4 text-sm font-semibold uppercase tracking-wider text-white transition-all duration-500 hover:bg-brand-900 hover:shadow-lg hover:shadow-brand-950/20 active:scale-[0.97];
+    background-color: var(--brand-950, #211a16);
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center border border-brand-950 bg-transparent px-8 py-4 text-xs font-semibold uppercase tracking-[0.15em] text-brand-950 transition-all duration-500 hover:bg-brand-950 hover:text-white hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-950/20 active:scale-[0.98] active:translate-y-0;
+    @apply inline-flex items-center justify-center rounded-full border-2 border-brand-950 px-8 py-4 text-sm font-semibold uppercase tracking-wider text-brand-950 transition-all duration-500 hover:bg-brand-950 hover:text-white active:scale-[0.97];
+    border-color: var(--brand-950, #211a16);
+    color: var(--brand-950, #211a16);
   }
 
   .section-label {
-    @apply inline-block text-xs font-medium uppercase tracking-[0.25em] text-gold-600;
+    @apply inline-block text-xs font-semibold uppercase tracking-[0.2em] text-gold-500;
+    color: var(--gold-500, #d99f18);
   }
 
   .section-title {
-    @apply mt-4 font-display text-4xl font-normal leading-tight tracking-tight text-brand-950 md:text-5xl lg:text-6xl;
+    @apply mt-3 font-display text-3xl font-bold tracking-tight text-brand-950 md:text-4xl lg:text-5xl;
+    color: var(--brand-950, #211a16);
   }
 
   .section-desc {
-    @apply mt-6 max-w-2xl text-base font-light leading-relaxed text-brand-700 md:text-lg;
-  }
-
-  .product-card-img {
-    @apply relative aspect-square overflow-hidden bg-stone-100;
+    @apply mt-4 max-w-2xl text-base leading-relaxed text-brand-600 md:text-lg;
+    color: var(--brand-600, #6e584a);
   }
 }
 

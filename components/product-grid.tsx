@@ -4,52 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { LINKS } from "@/lib/constants";
 
-const products = [
-  {
-    id: 1,
-    name: "Z Flip 5 x BlackBerry 9981/9983",
-    desc: "Di sản Porsche Design gặp gỡ smartphone gập hiện đại, sang trọng và nhỏ gọn.",
-    image: "/images/product-1.jpg",
-    alt: "Z Flip 5 x BlackBerry Porsche Design",
-  },
-  {
-    id: 2,
-    name: "Z Flip 5 mod mỏng",
-    desc: "Không phải sản phẩm cho số đông, mà là lựa chọn của người có gu.",
-    image: "/images/product-2.jpg",
-    alt: "Z Flip 5 mod mỏng",
-  },
-  {
-    id: 3,
-    name: "Z Fold 2 CNC màu đỏ mod thanh",
-    desc: "Gia công CNC không chỉ để nổi bật, mà để chắc chắn trên từng milimet.",
-    image: "/images/product-3.jpg",
-    alt: "Z Fold 2 CNC đỏ mod thanh",
-  },
-  {
-    id: 4,
-    name: "Z Fold 1 mod mini gaming",
-    desc: "Tối ưu cảm giác cầm và tản nhiệt cho những giờ chơi game dài.",
-    image: "/images/product-4.jpg",
-    alt: "Z Fold 1 mod mini gaming",
-  },
-  {
-    id: 5,
-    name: "iPhone SE 3 độ",
-    desc: "Ngoại hình nhỏ gọn, phần cứng được nâng cấp cho nhu cầu hiện nay.",
-    image: "/images/product-5.jpg",
-    alt: "iPhone SE 3 độ",
-  },
-  {
-    id: 6,
-    name: "Oppo Find N2 → Oppo Pad Mini",
-    desc: "Trải nghiệm gập mở theo một góc nhìn hoàn toàn khác.",
-    image: "/images/product-6.jpg",
-    alt: "Oppo Find N2 → Oppo Pad Mini",
-  },
-];
-
-export default function ProductGrid() {
+export default function ProductGrid({ products }: { products: any[] }) {
   return (
     <section id="products" className="relative py-24 sm:py-32 lg:py-40">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -68,7 +23,7 @@ export default function ProductGrid() {
         </motion.div>
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((product, index) => (
+          {products.map((product: any, index: number) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 40 }}
@@ -78,19 +33,13 @@ export default function ProductGrid() {
             >
               <div className="group h-full overflow-hidden border border-stone-200 bg-white transition-all duration-500 hover:border-gold-300 hover:shadow-2xl hover:-translate-y-1">
                 <div className="relative aspect-[4/5] overflow-hidden bg-stone-100">
-                  <Image
-                    src={product.image}
-                    alt={product.alt}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  />
+                  <Image src={product.image} alt={product.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold tracking-tight text-brand-950 group-hover:text-gold-600">
+                  <h3 className="text-lg font-semibold tracking-tight text-stone-950 group-hover:text-gold-600">
                     {product.name}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-brand-600">
+                  <p className="mt-2 text-sm leading-relaxed text-stone-600">
                     {product.desc}
                   </p>
                   <a

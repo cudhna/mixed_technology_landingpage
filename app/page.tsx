@@ -1,4 +1,4 @@
-import { LINKS } from "@/lib/constants";
+import { getConfig } from "@/lib/config";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import LauncherSection from "@/components/launcher-section";
@@ -7,15 +7,17 @@ import BrandStory from "@/components/brand-story";
 import CtaSection from "@/components/cta-section";
 import Footer from "@/components/footer";
 
-export default function Home() {
+export default async function Home() {
+  const config = getConfig();
+
   return (
     <main>
-      <Header />
-      <Hero />
-      <LauncherSection />
-      <ProductGrid />
-      <BrandStory />
-      <CtaSection />
+      <Header links={config.links} />
+      <Hero data={config.hero} links={config.links} />
+      <LauncherSection data={config.launcher} links={config.links} />
+      <ProductGrid products={config.products} />
+      <BrandStory data={config.brandStory} />
+      <CtaSection data={config.cta} links={config.links} />
       <Footer />
     </main>
   );
