@@ -43,21 +43,21 @@ export default function Header({ links }: { links: { facebook: string; zalo: str
           </a>
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="relative z-50 flex items-center gap-3">
           <a
             href={links.facebook}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden rounded-full bg-stone-950 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-all hover:bg-stone-900 md:inline-flex"
+            className="hidden bg-stone-950 px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-all hover:bg-gold-600 hover:-translate-y-0.5 md:inline-flex"
           >
             Liên hệ Fanpage
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex h-9 w-9 items-center justify-center rounded-full text-stone-600 transition-colors hover:bg-stone-100 md:hidden"
+            className="flex h-10 w-10 items-center justify-center text-stone-900 transition-colors hover:text-gold-600 md:hidden"
             aria-label="Menu"
           >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
@@ -65,31 +65,33 @@ export default function Header({ links }: { links: { facebook: string; zalo: str
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="border-b border-stone-200/60 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 flex items-center justify-center bg-white/90 backdrop-blur-3xl md:hidden"
           >
-            <div className="space-y-1 px-4 py-4 bg-stone-50">
-              <a href="#launcher" onClick={() => setMobileOpen(false)} className="block rounded-lg px-4 py-3 text-sm font-medium text-stone-600 hover:bg-stone-100">
+            <div className="flex flex-col items-center justify-center space-y-8 p-8 text-center">
+              <a href="#launcher" onClick={() => setMobileOpen(false)} className="text-xl font-display font-medium text-stone-900 transition-colors hover:text-gold-600">
                 9flip Launcher
               </a>
-              <a href="#products" onClick={() => setMobileOpen(false)} className="block rounded-lg px-4 py-3 text-sm font-medium text-stone-600 hover:bg-stone-100">
+              <a href="#products" onClick={() => setMobileOpen(false)} className="text-xl font-display font-medium text-stone-900 transition-colors hover:text-gold-600">
                 Bộ sưu tập
               </a>
-              <a href="#story" onClick={() => setMobileOpen(false)} className="block rounded-lg px-4 py-3 text-sm font-medium text-stone-600 hover:bg-stone-100">
+              <a href="#story" onClick={() => setMobileOpen(false)} className="text-xl font-display font-medium text-stone-900 transition-colors hover:text-gold-600">
                 Câu chuyện
               </a>
-              <a
-                href={links.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileOpen(false)}
-                className="mt-3 block rounded-full bg-stone-950 px-5 py-3 text-center text-xs font-semibold uppercase tracking-wider text-white"
-              >
-                Liên hệ Fanpage
-              </a>
+              <div className="pt-8">
+                <a
+                  href={links.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
+                  className="btn-primary"
+                >
+                  Liên hệ Fanpage
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

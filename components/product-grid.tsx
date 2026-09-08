@@ -29,27 +29,31 @@ export default function ProductGrid({ products }: { products: any[] }) {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
+              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="group cursor-pointer hover:-translate-y-2 transition-all duration-700"
             >
-              <div className="group h-full overflow-hidden border border-stone-200 bg-white transition-all duration-500 hover:border-gold-300 hover:shadow-2xl hover:-translate-y-1">
-                <div className="relative aspect-[4/5] overflow-hidden bg-stone-100">
-                  <Image src={product.image} alt={product.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold tracking-tight text-stone-950 group-hover:text-gold-600">
-                    {product.name}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-stone-600">
-                    {product.desc}
-                  </p>
-                  <a
-                    href={LINKS.facebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex items-center text-xs font-semibold uppercase tracking-[0.15em] text-gold-600 transition-colors hover:text-gold-700"
-                  >
-                    Xem chi tiết <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
-                  </a>
+              <div className="greeting-card shadow-sm hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)]">
+                <div className="greeting-card-inner">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-stone-100">
+                    <Image src={product.image} alt={product.alt} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" />
+                    <div className="absolute inset-0 bg-brand-950/0 transition-colors duration-700 group-hover:bg-brand-950/10" />
+                  </div>
+                  <div className="bg-white p-8 text-center transition-all duration-700 group-hover:bg-stone-50">
+                    <h3 className="font-display text-xl text-stone-900">
+                      {product.name}
+                    </h3>
+                    <p className="mt-4 text-sm font-light leading-relaxed text-stone-500">
+                      {product.desc}
+                    </p>
+                    <a
+                      href={LINKS.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-8 inline-flex items-center text-xs font-medium uppercase tracking-[0.2em] text-gold-600 transition-colors hover:text-gold-700 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 duration-500"
+                    >
+                      Chi tiết <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
