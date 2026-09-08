@@ -1,43 +1,46 @@
 # Mixed Technology — Landing Page
 
-Landing page tĩnh cho **Mixed Technology** — giới thiệu sản phẩm 9flip Launcher & dòng máy độ/mod thủ công.
+Landing page cho **Mixed Technology** — giới thiệu sản phẩm 9flip Launcher & dòng máy độ/mod thủ công.
 
 ## Công nghệ
 
 - Next.js 15 (App Router) + TypeScript + Tailwind CSS v3
-- Static export (`output: "export"`) — deploy được trên GitHub Pages, Vercel, Netlify
+- Server Actions cho admin panel (không cần backend riêng)
+- JSON config-driven — mọi nội dung đều chỉnh trong `data/site-config.json`
 - Framer Motion cho hiệu ứng scroll-reveal nhẹ nhàng
-- Lucide React cho icon
+- Deploy trên Vercel (miễn phí)
 
 ## Cấu trúc project
 
 ```
 mixed_technology_landingpage/
 ├── app/
-│   ├── layout.tsx          # Root layout (SEO, metadata, font)
-│   ├── page.tsx            # Trang chủ — ghép tất cả sections
-│   └── globals.css         # Tailwind base + custom styles
+│   ├── layout.tsx          # Root layout (theme CSS variables từ config)
+│   ├── page.tsx            # Trang chủ — đọc config và ghép các section
+│   ├── globals.css         # Tailwind + CSS custom properties cho theme
+│   ├── admin/
+│   │   ├── page.tsx        # Admin Panel (form editor)
+│   │   └── actions.ts      # Server Actions lưu config
+│   └── icon.jpg            # Favicon
 ├── components/
-│   ├── header.tsx          # Header cố định (sticky + mobile menu)
-│   ├── hero.tsx            # Hero section với ảnh banner
-│   ├── launcher-section.tsx # Section 9flip Launcher
-│   ├── product-grid.tsx    # Grid 6 sản phẩm độ máy
-│   ├── brand-story.tsx     # Section câu chuyện thương hiệu
-│   ├── cta-section.tsx     # CTA cuối trang
-│   └── footer.tsx          # Footer
-├── components/             # (sẽ dùng lại nếu cần)
+│   ├── header.tsx          # Header sticky (client component)
+│   ├── hero.tsx            # Hero section (server component)
+│   ├── launcher-section.tsx # 9flip Launcher (server component)
+│   ├── product-grid.tsx    # Grid 6 sản phẩm (server component)
+│   ├── brand-story.tsx     # Câu chuyện thương hiệu (server component)
+│   ├── cta-section.tsx     # CTA cuối trang (server component)
+│   └── footer.tsx          # Footer (server component)
+├── data/
+│   └── site-config.json    # Single source of truth cho toàn bộ nội dung
 ├── lib/
+│   ├── config.ts           # Hàm đọc/ghi config
 │   ├── constants.ts        # LINKS (facebook, zalo)
-│   └── utils.ts            # cn() helper cho classNames
+│   └── utils.ts            # cn() helper
 ├── public/
-│   ├── images/             # Ảnh sản phẩm, hero, story
-│   │   ├── hero.svg
-│   │   ├── launcher-mockup.svg
-│   │   ├── product-1.svg → product-6.svg
-│   │   └── story.svg
+│   ├── images/             # Ảnh sản phẩm, hero, story (thêm .jpg)
 │   └── favicon/
-│       └── favicon.svg
-├── next.config.js          # Static export config
+├── tmp/                    # Config runtime (không commit, lưu trên server)
+├── next.config.js          # Next.js config
 ├── tailwind.config.ts      # Brand colors + fonts
 ├── tsconfig.json           # TypeScript + Next.js paths
 ├── postcss.config.js       # PostCSS + Tailwind
@@ -55,46 +58,47 @@ npm install
 ```bash
 npm run dev
 ```
+Truy cập `http://localhost:3000` — landing page
+Truy cập `http://localhost:3000/admin` — admin panel
 
-### 3. Build static
+### 3. Build
 ```bash
 npm run build
 ```
-Output sẽ ở thư mục `out/` — có thể deploy lên GitHub Pages, Vercel, Netlify.
 
-## Thay đổi nội dung
+## Tuỳ chỉnh nội dung
 
-### Link Fanpage / Zalo
-Chỉnh trong `lib/constants.ts`:
-```ts
-export const LINKS = {
-  facebook: "https://www.facebook.com/profile.php?id=61590708082215",
-  zalo: "https://zalo.me/...",
-} as const;
-```
+### Cách 1 — Admin Panel (không cần code)
+Vào `http://localhost:3000/admin` — chỉnh sửa form, nhấn "Lưu thay đổi".
 
-### Ảnh sản phẩm
-Thay thế các file SVG placeholder trong `public/images/` bằng ảnh thật:
-- `hero.jpg` — ảnh hero chính (Z Flip x BlackBerry)
-- `launcher-mockup.jpg` — mockup app 9flip Launcher
-- `product-1.jpg` → `product-6.jpg` — ảnh 6 sản phẩm
-- `story.jpg` — ảnh xưởng/quá trình làm việc
+### Cách 2 — Chỉnh file JSON
+Chỉnh trực tiếp `data/site-config.json`. Các field:
 
-> **Lưu ý:** Đổi tên file trong code tương ứng, dùng định dạng `.jpg`, `.png`, `.webp` để tối ưu hơn.
+- `links.facebook` / `links.zalo` — link Fanpage & Zalo
+- `theme.*` — màu chủ đề (brand, gold, background, text...)
+- `hero.*` — nội dung hero section
+- `launcher.*` — nội dung 9flip Launcher
+- `products[6]` — danh sách sản phẩm (name, desc, image, alt)
+- `brandStory.*` — câu chuyện thương hiệu
+- `cta.*` — CTA section
+- `footer.copyright` — footer text
 
-### Text content
-Chỉnh trực tiếp trong từng component tại `components/`.
+### Cách 3 — Server Actions tự lưu
+Khi nhấn "Lưu" trên admin panel, config được ghi vào `/tmp/site-config.json` trên server và trang tự reload.
 
-## Triển khai (Deploy)
+## Deploy trên Vercel
 
-1. Push code lên GitHub
-2. Vercel: Kết nối repo → tự động deploy
-3. Netlify: Kết nối repo → tự động deploy
-4. GitHub Pages: Dùng `output: "export"` → push folder `out/` hoặc dùng GitHub Actions
+1. Đã link GitHub repo: `cudhna/mixed_technology_landingpage`
+2. Vercel auto-deploy mỗi lần push
+3. URL production: `https://mixedtechnologylandingpage.vercel.app`
+
+Vercel dashboard: `https://vercel.com/ducanhta205-1567s-projects/mixed_technology_landingpage`
 
 ## Ghi chú
 
-- Đây là khung cơ bản (skeleton) — phong cách luxury minimal sẽ được Antigravity tinh chỉnh sau
-- Ảnh placeholder là SVG đơn giản — thay bằng ảnh thật khi có
-- Link Facebook/Zalo là placeholder — thay bằng link thật
+- **Admin Panel** hoạt động trên server — cần Vercel/Netlify hosting (có server runtime)
+- Khi local dev, config đọc từ `data/site-config.json`, sau khi lưu sẽ ghi vào `tmp/site-config.json`
+- Trên Vercel, `/tmp` là writable — config lưu runtime cho đến khi cold restart
+- Để theme color thay đổi trên trang chính, layout.tsx đọc theme từ config và inject CSS variables
+- Không cần `output: "export"` vì dùng Server Actions
 ```
