@@ -16,69 +16,68 @@ export default function Hero({ data, links }: { data: any, links: { facebook: st
   const textY = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   return (
-    <section ref={ref} id="hero" className="relative min-h-screen bg-[#0a0a0a] flex flex-col justify-center overflow-hidden">
+    <section ref={ref} id="hero" className="relative h-[100svh] min-h-[600px] bg-[#0a0a0a] overflow-hidden">
       
       {/* Background Vignette */}
       <div className="absolute inset-0 pointer-events-none z-20" style={{ background: "radial-gradient(circle at center, transparent 30%, #0a0a0a 100%)" }} />
 
-      {/* Top Metadata */}
-      <div className="absolute top-20 left-4 md:left-8 z-30 flex gap-8 md:gap-16">
-        <div className="flex flex-col gap-1">
-          <span className="text-[10px] font-mono uppercase tracking-widest text-stone-500">MIXED TECHNOLOGY / 001</span>
-        </div>
-        <div className="hidden md:flex flex-col gap-1">
-          <span className="text-[10px] font-mono uppercase tracking-widest text-stone-500">OBJECT 01</span>
-        </div>
-        <div className="hidden lg:flex flex-col gap-1">
-          <span className="text-[10px] font-mono uppercase tracking-widest text-stone-500">ENGINEERED IN VIETNAM</span>
-        </div>
-      </div>
-
-      <div className="absolute top-20 right-4 md:right-8 z-30">
-        <span className="text-[10px] font-mono uppercase tracking-widest text-stone-500">2026</span>
-      </div>
-
-      {/* Main Image (Cinematic with Depth) */}
-      <motion.div
-        style={{ scale: imageScale, opacity: imageOpacity }}
-        className="absolute inset-0 w-full h-full z-10"
-      >
-        <Image 
-          src={data.image} 
-          alt="Hero Visual" 
-          fill 
-          className="object-cover object-center filter grayscale-[30%] contrast-125"
-          priority
-        />
-        <div className="absolute inset-0 bg-[#0a0a0a]/30 mix-blend-overlay"></div>
-      </motion.div>
-
-      {/* Overlapping Typography Composition */}
-      <motion.div
-        style={{ y: textY }}
-        className="relative z-30 mx-auto w-full max-w-[90rem] px-4 md:px-8 mt-32 flex flex-col items-center justify-center pointer-events-none"
-      >
-        <h1 className="text-[12vw] md:text-[14vw] font-light tracking-tighter leading-[0.75] text-stone-50 text-center mix-blend-difference">
-          {data.headline || "INDUSTRIAL"}
-        </h1>
-        <h1 className="text-[12vw] md:text-[14vw] font-light tracking-tighter leading-[0.75] text-stone-400 text-center mix-blend-difference italic ml-[10vw]">
-          {data.subheadline?.split(" ")[0] || "PRECISION"}
-        </h1>
-      </motion.div>
-
-      {/* Bottom Metadata & CTA */}
-      <div className="absolute bottom-8 md:bottom-12 left-4 md:left-8 right-4 md:right-8 z-30 flex flex-col md:flex-row justify-between items-end gap-6">
-        <div className="max-w-xs md:max-w-sm">
-          <p className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-stone-400 leading-relaxed text-balance">
-            {data.subheadline}
-          </p>
-        </div>
+      {/* Grid Container */}
+      <div className="relative z-30 mx-auto w-full max-w-[90rem] h-full px-4 md:px-8 pt-20 pb-8 flex flex-col justify-between">
         
-        <a href={links.facebook} target="_blank" rel="noopener noreferrer" className="border-b border-stone-600 pb-1 text-[10px] font-mono uppercase tracking-widest text-stone-300 hover:text-stone-50 transition-colors pointer-events-auto">
-          {data.ctaFacebook} &#8594;
-        </a>
+        {/* Top Metadata */}
+        <div className="grid grid-cols-12 gap-4 items-start">
+          <div className="col-span-8 md:col-span-4 flex gap-4 md:gap-8">
+            <span className="text-[9px] md:text-[10px] font-mono uppercase tracking-widest text-stone-500">MT / 001</span>
+            <span className="hidden md:inline-block text-[10px] font-mono uppercase tracking-widest text-stone-500">OBJECT 01</span>
+            <span className="hidden lg:inline-block text-[10px] font-mono uppercase tracking-widest text-stone-500">ENGINEERED IN VN</span>
+          </div>
+          <div className="col-span-4 md:col-span-8 text-right">
+            <span className="text-[9px] md:text-[10px] font-mono uppercase tracking-widest text-stone-500">2026</span>
+          </div>
+        </div>
+
+        {/* Product Image & Headline Container */}
+        <div className="relative flex-grow flex flex-col justify-center w-full mt-6 mb-6 gap-4 md:gap-8">
+          <motion.div
+            style={{ scale: imageScale, opacity: imageOpacity }}
+            className="relative w-full flex-grow min-h-[300px] md:min-h-[400px] z-10"
+          >
+            <Image 
+              src={data.image} 
+              alt="Hero Visual" 
+              fill 
+              className="object-cover object-center filter grayscale-[20%] contrast-110"
+              priority
+              sizes="(max-width: 768px) 100vw, 80vw"
+            />
+          </motion.div>
+
+          <motion.div
+            style={{ y: textY }}
+            className="relative z-20 w-full"
+          >
+            <h1 className="font-display text-4xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[1] text-stone-50">
+              INDUSTRIAL<br/>
+              <span className="text-stone-400 italic">PRECISION</span>
+            </h1>
+          </motion.div>
+        </div>
+
+        {/* Bottom Details & CTA */}
+        <div className="grid grid-cols-12 gap-4 items-end">
+          <div className="col-span-12 md:col-span-8 lg:col-span-6">
+            <p className="text-[11px] md:text-xs font-mono uppercase tracking-widest text-stone-400 leading-relaxed text-balance">
+              {data.headline}
+            </p>
+          </div>
+          <div className="col-span-12 md:col-span-4 lg:col-span-6 md:text-right mt-4 md:mt-0">
+            <a href={links.facebook} target="_blank" rel="noopener noreferrer" className="inline-block border-b border-stone-600 pb-1 text-[10px] md:text-[11px] font-mono uppercase tracking-widest text-stone-300 hover:text-stone-50 transition-colors pointer-events-auto">
+              VIEW PROJECT &#8594;
+            </a>
+          </div>
+        </div>
+
       </div>
-      
     </section>
   );
 }
