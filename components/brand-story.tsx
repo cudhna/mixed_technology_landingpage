@@ -5,73 +5,101 @@ import Image from "next/image";
 
 export default function BrandStory({ data }: { data: any }) {
   return (
-    <section id="about" className="relative bg-[#0a0a0a] py-32">
-      
+    <section id="story" className="relative py-24 md:py-40 bg-[#0a0a0a] overflow-hidden">
       <div className="mx-auto max-w-[90rem] px-4 md:px-8">
-        {/* Section Marker */}
-        <div className="flex items-center gap-4 mb-24">
-          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-stone-500">03 / MANIFESTO</span>
-          <div className="h-px bg-stone-800 flex-grow" />
+        
+        {/* Editorial Section Marker */}
+        <div className="flex items-center gap-6 mb-16 md:mb-32">
+          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-stone-400 whitespace-nowrap">03 / ABOUT</span>
+          <div className="h-[1px] bg-stone-800 flex-grow" />
         </div>
-      </div>
 
-      {/* Giant Typography Poster */}
-      <div className="relative w-full min-h-screen flex items-center justify-center px-4 md:px-8 overflow-hidden">
-        {/* Background visual subtly behind typography */}
-        <div className="absolute inset-0 z-0">
-          <motion.div
+        {/* Manifesto Statement */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-24 md:mb-40">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="col-span-1 md:col-span-9"
+          >
+            <h2 className="text-[clamp(2.5rem,6vw,6rem)] font-display font-light text-stone-50 leading-[0.9] tracking-tight uppercase">
+              WE DON&apos;T MODIFY<br/>
+              <span className="text-stone-500 italic">TECHNOLOGY.</span><br/>
+              WE REDEFINE<br/>
+              <span className="text-stone-400 italic">HOW IT FEELS.</span>
+            </h2>
+          </motion.div>
+          
+          <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.2 }}
-            className="w-full h-full relative"
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="col-span-1 md:col-span-3 flex items-end pb-4"
           >
-            <Image 
-              src={data.image} 
-              alt="Brand Visual" 
-              fill 
-              className="object-cover opacity-20 filter grayscale-[50%]" 
-              sizes="100vw" 
-            />
-            <div className="absolute inset-0 bg-[#0a0a0a]/80" />
+            <p className="text-sm md:text-base font-light text-stone-400 leading-relaxed text-balance">
+              {data.description}
+            </p>
           </motion.div>
         </div>
 
-        {/* Statement Typography */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 max-w-[100rem] mx-auto text-center pointer-events-none"
-        >
-          <h2 className="text-[8vw] md:text-[9vw] font-light tracking-tighter leading-[0.85] text-stone-50 uppercase text-balance mix-blend-difference">
-            WE DON'T JUST <span className="opacity-40 italic">MODIFY</span> TECHNOLOGY.
-            <br />
-            WE <span className="opacity-40 italic">REDEFINE</span> HOW IT FEELS.
-          </h2>
-        </motion.div>
-      </div>
-        
-      {/* Stats - Refined */}
-      <div className="mx-auto max-w-[90rem] px-4 md:px-8 mt-24">
-        <div className="pt-12 border-t border-stone-800 grid grid-cols-2 md:grid-cols-4 gap-12">
-          {data.stats.map((stat: any, i: number) => (
+        {/* Cinematic Visual & Stats */}
+        <div className="relative w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden mb-16 md:mb-32">
+          <motion.div
+            initial={{ scale: 1.05 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full h-full"
+          >
+            <Image 
+              src={data.image} 
+              alt="Mixed Technology Workshop" 
+              fill 
+              className="object-cover filter grayscale-[40%] contrast-110" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-[#0a0a0a]/20 mix-blend-overlay" />
+          </motion.div>
+        </div>
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 border-t border-stone-800 pt-12 md:pt-16">
+          {data.stats?.map((stat: any, index: number) => (
             <motion.div 
-              key={i}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * i }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
               className="flex flex-col gap-2"
             >
-              <p className="font-light text-3xl md:text-5xl text-stone-200 tracking-tight">{stat.value}</p>
-              <p className="text-[10px] font-mono uppercase tracking-widest text-stone-500">{stat.label}</p>
+              <span className="text-4xl md:text-5xl font-light text-stone-50 tracking-tighter">
+                {stat.value}
+              </span>
+              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-stone-500">
+                {stat.label}
+              </span>
             </motion.div>
           ))}
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex flex-col gap-2"
+          >
+            <span className="text-4xl md:text-5xl font-light text-stone-50 tracking-tighter">
+              100%
+            </span>
+            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-stone-500">
+              CRAFTED IN VN
+            </span>
+          </motion.div>
         </div>
-      </div>
 
+      </div>
     </section>
   );
 }

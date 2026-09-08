@@ -18,38 +18,31 @@ export default function Header({ links }: { links: { facebook: string; zalo: str
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-700 border-b border-transparent",
-        scrolled
-          ? "bg-[#0a0a0a]/50 backdrop-blur-md border-stone-800/50"
-          : "bg-transparent"
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        scrolled ? "bg-[#0a0a0a]/80 backdrop-blur-md border-b border-stone-800/50 py-4" : "bg-transparent py-6"
       )}
     >
-      <div className="mx-auto flex h-14 max-w-[90rem] items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="/" className="flex flex-col">
-          <span className="text-[10px] uppercase font-mono tracking-widest text-stone-300">
+      <div className="mx-auto flex w-full max-w-[90rem] items-center justify-between px-4 md:px-8">
+        <a href="/" className="flex flex-col z-50">
+          <span className="text-[10px] font-mono tracking-[0.2em] font-medium text-stone-100">
             MIXED TECHNOLOGY
           </span>
-          <span className="text-[9px] uppercase font-mono tracking-widest text-stone-500">
+          <span className="text-[9px] font-mono tracking-widest text-stone-500">
             / 2026
           </span>
         </a>
 
-        <nav className="hidden items-center gap-10 md:flex">
-          {["WORK", "9FLIP", "ABOUT", "CONTACT"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-[10px] font-mono tracking-widest text-stone-400 hover:text-stone-50 transition-colors"
-            >
-              {item}
-            </a>
-          ))}
+        <nav className="hidden items-center gap-12 md:flex">
+          <a href="#work" className="text-[10px] font-mono uppercase tracking-[0.2em] text-stone-400 transition-colors hover:text-stone-50">WORK</a>
+          <a href="#launcher" className="text-[10px] font-mono uppercase tracking-[0.2em] text-stone-400 transition-colors hover:text-stone-50">9FLIP</a>
+          <a href="#story" className="text-[10px] font-mono uppercase tracking-[0.2em] text-stone-400 transition-colors hover:text-stone-50">ABOUT</a>
+          <a href={links.facebook} target="_blank" rel="noopener noreferrer" className="text-[10px] font-mono uppercase tracking-[0.2em] text-stone-400 transition-colors hover:text-stone-50">CONTACT</a>
         </nav>
 
-        <div className="flex md:hidden">
+        <div className="flex items-center md:hidden z-50">
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-stone-400 transition-colors hover:text-stone-50"
+            className="flex h-10 w-10 items-center justify-end text-stone-100 transition-colors"
             aria-label="Menu"
           >
             {mobileOpen ? <X size={20} strokeWidth={1} /> : <Menu size={20} strokeWidth={1} />}
@@ -63,20 +56,16 @@ export default function Header({ links }: { links: { facebook: string; zalo: str
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 flex items-center justify-center bg-[#0a0a0a]/95 backdrop-blur-xl md:hidden"
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-[#0a0a0a] px-8 md:hidden"
           >
-            <div className="flex flex-col items-center justify-center space-y-10 p-8 text-center">
-              {["WORK", "9FLIP", "ABOUT", "CONTACT"].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-sm font-mono tracking-[0.3em] text-stone-300 hover:text-stone-50 transition-colors"
-                >
-                  {item}
-                </a>
-              ))}
+            <div className="flex flex-col space-y-10 text-center w-full">
+              <a href="#work" onClick={() => setMobileOpen(false)} className="text-[10px] font-mono tracking-[0.3em] uppercase text-stone-300 hover:text-stone-50">01 / WORK</a>
+              <a href="#launcher" onClick={() => setMobileOpen(false)} className="text-[10px] font-mono tracking-[0.3em] uppercase text-stone-300 hover:text-stone-50">02 / 9FLIP</a>
+              <a href="#story" onClick={() => setMobileOpen(false)} className="text-[10px] font-mono tracking-[0.3em] uppercase text-stone-300 hover:text-stone-50">03 / ABOUT</a>
+              <div className="pt-8 w-full flex justify-center">
+                <a href={links.facebook} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)} className="text-[10px] font-mono tracking-[0.3em] uppercase text-stone-300 hover:text-stone-50 border-b border-stone-800 pb-1 w-max">CONTACT &#8594;</a>
+              </div>
             </div>
           </motion.div>
         )}
