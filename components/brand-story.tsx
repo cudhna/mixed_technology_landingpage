@@ -10,7 +10,7 @@ export default function BrandStory({ data }: { data: any }) {
         
         {/* Soft Section Marker */}
         <div className="mb-16 md:mb-24 opacity-60">
-          <span className="text-[11px] uppercase tracking-widest text-stone-400">03 / GIỚI THIỆU</span>
+          <span className="text-[11px] uppercase tracking-widest text-stone-400">03 / Giới thiệu</span>
         </div>
 
         {/* Manifesto Statement */}
@@ -22,10 +22,8 @@ export default function BrandStory({ data }: { data: any }) {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="col-span-1 md:col-span-8"
           >
-            <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-light text-stone-100 leading-[1.2] tracking-tight text-balance">
-              CHÚNG TÔI KHÔNG CHỈ TẠO RA CÔNG NGHỆ. <br />
-              CHÚNG TÔI QUAN TÂM ĐẾN CẢM GIÁC <br />
-              <span className="text-stone-400 italic">KHI BẠN SỬ DỤNG NÓ.</span>
+<h2 className="text-[clamp(2rem,4vw,3.5rem)] font-light text-stone-100 leading-[1.2] tracking-tight text-balance">
+              {data.title}
             </h2>
           </motion.div>
           
@@ -90,7 +88,7 @@ export default function BrandStory({ data }: { data: any }) {
               100%
             </span>
             <span className="text-[10px] uppercase tracking-widest text-stone-500 opacity-80">
-              CHẾ TÁC TẠI VN
+              Chế tác tại VN
             </span>
           </motion.div>
         </div>

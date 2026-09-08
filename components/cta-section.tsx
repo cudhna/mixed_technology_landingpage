@@ -9,7 +9,7 @@ export default function CtaSection({ data, links }: { data: any; links: any }) {
         
         {/* Soft Section Marker */}
         <div className="mb-16 md:mb-24 opacity-60">
-          <span className="text-[11px] uppercase tracking-widest text-stone-400">04 / LIÊN HỆ</span>
+          <span className="text-[11px] uppercase tracking-widest text-stone-400">04 / Liên hệ</span>
         </div>
 
         <div className="flex flex-col items-center text-center">

@@ -30,10 +30,10 @@ export default function Header({ links }: { links: { facebook: string; zalo: str
         </a>
 
         <nav className="hidden items-center gap-12 md:flex">
-          <a href="#work" className="text-[11px] uppercase tracking-widest text-stone-400 transition-colors hover:text-stone-50">DỰ ÁN</a>
-          <a href="#launcher" className="text-[11px] uppercase tracking-widest text-stone-400 transition-colors hover:text-stone-50">9FLIP</a>
-          <a href="#story" className="text-[11px] uppercase tracking-widest text-stone-400 transition-colors hover:text-stone-50">GIỚI THIỆU</a>
-          <a href={links.facebook} target="_blank" rel="noopener noreferrer" className="text-[11px] uppercase tracking-widest text-stone-400 transition-colors hover:text-stone-50">LIÊN HỆ</a>
+          <a href="#work" className="text-[11px] uppercase tracking-widest text-stone-400 transition-colors hover:text-stone-50">Dự án</a>
+          <a href="#launcher" className="text-[11px] uppercase tracking-widest text-stone-400 transition-colors hover:text-stone-50">9flip</a>
+          <a href="#story" className="text-[11px] uppercase tracking-widest text-stone-400 transition-colors hover:text-stone-50">Giới thiệu</a>
+          <a href={links.facebook} target="_blank" rel="noopener noreferrer" className="text-[11px] uppercase tracking-widest text-stone-400 transition-colors hover:text-stone-50">Liên hệ</a>
         </nav>
 
         <div className="flex items-center md:hidden z-50">
