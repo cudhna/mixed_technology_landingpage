@@ -23,7 +23,6 @@ export default function BrandStory() {
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-950/80 to-transparent" />
           </motion.div>
 
           <motion.div
@@ -36,13 +35,13 @@ export default function BrandStory() {
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
               Câu chuyện thương hiệu
             </span>
-            <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
+            <h2 className="font-display text-3xl font-normal leading-tight tracking-tight text-white md:text-4xl lg:text-5xl">
               Mỗi dự án đều bắt đầu từ rất nhiều bản phác thảo trước khi có
               một sản phẩm hoàn chỉnh. Chúng tôi tin rằng công nghệ hoàn mỹ nhất
               là công nghệ mang lại sự tự do và tiện lợi tối đa cho người dùng —
               dù đó là một dòng code tối ưu hay một đường phay CNC tinh xảo.
             </h2>
-            <p className="text-lg leading-relaxed text-stone-400">
+            <p className="text-lg font-light leading-relaxed text-stone-300">
               Tại Mixed Technology, chúng tôi không chỉ tạo ra sản phẩm — chúng tôi kiến tạo
               trải nghiệm. Từ phần mềm tối ưu cho thiết bị di động đến từng tác phẩm độ máy
               thủ công tỉ mỉ, mỗi chi tiết đều được chăm chút đến hoàn thiện.
@@ -50,18 +49,18 @@ export default function BrandStory() {
             <div className="pt-4">
               <div className="flex items-center gap-8">
                 <div>
-                  <p className="font-display text-4xl font-bold text-white">6+</p>
-                  <p className="text-sm text-stone-400">Năm kinh nghiệm</p>
+                  <p className="font-display text-4xl font-normal text-white">6+</p>
+                  <p className="text-sm font-light text-stone-400 mt-1">Năm kinh nghiệm</p>
                 </div>
-                <div className="w-px h-12 bg-stone-700" />
+                <div className="w-px h-12 bg-stone-800" />
                 <div>
-                  <p className="font-display text-4xl font-bold text-white">50+</p>
-                  <p className="text-sm text-stone-400">Dự án hoàn thành</p>
+                  <p className="font-display text-4xl font-normal text-white">50+</p>
+                  <p className="text-sm font-light text-stone-400 mt-1">Dự án hoàn thành</p>
                 </div>
-                <div className="w-px h-12 bg-stone-700" />
+                <div className="w-px h-12 bg-stone-800" />
                 <div>
-                  <p className="font-display text-4xl font-bold text-white">2k+</p>
-                  <p className="text-sm text-stone-400">Khách hàng tin tưởng</p>
+                  <p className="font-display text-4xl font-normal text-white">2k+</p>
+                  <p className="text-sm font-light text-stone-400 mt-1">Khách hàng tin tưởng</p>
                 </div>
               </div>
             </div>
@@ -69,7 +68,6 @@ export default function BrandStory() {
         </div>
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-950 via-brand-950/95 to-transparent" />
     </section>
   );
 }

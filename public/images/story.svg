@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <rect width="800" height="600" fill="#211a16"/>
-  <rect x="100" y="100" width="600" height="400" rx="16" fill="#3e312b"/>
-  <text x="400" y="300" text-anchor="middle" fill="#836d5a" font-family="Georgia, serif" font-size="20">Mixed Technology Studio</text>
-  <text x="400" y="340" text-anchor="middle" fill="#6e584a" font-family="Inter, sans-serif" font-size="14">Story Placeholder</text>
-</svg>
