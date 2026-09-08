@@ -5,67 +5,60 @@ import Image from "next/image";
 
 export default function LauncherSection({ data, links }: { data: any; links: any }) {
   return (
-    <section id="launcher" className="relative py-24 sm:py-32 lg:py-40">
-      <div className="absolute inset-0 bg-white" />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <span className="section-label">Phần mềm cốt lõi</span>
-          <h2 className="section-title">{data.title}</h2>
-          <p className="section-desc mx-auto">{data.description}</p>
-        </motion.div>
+    <section id="9flip" className="relative py-32 bg-[#0a0a0a] border-t border-stone-800">
+      <div className="mx-auto max-w-7xl px-4 md:px-8">
+        
+        {/* Massive Typography */}
+        <div className="mb-20">
+          <span className="text-[10px] font-mono tracking-widest text-stone-500 uppercase mb-8 block">01 — SOFTWARE CORE</span>
+          <h2 className="text-6xl md:text-[6rem] lg:text-[8rem] font-light tracking-tighter leading-[0.85] text-stone-50 uppercase">
+            {data.title || "9FLIP LAUNCHER"}
+          </h2>
+          <p className="mt-8 md:mt-12 text-lg md:text-xl font-light text-stone-400 max-w-2xl leading-relaxed">
+            {data.description}
+          </p>
+        </div>
 
-        <div className="mt-20 grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <motion.div
-            initial={{ opacity: 0, x: -40, filter: "blur(10px)" }}
-            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="relative p-2 bg-white shadow-[0_20px_40px_rgb(0,0,0,0.06)]"
-          >
-            <div className="relative aspect-[4/3] overflow-hidden border border-stone-100">
-              <Image src={data.image} alt="9flip Launcher trên màn hình ngoài" fill className="object-cover transition-transform duration-1000 hover:scale-105" sizes="(max-width: 1024px) 100vw, 50vw" />
-            </div>
-          </motion.div>
+        {/* Large Mockup with Annotations */}
+        <div className="relative w-full aspect-[16/9] md:aspect-[21/9] bg-stone-900 overflow-hidden mb-16">
+          <Image 
+            src={data.image} 
+            alt="9flip Launcher Mockup" 
+            fill 
+            className="object-cover filter grayscale-[20%]" 
+            sizes="100vw" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-80" />
+        </div>
 
-          <div className="space-y-8">
-            <ul className="space-y-6">
-              {data.features.map((feature: any, i: number) => (
-                <motion.li 
-                  key={i} 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 * i, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  className="group flex items-start gap-6 cursor-default"
-                >
-                  <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-stone-50 border border-stone-100 text-xl transition-all duration-500 group-hover:bg-gold-50 group-hover:border-gold-200">
-                    {feature.icon}
-                  </span>
-                  <span className="pt-2 text-base font-light leading-relaxed text-stone-600 transition-colors duration-500 group-hover:text-stone-900">
-                    {feature.text}
-                  </span>
-                </motion.li>
-              ))}
-            </ul>
-
-            <motion.div
+        {/* Technical Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-stone-800 pt-16">
+          {data.features.map((feature: any, i: number) => (
+            <motion.div 
+              key={i} 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.1 * i, ease: "easeOut" }}
+              className="flex flex-col gap-4"
             >
-              <a href={links.facebook} target="_blank" rel="noopener noreferrer" className="btn-primary inline-block mt-4">
-                {data.cta}
-              </a>
+              <div className="flex items-center gap-4 border-b border-stone-800 pb-4">
+                <span className="tech-label">SPEC.{String(i + 1).padStart(2, '0')}</span>
+                <span className="text-stone-300 font-mono text-sm uppercase">{feature.icon} FEATURE</span>
+              </div>
+              <p className="text-sm font-light text-stone-400 leading-relaxed">
+                {feature.text}
+              </p>
             </motion.div>
-          </div>
+          ))}
         </div>
+
+        <div className="mt-16 text-center md:text-left">
+          <a href={links.facebook} target="_blank" rel="noopener noreferrer" className="border border-stone-700 px-8 py-4 text-[10px] font-mono tracking-widest text-stone-300 hover:bg-stone-50 hover:text-[#0a0a0a] transition-colors inline-block">
+            {data.cta || "INSTALL CORE"}
+          </a>
+        </div>
+
       </div>
     </section>
   );
