@@ -68,7 +68,7 @@ Output sẽ ở thư mục `out/` — có thể deploy lên GitHub Pages, Vercel
 Chỉnh trong `lib/constants.ts`:
 ```ts
 export const LINKS = {
-  facebook: "https://www.facebook.com/...",
+  facebook: "https://www.facebook.com/profile.php?id=61590708082215",
   zalo: "https://zalo.me/...",
 } as const;
 ```
