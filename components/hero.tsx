@@ -67,7 +67,7 @@ export default function Hero({ data, links }: { data: any, links: { facebook: st
                 className="group flex flex-col w-max cursor-pointer pointer-events-auto"
               >
                 <span className="text-[11px] uppercase tracking-widest text-stone-400 group-hover:text-stone-100 transition-colors duration-500 mb-1 flex items-center gap-2">
-                  XEM CHI TIẾT 
+                  XEM CHI TIẾTT 
                   <span className="transform transition-transform duration-500 group-hover:translate-x-1">&#8594;</span>
                 </span>
               </a>
