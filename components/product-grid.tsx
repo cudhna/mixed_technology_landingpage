@@ -3,13 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const orbitLabels = [
-  { text: "PREMIUM", offset: -30 },
-  { text: "LIMITED", offset: -15 },
-  { text: "ARTISAN", offset: 0 },
-  { text: "EXCLUSIVE", offset: 15 },
-  { text: "MADE", offset: 30 },
-];
+const orbitLabels = ["PREMIUM", "LIMITED", "ARTISAN", "EXCLUSIVE", "MADE"];
 
 export default function ProductGrid({ products }: { products: any[] }) {
   return (
@@ -20,34 +14,40 @@ export default function ProductGrid({ products }: { products: any[] }) {
         </div>
 
         <style>{`
-          @keyframes orbit-spin {
+          @keyframes orbit {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
           }
-          .orbit-ring {
+          .orbit-container {
             position: absolute;
-            inset: -20px;
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 50%;
-            animation: orbit-spin 60s linear infinite;
+            inset: 0;
             pointer-events: none;
+            overflow: hidden;
           }
-          .orbit-ring-reverse {
+          .orbit-ring-1 {
             position: absolute;
-            inset: -10px;
-            border: 1px dashed rgba(255,255,255,0.03);
+            inset: 15%;
+            border: 1px solid rgba(255,255,255,0.06);
             border-radius: 50%;
-            animation: orbit-spin 40s linear infinite reverse;
-            pointer-events: none;
+            animation: orbit 30s linear infinite;
+          }
+          .orbit-ring-2 {
+            position: absolute;
+            inset: 10%;
+            border: 1px dashed rgba(255,255,255,0.04);
+            border-radius: 50%;
+            animation: orbit 20s linear infinite reverse;
           }
           .orbit-label {
             position: absolute;
-            font-size: 9px;
+            font-size: 8px;
             font-family: monospace;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.25em;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.15);
             white-space: nowrap;
+            top: 50%;
+            left: 50%;
           }
         `}</style>
 
@@ -96,24 +96,25 @@ export default function ProductGrid({ products }: { products: any[] }) {
                     sizes={isFeatured ? "(max-width: 768px) 100vw, 60vw" : "(max-width: 768px) 50vw, 33vw"}
                   />
 
-                  {/* Orbiting text labels */}
-                  <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                    <div className="orbit-ring" />
-                    <div className="orbit-ring-reverse" />
-                    {orbitLabels.map((label, i) => (
-                      <span
-                        key={i}
-                        className="orbit-label"
-                        style={{
-                          top: "50%",
-                          left: "50%",
-                          transform: `translate(-50%, -50%) rotate(${i * 72 + index * 15}deg) translateY(${-60 + label.offset}px)`,
-                          animation: `orbit-spin ${20 + index * 3}s linear infinite ${-index * 2}s`,
-                        }}
-                      >
-                        {label.text}
-                      </span>
-                    ))}
+                  <div className="orbit-container">
+                    <div className="orbit-ring-1" />
+                    <div className="orbit-ring-2" />
+                    {orbitLabels.map((text, i) => {
+                      const angle = (i * 72 + index * 20) % 360;
+                      const r = 40 + (index % 3) * 5;
+                      const rad = (angle * Math.PI) / 180;
+                      const x = 50 + Math.cos(rad) * r;
+                      const y = 50 + Math.sin(rad) * r;
+                      return (
+                        <span
+                          key={i}
+                          className="orbit-label"
+                          style={{ left: `${x}%`, top: `${y}%`, transform: "translate(-50%, -50%)" }}
+                        >
+                          {text}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
 
