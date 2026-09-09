@@ -23,9 +23,9 @@ function OrbitingLabels({ count, radius, speed, color }: { count: number; radius
         if (el) {
           const angle = t + (i * Math.PI * 2) / labels.length;
           const x = Math.cos(angle) * radius;
-          const y = Math.sin(angle) * radius;
+          const y = Math.sin(angle) * radius * 0.6 + Math.sin(t * 0.7 + i) * radius * 0.3;
           el.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
-          el.style.opacity = String(0.5 + Math.sin(t + i) * 0.4);
+          el.style.opacity = String(0.4 + Math.sin(t + i * 1.5) * 0.3);
         }
       }
       animId = requestAnimationFrame(animate);
@@ -97,8 +97,8 @@ export default function ProductGrid({ products }: { products: any[] }) {
                 aspectClass = "aspect-[4/5]";
               }
 
-              const orbitR = 60 + (index % 3) * 15;
-              const speed = 0.2 + index * 0.08;
+              const orbitR = 80 + (index % 3) * 20;
+              const speed = 0.015 + index * 0.003;
 
               return (
                 <motion.div
