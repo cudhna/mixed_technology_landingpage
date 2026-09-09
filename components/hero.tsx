@@ -31,7 +31,7 @@ export default function Hero({ data, links }: { data: any, links: { facebook: st
           <div className="col-span-1 md:col-span-7 relative order-1 md:order-2 flex items-center justify-center">
             <motion.div
               style={{ scale: imageScale, opacity: imageOpacity }}
-              className="relative w-full aspect-[4/5] sm:aspect-square md:aspect-[4/3] max-w-3xl mx-auto flex items-center justify-center"
+              className="relative w-full max-w-3xl mx-auto p-4 md:p-8 flex items-center justify-center"
             >
               {/* Technical Decorative Frame */}
               <div className="absolute inset-0 border border-stone-800/40 bg-stone-900/10 pointer-events-none z-10">
@@ -48,12 +48,12 @@ export default function Hero({ data, links }: { data: any, links: { facebook: st
               </div>
 
               {/* Image Inside Frame */}
-              <div className="absolute inset-8 md:inset-12 z-20">
+              <div className="relative w-full aspect-[4/3] md:aspect-[16/9] z-20">
                 <Image 
                   src={data.image} 
                   alt="Mixed Technology Product" 
                   fill 
-                  className="object-contain filter grayscale-[15%] contrast-105 drop-shadow-2xl"
+                  className="object-cover filter grayscale-[15%] contrast-105 drop-shadow-2xl"
                   priority
                   sizes="(max-width: 768px) 100vw, 60vw"
                 />

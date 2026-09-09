@@ -43,7 +43,7 @@ export default function BrandStory({ data }: { data: any }) {
         </div>
 
         {/* Cinematic Visual with Technical Frame */}
-        <div className="relative w-full aspect-[4/3] md:aspect-[21/9] flex items-center justify-center mb-16 md:mb-24">
+        <div className="relative w-full max-w-6xl mx-auto flex items-center justify-center mb-16 md:mb-24 p-4 md:p-8">
           
           {/* Technical Decorative Frame */}
           <div className="absolute inset-0 border border-stone-800/40 bg-stone-900/10 pointer-events-none z-10">
@@ -64,7 +64,7 @@ export default function BrandStory({ data }: { data: any }) {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-4 md:inset-8 z-20"
+            className="relative w-full aspect-[4/3] md:aspect-[21/9] z-20"
           >
             <Image 
               src={data.image} 
