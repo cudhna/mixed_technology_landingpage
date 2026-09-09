@@ -1,30 +1,43 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "./language-provider";
+import { useState, useEffect } from "react";
 
 export default function LauncherSection() {
   const { t, images } = useLanguage();
   const data = t.launcher;
+  const shouldReduceMotion = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <section id="launcher" className="relative py-24 md:py-32 bg-[#050505] overflow-hidden">
       <div className="mx-auto max-w-[90rem] px-4 md:px-8">
         
-        <div className="mb-12 md:mb-16 opacity-80">
+        <motion.div 
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mb-12 md:mb-16 opacity-80"
+        >
           <span className="text-xs md:text-sm font-semibold tracking-widest text-stone-500 uppercase">
             {data.sectionTitle}
           </span>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
           
           <motion.div 
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: shouldReduceMotion ? 0 : 0.1 }}
             className="col-span-1 md:col-span-5 flex flex-col"
           >
             <h2 className="text-3xl md:text-5xl font-medium text-stone-100 leading-[1.1] tracking-tight mb-6">
@@ -64,10 +77,10 @@ export default function LauncherSection() {
 
           <div className="col-span-1 md:col-span-7 relative flex items-center justify-center mt-8 md:mt-0">
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.2 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: shouldReduceMotion ? 0 : 0.2 }}
               className="relative w-full max-w-lg aspect-[3/4] md:aspect-square flex items-center justify-center p-4 md:p-8"
             >
               <div className="absolute inset-0 border border-stone-800/40 bg-stone-900/20 backdrop-blur-sm z-10 flex items-center justify-center">
@@ -83,6 +96,11 @@ export default function LauncherSection() {
                   alt="9Flip Launcher Interface" 
                   fill 
                   className="object-contain drop-shadow-2xl" 
+                  style={{
+                    opacity: mounted ? 1 : 0,
+                    transition: 'opacity 0.8s ease-in-out'
+                  }}
+                  onLoad={(e) => (e.currentTarget.style.opacity = '1')}
                 />
               </div>
             </motion.div>
