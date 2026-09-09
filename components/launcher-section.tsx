@@ -1,26 +1,45 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function LauncherSection({ data, links }: { data: any; links: any }) {
-  const itemVariants = {
-    hidden: { opacity: 0, y: 8 },
-    visible: { opacity: 1, y: 0 }
-  };
+  const containerRef = useRef<HTMLDivElement>(null);
+  const labelsRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    const labels = labelsRef.current;
+    if (labels.length === 0) return;
+    let animId = 0;
+    let t = 0;
+
+    const animate = () => {
+      t += 0.008;
+      labels.forEach((label, i) => {
+        const angle = t + (i * Math.PI * 2) / labels.length;
+        const radius = 25 + (i % 2) * 15;
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle * 0.7) * radius * 0.5;
+        label.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+        label.style.opacity = String(0.6 + Math.sin(t + i) * 0.3);
+      });
+      animId = requestAnimationFrame(animate);
+    };
+
+    animId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animId);
+  }, []);
 
   return (
     <section id="launcher" className="relative py-24 md:py-32 bg-[#0a0a0a] overflow-hidden">
       <div className="mx-auto max-w-[90rem] px-4 md:px-8">
-        
-        {/* Soft Section Marker */}
         <div className="mb-16 md:mb-24 opacity-60">
           <span className="text-[11px] uppercase tracking-widest text-stone-400">02 / 9FLIP</span>
         </div>
 
-        {/* Cinematic Presentation */}
         <div className="flex flex-col items-center text-center mb-16 md:mb-24">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -29,7 +48,7 @@ export default function LauncherSection({ data, links }: { data: any; links: any
           >
             {data.title}
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -40,53 +59,46 @@ export default function LauncherSection({ data, links }: { data: any; links: any
           </motion.p>
         </div>
 
-        {/* Technical Object Presentation */}
         <div className="relative w-full max-w-4xl mx-auto aspect-[3/4] md:aspect-square flex items-center justify-center mt-8 md:mt-16">
-          
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-10%" }}
             transition={{ staggerChildren: 0.15, duration: 1.2 }}
             className="relative w-full h-full flex items-center justify-center"
+            ref={containerRef}
           >
-            {/* Background Frame / Pedestal */}
-            <motion.div variants={itemVariants} className="absolute inset-4 md:inset-16 border border-stone-800/40 bg-stone-900/20 backdrop-blur-sm z-10 flex items-center justify-center">
-               {/* Technical Crosshairs */}
-               <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-stone-500/50" />
-               <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-stone-500/50" />
-               <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-stone-500/50" />
-               <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-stone-500/50" />
-               
-               {/* Center Grid Line */}
-               <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-                 <div className="w-[1px] h-full bg-stone-600" />
-               </div>
+            <motion.div variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }} className="absolute inset-4 md:inset-16 border border-stone-800/40 bg-stone-900/20 backdrop-blur-sm z-10 flex items-center justify-center">
+              <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-stone-500/50" />
+              <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-stone-500/50" />
+              <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-stone-500/50" />
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-stone-500/50" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+                <div className="w-[1px] h-full bg-stone-600" />
+              </div>
             </motion.div>
 
-            {/* Device Mockup */}
-            <motion.div variants={itemVariants} className="absolute inset-12 md:inset-24 z-20">
-               <Image 
-                src={data.image} 
-                alt="9Flip Launcher Interface" 
-                fill 
-                className="object-contain filter grayscale-[5%] contrast-110 drop-shadow-2xl" 
-              />
+            <motion.div variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }} className="absolute inset-12 md:inset-24 z-20">
+              <Image src={data.image} alt="9Flip Launcher Interface" fill className="object-contain filter grayscale-[5%] contrast-110 drop-shadow-2xl" />
             </motion.div>
 
-            {/* Desktop Engineering Annotations */}
-            <div className="hidden md:block">
+            {/* Orbiting Labels — planets around the sun */}
+            <div className="absolute inset-0 pointer-events-none hidden md:block">
               {data.features.map((feature: any, i: number) => {
-                const positions = [
-                  "top-[10%] -left-[5%]",
-                  "bottom-[20%] -left-[5%]",
-                  "top-[20%] -right-[5%]",
-                  "bottom-[10%] -right-[5%]"
-                ];
-
+                const positions = ["top-[10%] left-[5%]", "bottom-[20%] left-[5%]", "top-[20%] right-[5%]", "bottom-[10%] right-[5%]"];
                 return (
-                  <motion.div key={i} variants={itemVariants} className={`absolute ${positions[i]} w-[25%] flex flex-col items-${i < 2 ? "start" : "end"} gap-2 z-30`}>
-                    <div className="text-[10px] tracking-widest px-2 py-1 bg-[#0a0a0a] text-stone-300 border border-stone-800/50 shadow-xl">
+                  <motion.div
+                    key={i}
+                    ref={(el) => { if (el) labelsRef.current[i] = el; }}
+                    variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.2, delay: 0.2 + i * 0.15 }}
+                    className={`absolute ${positions[i]} w-[22%] flex flex-col items-${i < 2 ? "start" : "end"} gap-1 z-30`}
+                    style={{ transformOrigin: "center center" }}
+                  >
+                    <div className="text-[10px] tracking-widest px-2 py-1 bg-[#0a0a0a]/80 text-stone-300 border border-stone-800/50 shadow-xl whitespace-nowrap">
                       0{i + 1} / {feature.icon}
                     </div>
                     <p className={`text-xs text-stone-400 font-light leading-relaxed ${i < 2 ? "text-left" : "text-right"}`}>
@@ -96,27 +108,17 @@ export default function LauncherSection({ data, links }: { data: any; links: any
                 );
               })}
             </div>
-            
           </motion.div>
         </div>
 
-        {/* Mobile Technical Features Fallback */}
+        {/* Mobile */}
         <div className="grid grid-cols-1 md:hidden gap-8 mt-16 pt-12">
           {data.features.map((feature: any, i: number) => (
-            <motion.div 
-              key={i} 
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className="flex flex-col gap-2"
-            >
+            <motion.div key={i} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1 }} className="flex flex-col gap-2">
               <div className="text-[10px] tracking-widest border border-stone-800/50 px-2 py-1 w-max text-stone-300 opacity-80">
                 0{i + 1} / {feature.icon}
               </div>
-              <p className="text-sm font-light text-stone-400 leading-relaxed">
-                {feature.text}
-              </p>
+              <p className="text-sm font-light text-stone-400 leading-relaxed">{feature.text}</p>
             </motion.div>
           ))}
         </div>
@@ -129,7 +131,6 @@ export default function LauncherSection({ data, links }: { data: any; links: any
             </span>
           </a>
         </div>
-
       </div>
     </section>
   );
