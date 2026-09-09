@@ -14,40 +14,39 @@ export default function ProductGrid({ products }: { products: any[] }) {
         </div>
 
         <style>{`
-          @keyframes orbit {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-          }
-          .orbit-container {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            overflow: hidden;
-          }
-          .orbit-ring-1 {
-            position: absolute;
-            inset: 15%;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 50%;
-            animation: orbit 30s linear infinite;
-          }
-          .orbit-ring-2 {
-            position: absolute;
-            inset: 10%;
-            border: 1px dashed rgba(255,255,255,0.04);
-            border-radius: 50%;
-            animation: orbit 20s linear infinite reverse;
+          @keyframes orbit-label {
+            from { transform: rotate(0deg) translateY(-55px) rotate(0deg); }
+            to { transform: rotate(360deg) translateY(-55px) rotate(-360deg); }
           }
           .orbit-label {
             position: absolute;
+            left: 50%;
+            top: 50%;
             font-size: 8px;
             font-family: monospace;
             letter-spacing: 0.25em;
             text-transform: uppercase;
             color: rgba(255,255,255,0.15);
             white-space: nowrap;
-            top: 50%;
-            left: 50%;
+            transform-origin: 0 0;
+          }
+          .orbit-ring-1 {
+            position: absolute;
+            inset: 15%;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 50%;
+            animation: spin 40s linear infinite;
+          }
+          .orbit-ring-2 {
+            position: absolute;
+            inset: 10%;
+            border: 1px dashed rgba(255,255,255,0.04);
+            border-radius: 50%;
+            animation: spin 25s linear infinite reverse;
+          }
+          @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
           }
         `}</style>
 
@@ -78,6 +77,8 @@ export default function ProductGrid({ products }: { products: any[] }) {
               aspectClass = "aspect-[4/5]";
             }
 
+            const orbitR = 55 + (index % 3) * 5;
+
             return (
               <motion.div
                 key={product.id}
@@ -96,20 +97,21 @@ export default function ProductGrid({ products }: { products: any[] }) {
                     sizes={isFeatured ? "(max-width: 768px) 100vw, 60vw" : "(max-width: 768px) 50vw, 33vw"}
                   />
 
-                  <div className="orbit-container">
+                  <div className="relative w-full h-full">
                     <div className="orbit-ring-1" />
                     <div className="orbit-ring-2" />
                     {orbitLabels.map((text, i) => {
-                      const angle = (i * 72 + index * 20) % 360;
-                      const r = 40 + (index % 3) * 5;
-                      const rad = (angle * Math.PI) / 180;
-                      const x = 50 + Math.cos(rad) * r;
-                      const y = 50 + Math.sin(rad) * r;
+                      const angle = i * 72;
+                      const delay = -index * 2 - i * 0.5;
+                      const duration = 20 + index * 5;
                       return (
                         <span
                           key={i}
                           className="orbit-label"
-                          style={{ left: `${x}%`, top: `${y}%`, transform: "translate(-50%, -50%)" }}
+                          style={{
+                            transform: `rotate(${angle}deg) translateY(${-orbitR}px) rotate(-${angle}deg)`,
+                            animation: `orbit-label ${duration}s linear infinite ${delay}s`,
+                          }}
                         >
                           {text}
                         </span>
