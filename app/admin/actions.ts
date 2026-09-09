@@ -90,11 +90,11 @@ function buildConfigFromForm(formData: FormData) {
       title: get("brandStory.title"),
       description: get("brandStory.description"),
       image: get("brandStory.image"),
-      stats: [
-        { value: get("brandStory.stat1.value") || "6+", label: get("brandStory.stat1.label") || "Năm kinh nghiệm" },
-        { value: get("brandStory.stat2.value") || "50+", label: get("brandStory.stat2.label") || "Dự án hoàn thành" },
-        { value: get("brandStory.stat3.value") || "2k+", label: get("brandStory.stat3.label") || "Khách hàng tin tưởng" },
-      ],
+      // stats: [
+      //   { value: get("brandStory.stat1.value") || "6+", label: get("brandStory.stat1.label") || "Năm kinh nghiệm" },
+      //   { value: get("brandStory.stat2.value") || "50+", label: get("brandStory.stat2.label") || "Dự án hoàn thành" },
+      //   { value: get("brandStory.stat3.value") || "2k+", label: get("brandStory.stat3.label") || "Khách hàng tin tưởng" },
+      // ],
     },
     cta: {
       title: get("cta.title"),
