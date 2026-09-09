@@ -85,11 +85,11 @@ export default function LauncherSection({ data, links }: { data: any; links: any
                 ];
 
                 return (
-                  <motion.div key={i} variants={itemVariants} className={"absolute ${positions[i]} w-[25%] flex flex-col items-${i < 2 ? 'start' : 'end'} gap-2 z-30"}>
+                  <motion.div key={i} variants={itemVariants} className={`absolute ${positions[i]} w-[25%] flex flex-col items-${i < 2 ? "start" : "end"} gap-2 z-30`}>
                     <div className="text-[10px] tracking-widest px-2 py-1 bg-[#0a0a0a] text-stone-300 border border-stone-800/50 shadow-xl">
                       0{i + 1} / {feature.icon}
                     </div>
-                    <p className={"text-xs text-stone-400 font-light leading-relaxed ${i < 2 ? 'text-left' : 'text-right'}"}>
+                    <p className={`text-xs text-stone-400 font-light leading-relaxed ${i < 2 ? "text-left" : "text-right"}`}>
                       {feature.text}
                     </p>
                   </motion.div>
