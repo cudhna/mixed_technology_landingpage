@@ -8,90 +8,70 @@ export default function ProductGrid({ products }: { products: any[] }) {
     <section id="work" className="relative py-24 md:py-32 bg-[#0a0a0a] overflow-hidden">
       <div className="mx-auto max-w-[90rem] px-4 md:px-8">
         
-        <div className="mb-12 md:mb-16 opacity-80">
-          <span className="text-xs md:text-sm font-semibold tracking-widest text-stone-500">DỰ ÁN PHẦN CỨNG</span>
+        <div className="mb-8 md:mb-12">
+          <span className="text-xs md:text-sm font-semibold tracking-widest text-stone-500 uppercase">DỰ ÁN PHẦN CỨNG</span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-x-4 md:gap-x-12 gap-y-20 md:gap-y-32">
+        {/* Simplified, Scannable Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
           {products.map((product: any, index: number) => {
             const isFeatured = index === 0;
             const labels = product.labels || [];
 
-            let gridClass = "";
-            let aspectClass = "";
+            // Featured takes 8 columns (2/3 width), others take 4 columns (1/3 width, so 3 per row)
+            const gridClass = isFeatured 
+              ? "col-span-1 md:col-span-8" 
+              : "col-span-1 md:col-span-4";
             
-            if (index === 0) {
-              gridClass = "col-span-1 sm:col-span-2 md:col-span-7 md:col-start-1";
-              aspectClass = "aspect-[16/10]";
-            } else if (index === 1) {
-              gridClass = "col-span-1 md:col-span-4 md:col-start-9 md:mt-16";
-              aspectClass = "aspect-[3/4]";
-            } else if (index === 2) {
-              gridClass = "col-span-1 md:col-span-4 md:col-start-2";
-              aspectClass = "aspect-[4/3]";
-            } else if (index === 3) {
-              gridClass = "col-span-1 md:col-span-5 md:col-start-7 md:-mt-24";
-              aspectClass = "aspect-square";
-            } else if (index === 4) {
-              gridClass = "col-span-1 md:col-span-6 md:col-start-1";
-              aspectClass = "aspect-[16/9]";
-            } else {
-              gridClass = "col-span-1 md:col-span-4 md:col-start-8 md:-mt-8";
-              aspectClass = "aspect-[4/5]";
-            }
+            // Fixed aspect ratio for consistency. Featured is wider, regular is squarish.
+            const aspectClass = isFeatured 
+              ? "aspect-[16/10] md:aspect-[21/9]" 
+              : "aspect-[4/3]";
 
             return (
               <motion.div
                 key={product.id}
-                initial={{ opacity: 0, y: 8 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-10%" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className={"group flex flex-col "}
+                viewport={{ once: true, margin: "-5%" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className={"group flex flex-col " + gridClass}
               >
-                <div className="relative mb-6 md:mb-8 flex items-center justify-center p-2 md:p-4">
-                  
-                  {/* Decorative Frame */}
-                  <div className="absolute inset-0 border border-stone-800/20 bg-[#0f0f0f] pointer-events-none z-10">
-                     <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-stone-600/40" style={{ marginLeft: '-1px', marginTop: '-1px' }} />
-                     <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-stone-600/40" style={{ marginRight: '-1px', marginTop: '-1px' }} />
-                     <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-stone-600/40" style={{ marginLeft: '-1px', marginBottom: '-1px' }} />
-                     <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-stone-600/40" style={{ marginRight: '-1px', marginBottom: '-1px' }} />
-                  </div>
-
-                  <div className={"relative w-full overflow-hidden bg-black  z-20"}>
-                    <Image
-                      src={product.image}
-                      alt={product.alt || product.name}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.01] filter grayscale-[10%] group-hover:grayscale-0"
-                      sizes={isFeatured ? "(max-width: 768px) 100vw, 60vw" : "(max-width: 768px) 50vw, 33vw"}
-                    />
-                  </div>
+                {/* Image Wrapper */}
+                <div className={"relative w-full overflow-hidden bg-[#111] border border-stone-800/40 rounded-sm mb-4 " + aspectClass}>
+                  <Image
+                    src={product.image}
+                    alt={product.alt || product.name}
+                    fill
+                    className="object-contain p-4 md:p-8 transition-transform duration-300 group-hover:scale-[1.02]"
+                    sizes={isFeatured ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
+                  />
                 </div>
 
-                <div className="flex flex-col gap-3 px-1">
-                  <h3 className={" font-medium text-stone-100 tracking-tight leading-snug"}>
+                {/* Content Wrapper */}
+                <div className="flex flex-col gap-2">
+                  <h3 className={"font-medium text-stone-100 tracking-tight leading-snug " + (isFeatured ? '"text-2xl md:text-3xl"' : '"text-lg md:text-xl"')}>
                     {product.name}
                   </h3>
-                  <p className="text-sm text-stone-400 max-w-sm leading-relaxed">
+                  
+                  <p className="text-sm text-stone-400 leading-relaxed">
                     {product.desc}
                   </p>
                   
                   {labels.length > 0 && (
-                    <div className="flex flex-col gap-1 mt-2 mb-2">
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1 mb-2">
                       {labels.map((lbl: string, i: number) => {
                         const parts = lbl.split(':');
                         if (parts.length > 1) {
                           return (
-                            <div key={i} className="text-xs text-stone-500 flex gap-2">
-                              <span className="font-semibold text-stone-400">{parts[0]}:</span>
+                            <div key={i} className="text-xs text-stone-500 flex gap-1">
+                              <span className="font-medium text-stone-400">{parts[0]}:</span>
                               <span>{parts.slice(1).join(':')}</span>
                             </div>
                           );
                         }
                         return (
-                          <div key={i} className="text-xs text-stone-400">
+                          <div key={i} className="text-xs text-stone-500">
                             • {lbl}
                           </div>
                         );
@@ -99,9 +79,9 @@ export default function ProductGrid({ products }: { products: any[] }) {
                     </div>
                   )}
 
-                  <div className="flex items-center gap-2 group/cta cursor-pointer text-xs font-semibold uppercase tracking-wide text-stone-300 hover:text-white transition-colors duration-300 w-max mt-2">
-                    XEM CHI TIẾT
-                    <span className="transform transition-transform duration-300 md:group-hover:translate-x-1">&#8594;</span>
+                  <div className="flex items-center gap-2 group/cta cursor-pointer text-xs font-medium text-stone-300 hover:text-white transition-colors duration-200 w-max mt-1">
+                    Xem chi tiết
+                    <span className="transform transition-transform duration-200 group-hover/cta:translate-x-1">&#8594;</span>
                   </div>
                 </div>
               </motion.div>

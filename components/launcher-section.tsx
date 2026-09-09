@@ -10,7 +10,7 @@ export default function LauncherSection({ data, links }: { data: any; links: any
         
         {/* Soft Section Marker */}
         <div className="mb-12 md:mb-16 opacity-80">
-          <span className="text-xs md:text-sm font-semibold tracking-widest text-stone-500">PHẦN MỀM NỔI BẬT</span>
+          <span className="text-xs md:text-sm font-semibold tracking-widest text-stone-500 uppercase">PHẦN MỀM NỔI BẬT</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
