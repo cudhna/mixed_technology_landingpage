@@ -6,19 +6,31 @@ import ProductGrid from "@/components/product-grid";
 import BrandStory from "@/components/brand-story";
 import CtaSection from "@/components/cta-section";
 import Footer from "@/components/footer";
+import { LanguageProvider } from "@/components/language-provider";
+import fs from "fs";
+import path from "path";
 
 export default async function Home() {
-  const config = await getConfig();
+  const viConfig = await getConfig();
+  let enConfig = null;
+  try {
+    const enPath = path.join(process.cwd(), "data", "en.json");
+    enConfig = JSON.parse(fs.readFileSync(enPath, "utf-8"));
+  } catch (e) {
+    enConfig = viConfig; // Fallback if missing
+  }
 
   return (
     <main>
-      <Header links={config.links} />
-      <Hero data={config.hero} links={config.links} />
-      <LauncherSection data={config.launcher} links={config.links} />
-      <ProductGrid products={config.products} />
-      <BrandStory data={config.brandStory} />
-      <CtaSection data={config.cta} links={config.links} />
-      <Footer />
+      <LanguageProvider vi={viConfig} en={enConfig}>
+        <Header />
+        <Hero />
+        <LauncherSection />
+        <ProductGrid />
+        <BrandStory />
+        <CtaSection />
+        <Footer />
+      </LanguageProvider>
     </main>
   );
 }

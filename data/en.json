@@ -1,0 +1,86 @@
+{
+  "links": {
+    "facebook": "https://www.facebook.com/profile.php?id=61590708082215",
+    "zalo": "https://zalo.me/"
+  },
+  "nav": {
+    "projects": "Projects",
+    "launcher": "9Flip",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "Technology re-engineered for practical use.",
+    "subheadline": "Software solutions and bespoke hardware modifications for those who want more from their devices.",
+    "cta": "EXPLORE PRODUCTS"
+  },
+  "launcher": {
+    "sectionTitle": "FEATURED SOFTWARE",
+    "title": "9 Flip Launcher",
+    "description": "Launch apps on your Galaxy Z Flip cover screen. Seamless mirroring, fast operation, and completely safe.",
+    "trust": ["NO ROOT", "GOOGLE PLAY", "NO ADS", "NO DATA COLLECTION"],
+    "features": [
+      { "title": "No Root Required", "desc": "Keeps your warranty and Knox intact." },
+      { "title": "Easy Installation", "desc": "Available on Google Play, ready in minutes." },
+      { "title": "Google Account", "desc": "Premium tied to your account, transfers to new devices." },
+      { "title": "Large Community", "desc": "Active community and continuous updates." }
+    ],
+    "cta": "GET IT ON GOOGLE PLAY"
+  },
+  "products": {
+    "sectionTitle": "HARDWARE PROJECTS",
+    "viewDetails": "View details",
+    "items": [
+      {
+        "id": 1,
+        "name": "Z Flip 5 x BlackBerry 9981/9983",
+        "desc": "Porsche Design legacy meets modern foldable smartphone. Elegant and compact.",
+        "labels": ["Keyboard: Physical", "Frame: Stainless Steel"]
+      },
+      {
+        "id": 2,
+        "name": "Z Flip 5 Ultra Thin Mod",
+        "desc": "Not for the masses. A choice for those with distinct taste.",
+        "labels": ["Thickness: Reduced by 2mm", "Back: Carbon Fiber"]
+      },
+      {
+        "id": 3,
+        "name": "Z Fold 2 CNC Red Mod",
+        "desc": "CNC machined not just to stand out, but for millimeter-perfect rigidity.",
+        "labels": ["Material: Solid Aluminum", "Process: Precision CNC"]
+      },
+      {
+        "id": 4,
+        "name": "Z Fold 1 Mini Gaming Mod",
+        "desc": "Optimized ergonomics and thermals for extended gaming sessions.",
+        "labels": ["Cooling: Upgraded Copper", "Display: 120Hz Mod"]
+      },
+      {
+        "id": 5,
+        "name": "iPhone SE 3 Custom",
+        "desc": "Compact footprint with upgraded hardware for modern demands.",
+        "labels": ["Battery: Increased Capacity", "Port: Type-C"]
+      },
+      {
+        "id": 6,
+        "name": "Oppo Find N2 to Pad Mini",
+        "desc": "Experience the foldable from a completely different perspective.",
+        "labels": ["Hinge: Custom Adjusted", "Weight: Optimized"]
+      }
+    ]
+  },
+  "brandStory": {
+    "sectionTitle": "ABOUT MIXED TECHNOLOGY",
+    "title": "Every project begins with countless sketches before becoming a finished product. We believe perfect technology brings maximum freedom and convenience to users.",
+    "description": "At Mixed Technology, we do not just create products; we craft experiences. From optimized software for foldables to meticulously handcrafted hardware, every detail is refined to perfection."
+  },
+  "cta": {
+    "title": "READY TO EXPERIENCE MIXED TECHNOLOGY?",
+    "description": "Whether you are looking for an optimized software solution or a bespoke hardware modification, Mixed Technology is here to help.",
+    "ctaFacebook": "MESSAGE US",
+    "ctaZalo": "CONNECT ZALO"
+  },
+  "footer": {
+    "copyright": "Mixed Technology"
+  }
+}

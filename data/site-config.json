@@ -23,80 +23,76 @@
     "textMuted": "#6e584a",
     "border": "#d1c5b3"
   },
+  "nav": {
+    "projects": "Dự án",
+    "launcher": "9Flip",
+    "about": "Giới thiệu",
+    "contact": "Liên hệ"
+  },
   "hero": {
     "headline": "Công nghệ được làm lại theo cách thiết thực hơn.",
     "subheadline": "Phần mềm và những dự án phần cứng độc bản dành cho những người muốn khai thác nhiều hơn từ thiết bị của mình.",
-    "image": "/images/hero.jpg",
     "cta": "KHÁM PHÁ SẢN PHẨM"
   },
   "launcher": {
+    "sectionTitle": "PHẦN MỀM NỔI BẬT",
     "title": "9 Flip Launcher",
     "description": "Mở ứng dụng trên màn hình ngoài Galaxy Z Flip. Phản chiếu linh hoạt, thao tác nhanh chóng và an toàn tuyệt đối.",
     "trust": ["KHÔNG ROOT", "GOOGLE PLAY", "KHÔNG QUẢNG CÁO", "KHÔNG THU THẬP DỮ LIỆU"],
-    "image": "/images/launcher-mockup.jpg",
     "features": [
       { "title": "Không Root", "desc": "Giữ nguyên bảo hành, Knox nguyên vẹn." },
       { "title": "Dễ cài đặt", "desc": "Có sẵn trên Google Play, vài phút là dùng được." },
       { "title": "Tài khoản Google", "desc": "Premium theo tài khoản, lên đời máy vẫn dùng tiếp." },
       { "title": "Cộng đồng lớn", "desc": "Cộng đồng đông đảo, liên tục cập nhật tính năng mới." }
     ],
-    "cta": "TẢI TRÊN GOOGLE PLAY",
-    "playStoreLink": "https://play.google.com/store/search?q=9+flip+launcher&c=apps&hl=vi"
+    "cta": "TẢI TRÊN GOOGLE PLAY"
   },
-  "products": [
-    {
-      "id": 1,
-      "name": "Z Flip 5 x BlackBerry 9981/9983",
-      "desc": "Di sản Porsche Design gặp gỡ smartphone gập hiện đại, sang trọng và nhỏ gọn.",
-      "image": "/images/product-1.jpg",
-      "alt": "Z Flip 5 x BlackBerry Porsche Design",
-      "labels": ["Bàn phím: Vật lý", "Khung: Thép không gỉ"]
-    },
-    {
-      "id": 2,
-      "name": "Z Flip 5 mod mỏng",
-      "desc": "Không phải sản phẩm cho số đông, mà là lựa chọn của người có gu.",
-      "image": "/images/product-2.jpg",
-      "alt": "Z Flip 5 mod mỏng",
-      "labels": ["Độ dày: Giảm 2mm", "Mặt lưng: Sợi Carbon"]
-    },
-    {
-      "id": 3,
-      "name": "Z Fold 2 CNC đỏ mod thanh",
-      "desc": "Gia công CNC không chỉ để nổi bật, mà để chắc chắn trên từng milimet.",
-      "image": "/images/product-3.jpg",
-      "alt": "Z Fold 2 CNC đỏ mod thanh",
-      "labels": ["Chất liệu: Nhôm nguyên khối", "Gia công: CNC chính xác"]
-    },
-    {
-      "id": 4,
-      "name": "Z Fold 1 mod mini gaming",
-      "desc": "Tối ưu cảm giác cầm và tản nhiệt cho những giờ chơi game dài.",
-      "image": "/images/product-4.jpg",
-      "alt": "Z Fold 1 mod mini gaming",
-      "labels": ["Tản nhiệt: Nâng cấp đồng", "Màn hình: 120Hz mod"]
-    },
-    {
-      "id": 5,
-      "name": "iPhone SE 3 độ",
-      "desc": "Ngoại hình nhỏ gọn nhưng phần cứng được nâng cấp cho nhu cầu hiện nay.",
-      "image": "/images/product-5.jpg",
-      "alt": "iPhone SE 3 độ",
-      "labels": ["Pin: Tăng dung lượng", "Cổng kết nối: Type-C"]
-    },
-    {
-      "id": 6,
-      "name": "Oppo Find N2 độ Oppo Pad Mini",
-      "desc": "Trải nghiệm gập mở theo một góc nhìn hoàn toàn khác.",
-      "image": "/images/product-6.jpg",
-      "alt": "Oppo Find N2 độ Oppo Pad Mini",
-      "labels": ["Bản lề: Tùy chỉnh", "Trọng lượng: Tối ưu"]
-    }
-  ],
+  "products": {
+    "sectionTitle": "DỰ ÁN PHẦN CỨNG",
+    "viewDetails": "Xem chi tiết",
+    "items": [
+      {
+        "id": 1,
+        "name": "Z Flip 5 x BlackBerry 9981/9983",
+        "desc": "Di sản Porsche Design gặp gỡ smartphone gập hiện đại, sang trọng và nhỏ gọn.",
+        "labels": ["Bàn phím: Vật lý", "Khung: Thép không gỉ"]
+      },
+      {
+        "id": 2,
+        "name": "Z Flip 5 mod mỏng",
+        "desc": "Không phải sản phẩm cho số đông, mà là lựa chọn của người có gu.",
+        "labels": ["Độ dày: Giảm 2mm", "Mặt lưng: Sợi Carbon"]
+      },
+      {
+        "id": 3,
+        "name": "Z Fold 2 CNC đỏ mod thanh",
+        "desc": "Gia công CNC không chỉ để nổi bật, mà để chắc chắn trên từng milimet.",
+        "labels": ["Chất liệu: Nhôm nguyên khối", "Gia công: CNC chính xác"]
+      },
+      {
+        "id": 4,
+        "name": "Z Fold 1 mod mini gaming",
+        "desc": "Tối ưu cảm giác cầm và tản nhiệt cho những giờ chơi game dài.",
+        "labels": ["Tản nhiệt: Nâng cấp đồng", "Màn hình: 120Hz mod"]
+      },
+      {
+        "id": 5,
+        "name": "iPhone SE 3 độ",
+        "desc": "Ngoại hình nhỏ gọn nhưng phần cứng được nâng cấp cho nhu cầu hiện nay.",
+        "labels": ["Pin: Tăng dung lượng", "Cổng kết nối: Type-C"]
+      },
+      {
+        "id": 6,
+        "name": "Oppo Find N2 độ Oppo Pad Mini",
+        "desc": "Trải nghiệm gập mở theo một góc nhìn hoàn toàn khác.",
+        "labels": ["Bản lề: Tùy chỉnh", "Trọng lượng: Tối ưu"]
+      }
+    ]
+  },
   "brandStory": {
+    "sectionTitle": "VỀ MIXED TECHNOLOGY",
     "title": "Mỗi dự án đều bắt đầu từ rất nhiều bản phác thảo trước khi có một sản phẩm hoàn chỉnh. Chúng tôi tin rằng công nghệ hoàn mỹ nhất là công nghệ mang lại sự tự do và tiện lợi tối đa cho người dùng.",
-    "description": "Tại Mixed Technology, chúng tôi không chỉ tạo ra sản phẩm, chúng tôi kiến tạo trải nghiệm. Từ phần mềm tối ưu cho thiết bị di động đến từng tác phẩm độ máy thủ công tỉ mỉ, mỗi chi tiết đều được chăm chút đến hoàn thiện.",
-    "image": "/images/story.jpg"
+    "description": "Tại Mixed Technology, chúng tôi không chỉ tạo ra sản phẩm, chúng tôi kiến tạo trải nghiệm. Từ phần mềm tối ưu cho thiết bị di động đến từng tác phẩm độ máy thủ công tỉ mỉ, mỗi chi tiết đều được chăm chút đến hoàn thiện."
   },
   "cta": {
     "title": "SẴN SÀNG TRẢI NGHIỆM CÙNG MIXED TECHNOLOGY?",
@@ -106,5 +102,18 @@
   },
   "footer": {
     "copyright": "Mixed Technology"
+  },
+  "images": {
+    "hero": "/images/hero.jpg",
+    "launcher": "/images/launcher-mockup.jpg",
+    "story": "/images/story.jpg",
+    "products": [
+      "/images/product-1.jpg",
+      "/images/product-2.jpg",
+      "/images/product-3.jpg",
+      "/images/product-4.jpg",
+      "/images/product-5.jpg",
+      "/images/product-6.jpg"
+    ]
   }
 }

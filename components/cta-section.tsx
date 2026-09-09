@@ -1,8 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "./language-provider";
 
-export default function CtaSection({ data, links }: { data: any, links: { facebook: string, zalo: string } }) {
+export default function CtaSection() {
+  const { t, links } = useLanguage();
+  const data = t.cta;
+
   return (
     <section className="relative py-24 md:py-32 bg-[#0a0a0a] border-t border-stone-800/30 overflow-hidden">
       <div className="mx-auto max-w-4xl px-4 md:px-8 text-center flex flex-col items-center">
