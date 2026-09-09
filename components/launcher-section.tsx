@@ -1,36 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function LauncherSection({ data, links }: { data: any; links: any }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const labelsRef = useRef<HTMLDivElement[]>([]);
-
-  useEffect(() => {
-    const labels = labelsRef.current;
-    if (labels.length === 0) return;
-    let animId = 0;
-    let t = 0;
-
-    const animate = () => {
-      t += 0.008;
-      labels.forEach((label, i) => {
-        const angle = t + (i * Math.PI * 2) / labels.length;
-        const radius = 25 + (i % 2) * 15;
-        const x = Math.cos(angle) * radius;
-        const y = Math.sin(angle * 0.7) * radius * 0.5;
-        label.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
-        label.style.opacity = String(0.6 + Math.sin(t + i) * 0.3);
-      });
-      animId = requestAnimationFrame(animate);
-    };
-
-    animId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animId);
-  }, []);
-
   return (
     <section id="launcher" className="relative py-24 md:py-32 bg-[#0a0a0a] overflow-hidden">
       <div className="mx-auto max-w-[90rem] px-4 md:px-8">
@@ -60,14 +33,13 @@ export default function LauncherSection({ data, links }: { data: any; links: any
         </div>
 
         <div className="relative w-full max-w-4xl mx-auto aspect-[3/4] md:aspect-square flex items-center justify-center mt-8 md:mt-16">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ staggerChildren: 0.15, duration: 1.2 }}
-            className="relative w-full h-full flex items-center justify-center"
-            ref={containerRef}
-          >
+           <motion.div
+             initial="hidden"
+             whileInView="visible"
+             viewport={{ once: true, margin: "-10%" }}
+             transition={{ staggerChildren: 0.15, duration: 1.2 }}
+             className="relative w-full h-full flex items-center justify-center"
+           >
             <motion.div variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }} className="absolute inset-4 md:inset-16 border border-stone-800/40 bg-stone-900/20 backdrop-blur-sm z-10 flex items-center justify-center">
               <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-stone-500/50" />
               <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-stone-500/50" />
@@ -82,23 +54,21 @@ export default function LauncherSection({ data, links }: { data: any; links: any
               <Image src={data.image} alt="9Flip Launcher Interface" fill className="object-contain filter grayscale-[5%] contrast-110 drop-shadow-2xl" />
             </motion.div>
 
-            {/* Orbiting Labels — planets around the sun */}
+            {/* Tech Annotations */}
             <div className="absolute inset-0 pointer-events-none hidden md:block">
               {data.features.map((feature: any, i: number) => {
                 const positions = ["top-[10%] left-[5%]", "bottom-[20%] left-[5%]", "top-[20%] right-[5%]", "bottom-[10%] right-[5%]"];
                 return (
                   <motion.div
                     key={i}
-                    ref={(el) => { if (el) labelsRef.current[i] = el; }}
-                    variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }}
+                    variants={{ hidden: { opacity: 0, y: 6 }, visible: { opacity: 1, y: 0 } }}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    transition={{ duration: 1.2, delay: 0.2 + i * 0.15 }}
+                    transition={{ duration: 0.8, delay: 0.2 + i * 0.15 }}
                     className={`absolute ${positions[i]} w-[22%] flex flex-col items-${i < 2 ? "start" : "end"} gap-1 z-30`}
-                    style={{ transformOrigin: "center center" }}
                   >
-                    <div className="text-[10px] tracking-widest px-2 py-1 bg-[#0a0a0a]/80 text-stone-300 border border-stone-800/50 shadow-xl whitespace-nowrap">
+                    <div className="text-[10px] tracking-widest px-2 py-1 bg-[#0a0a0a]/90 backdrop-blur-sm text-stone-300 border border-stone-800/50 shadow-lg whitespace-nowrap">
                       0{i + 1} / {feature.icon}
                     </div>
                     <p className={`text-xs text-stone-400 font-light leading-relaxed ${i < 2 ? "text-left" : "text-right"}`}>
