@@ -10,7 +10,7 @@ export default function ProductGrid({ products }: { products: any[] }) {
         
         {/* Soft Section Marker */}
         <div className="mb-16 md:mb-24 opacity-60">
-          <span className="text-[11px] uppercase tracking-widest text-stone-400">01 / ĐƯỜNG ÁN</span>
+          <span className="text-[11px] uppercase tracking-widest text-stone-400">01 / Dự án</span>
         </div>
 
         {/* Softened CSS Grid Pattern */}
@@ -74,8 +74,7 @@ export default function ProductGrid({ products }: { products: any[] }) {
                     </p>
                     
                     <div className="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">
-                      XEM CHI TIẾTT
-                      <span className="transform transition-transform duration-500 md:group-hover:translate-x-1">&#8594;</span>
+                      XEM CHI TIẾT                      <span className="transform transition-transform duration-500 md:group-hover:translate-x-1">&#8594;</span>
                     </div>
                   </div>
                 </div>
