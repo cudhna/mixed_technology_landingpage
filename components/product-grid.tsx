@@ -73,7 +73,7 @@ export default function ProductGrid({ products }: { products: any[] }) {
                 className={`group flex flex-col ${gridClass}`}
               >
                 <div className="relative mb-6 md:mb-8">
-                  <div className={`overflow-hidden bg-[#0f0f0f] border border-white/5 ${aspectClass}`}>
+                  <div className={`relative overflow-hidden bg-[#0f0f0f] ${aspectClass}`}>
                     <Image
                       src={product.image}
                       alt={product.alt || product.name}
@@ -82,7 +82,18 @@ export default function ProductGrid({ products }: { products: any[] }) {
                       sizes={isFeatured ? "(max-width: 768px) 100vw, 60vw" : "(max-width: 768px) 50vw, 33vw"}
                     />
                   </div>
-                  {/* Tech labels — positioned at corners, half inside half outside border */}
+                  {/* Decorative frame */}
+                  <div className="absolute inset-0 -m-1 md:-m-2 pointer-events-none" style={{ inset: '-4px' }}>
+                    <div className="w-full h-full border border-stone-800/20" />
+                    <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-stone-500/30" style={{ marginLeft: '-1px', marginTop: '-1px' }} />
+                    <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-stone-500/30" style={{ marginRight: '-1px', marginTop: '-1px' }} />
+                    <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-stone-500/30" style={{ marginLeft: '-1px', marginBottom: '-1px' }} />
+                    <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-stone-500/30" style={{ marginRight: '-1px', marginBottom: '-1px' }} />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+                      <div className="w-px h-full bg-stone-600" />
+                    </div>
+                  </div>
+                  {/* Tech labels */}
                   {labels.map((text: string, i: number) => (
                     <TechLabel key={i} text={text} position={labelPositions[i]} />
                   ))}
