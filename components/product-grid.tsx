@@ -4,28 +4,26 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const orbitLabels = ["PREMIUM", "LIMITED", "ARTISAN", "EXCLUSIVE", "MADE"];
-
-function OrbitingLabels({ count, radius, speed, color }: { count: number; radius: number; speed: number; color: string }) {
+function FloatingLabels({ labels }: { labels: string[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const angleRef = useRef(0);
 
   useEffect(() => {
-    const labels = containerRef.current?.children;
-    if (!labels || labels.length === 0) return;
+    const container = containerRef.current;
+    if (!container || labels.length === 0) return;
+    const labelEls = container.children;
+    if (labelEls.length === 0) return;
     let animId = 0;
     let t = 0;
 
     const animate = () => {
-      t += speed;
-      for (let i = 0; i < labels.length; i++) {
-        const el = labels[i] as HTMLElement;
+      t += 0.015;
+      for (let i = 0; i < labelEls.length; i++) {
+        const el = labelEls[i] as HTMLElement;
         if (el) {
-          const angle = t + (i * Math.PI * 2) / labels.length;
-          const x = Math.cos(angle) * radius;
-          const y = Math.sin(angle) * radius * 0.6 + Math.sin(t * 0.7 + i) * radius * 0.3;
-          el.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
-          el.style.opacity = String(0.4 + Math.sin(t + i * 1.5) * 0.3);
+          const offsetY = Math.sin(t + i * 1.2) * (3 + i * 2);
+          const offsetX = Math.cos(t * 0.7 + i * 0.8) * (1 + i);
+          el.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+          el.style.opacity = String(0.7 + Math.sin(t + i) * 0.25);
         }
       }
       animId = requestAnimationFrame(animate);
@@ -33,29 +31,25 @@ function OrbitingLabels({ count, radius, speed, color }: { count: number; radius
 
     animId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animId);
-  }, [count, radius, speed]);
+  }, [labels.length]);
+
+  if (labels.length === 0) return null;
 
   return (
-    <div ref={containerRef} className="absolute inset-0 pointer-events-none">
-      {orbitLabels.slice(0, count).map((text, i) => (
-        <span
-          key={i}
-          style={{
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            fontSize: "9px",
-            fontFamily: "monospace",
-            letterSpacing: "0.3em",
-            textTransform: "uppercase",
-            color: color,
-            whiteSpace: "nowrap",
-            pointerEvents: "none",
-          }}
-        >
-          {text}
-        </span>
-      ))}
+    <div ref={containerRef} className="absolute inset-0 pointer-events-none z-10">
+      {labels.map((text, i) => {
+        const isLeft = i === 0 || labels.length === 1;
+        const isTop = i === 0;
+        return (
+          <span
+            key={i}
+            className={`absolute text-[9px] md:text-[10px] font-mono tracking-[0.25em] uppercase whitespace-nowrap ${isLeft ? "left-2 md:left-3" : "right-2 md:right-3"} ${isTop ? "top-2 md:top-3" : "bottom-2 md:bottom-3"}`}
+            style={{ color: "rgba(255,255,255,0.12)" }}
+          >
+            {text}
+          </span>
+        );
+      })}
     </div>
   );
 }
@@ -74,6 +68,7 @@ export default function ProductGrid({ products }: { products: any[] }) {
             {products.map((product: any, index: number) => {
               const isFeatured = index === 0;
               const numberString = (index + 1).toString().padStart(2, "0");
+              const labels = product.labels || [];
 
               let gridClass = "";
               let aspectClass = "";
@@ -97,9 +92,6 @@ export default function ProductGrid({ products }: { products: any[] }) {
                 aspectClass = "aspect-[4/5]";
               }
 
-              const orbitR = 180 + (index % 3) * 30;
-              const speed = 0.015 + index * 0.003;
-
               return (
                 <motion.div
                   key={product.id}
@@ -109,7 +101,7 @@ export default function ProductGrid({ products }: { products: any[] }) {
                   transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                   className={`group flex flex-col ${gridClass}`}
                 >
-                  <div className="relative mb-6 md:mb-8 pb-16">
+                  <div className="relative mb-6 md:mb-8">
                     <div className={`overflow-hidden bg-[#0f0f0f] ${aspectClass}`}>
                       <Image
                         src={product.image}
@@ -119,9 +111,7 @@ export default function ProductGrid({ products }: { products: any[] }) {
                         sizes={isFeatured ? "(max-width: 768px) 100vw, 60vw" : "(max-width: 768px) 50vw, 33vw"}
                       />
                     </div>
-                    <div className="absolute inset-0" style={{ margin: "80px" }}>
-                      <OrbitingLabels count={5} radius={orbitR} speed={speed} color="rgba(255,255,255,0.1)" />
-                    </div>
+                    <FloatingLabels labels={labels} />
                   </div>
 
                   <div className="flex flex-col gap-2">
