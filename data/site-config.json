@@ -24,23 +24,23 @@
     "border": "#d1c5b3"
   },
   "hero": {
-    "headline": "KẾT TINH GIỮA KỸ NGHỆ PHẦN CỨNG VÀ GIẢI PHÁP PHẦN MỀM TỐI ƯU",
-    "subheadline": "Mixed Technology là nơi những chiếc điện thoại gập được khai phá trọn vẹn tiềm năng, từ phần mềm tối ưu đến từng tác phẩm độ máy thủ công.",
+    "headline": "Công nghệ được làm lại theo cách thiết thực hơn.",
+    "subheadline": "Phần mềm và những dự án phần cứng độc bản dành cho những người muốn khai thác nhiều hơn từ thiết bị của mình.",
     "image": "/images/hero.jpg",
-    "ctaFacebook": "NHẮN TIN FANPAGE",
-    "ctaZalo": "LIÊN HỆ ZALO"
+    "cta": "KHÁM PHÁ SẢN PHẨM"
   },
   "launcher": {
-    "title": "MỞ KHÓA TRỌN VẸN MÀN HÌNH NGOÀI GALAXY Z FLIP",
-    "description": "Tự động hiển thị và mở hầu hết ứng dụng ngay trên màn ngoài, phản chiếu màn trong linh hoạt mà không cần Root, không quảng cáo, không thu thập dữ liệu.",
+    "title": "9 Flip Launcher",
+    "description": "Mở ứng dụng trên màn hình ngoài Galaxy Z Flip. Phản chiếu linh hoạt, thao tác nhanh chóng và an toàn tuyệt đối.",
+    "trust": ["KHÔNG ROOT", "GOOGLE PLAY", "KHÔNG QUẢNG CÁO", "KHÔNG THU THẬP DỮ LIỆU"],
     "image": "/images/launcher-mockup.jpg",
     "features": [
-      { "icon": "KNOX", "text": "100% No-Root giữ nguyên bảo hành, Knox nguyên vẹn." },
-      { "icon": "PLAY", "text": "Có sẵn trên Google Play, cài đặt an toàn và sử dụng ngay." },
-      { "icon": "ACC", "text": "Premium theo tài khoản Google, lên đời máy vẫn dùng tiếp." },
-      { "icon": "COM", "text": "Cộng đồng người dùng đông đảo và liên tục cập nhật." }
+      { "title": "Không Root", "desc": "Giữ nguyên bảo hành, Knox nguyên vẹn." },
+      { "title": "Dễ cài đặt", "desc": "Có sẵn trên Google Play, vài phút là dùng được." },
+      { "title": "Tài khoản Google", "desc": "Premium theo tài khoản, lên đời máy vẫn dùng tiếp." },
+      { "title": "Cộng đồng lớn", "desc": "Cộng đồng đông đảo, liên tục cập nhật tính năng mới." }
     ],
-    "cta": "TẢI XUỐNG",
+    "cta": "TẢI TRÊN GOOGLE PLAY",
     "playStoreLink": "https://play.google.com/store/search?q=9+flip+launcher&c=apps&hl=vi"
   },
   "products": [
@@ -50,7 +50,7 @@
       "desc": "Di sản Porsche Design gặp gỡ smartphone gập hiện đại, sang trọng và nhỏ gọn.",
       "image": "/images/product-1.jpg",
       "alt": "Z Flip 5 x BlackBerry Porsche Design",
-      "labels": ["BLACKBERRY EDITION", "PORSCHE DESIGN"]
+      "labels": ["Bàn phím: Vật lý", "Khung: Thép không gỉ"]
     },
     {
       "id": 2,
@@ -58,7 +58,7 @@
       "desc": "Không phải sản phẩm cho số đông, mà là lựa chọn của người có gu.",
       "image": "/images/product-2.jpg",
       "alt": "Z Flip 5 mod mỏng",
-      "labels": ["ULTRA THIN MOD", "CUSTOM SKIN"]
+      "labels": ["Độ dày: Giảm 2mm", "Mặt lưng: Sợi Carbon"]
     },
     {
       "id": 3,
@@ -66,7 +66,7 @@
       "desc": "Gia công CNC không chỉ để nổi bật, mà để chắc chắn trên từng milimet.",
       "image": "/images/product-3.jpg",
       "alt": "Z Fold 2 CNC đỏ mod thanh",
-      "labels": ["CNC MACHINED", "RED FINISH"]
+      "labels": ["Chất liệu: Nhôm nguyên khối", "Gia công: CNC chính xác"]
     },
     {
       "id": 4,
@@ -74,7 +74,7 @@
       "desc": "Tối ưu cảm giác cầm và tản nhiệt cho những giờ chơi game dài.",
       "image": "/images/product-4.jpg",
       "alt": "Z Fold 1 mod mini gaming",
-      "labels": ["GAMING EDITION", "COMPACT POWER"]
+      "labels": ["Tản nhiệt: Nâng cấp đồng", "Màn hình: 120Hz mod"]
     },
     {
       "id": 5,
@@ -82,7 +82,7 @@
       "desc": "Ngoại hình nhỏ gọn nhưng phần cứng được nâng cấp cho nhu cầu hiện nay.",
       "image": "/images/product-5.jpg",
       "alt": "iPhone SE 3 độ",
-      "labels": ["SE UPGRADE", "PERFORMANCE"]
+      "labels": ["Pin: Tăng dung lượng", "Cổng kết nối: Type-C"]
     },
     {
       "id": 6,
@@ -90,18 +90,13 @@
       "desc": "Trải nghiệm gập mở theo một góc nhìn hoàn toàn khác.",
       "image": "/images/product-6.jpg",
       "alt": "Oppo Find N2 độ Oppo Pad Mini",
-      "labels": ["FOLDABLE PRO", "MULTI TASK"]
+      "labels": ["Bản lề: Tùy chỉnh", "Trọng lượng: Tối ưu"]
     }
   ],
   "brandStory": {
     "title": "Mỗi dự án đều bắt đầu từ rất nhiều bản phác thảo trước khi có một sản phẩm hoàn chỉnh. Chúng tôi tin rằng công nghệ hoàn mỹ nhất là công nghệ mang lại sự tự do và tiện lợi tối đa cho người dùng.",
     "description": "Tại Mixed Technology, chúng tôi không chỉ tạo ra sản phẩm, chúng tôi kiến tạo trải nghiệm. Từ phần mềm tối ưu cho thiết bị di động đến từng tác phẩm độ máy thủ công tỉ mỉ, mỗi chi tiết đều được chăm chút đến hoàn thiện.",
-    "image": "/images/story.jpg",
-    "stats": [
-      { "value": "6+", "label": "NĂM KINH NGHIỆM" },
-      { "value": "50+", "label": "DỰ ÁN HOÀN THÀNH" },
-      { "value": "2K+", "label": "KHÁCH HÀNG" }
-    ]
+    "image": "/images/story.jpg"
   },
   "cta": {
     "title": "SẴN SÀNG TRẢI NGHIỆM CÙNG MIXED TECHNOLOGY?",

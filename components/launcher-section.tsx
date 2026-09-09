@@ -5,101 +5,90 @@ import Image from "next/image";
 
 export default function LauncherSection({ data, links }: { data: any; links: any }) {
   return (
-    <section id="launcher" className="relative py-24 md:py-32 bg-[#0a0a0a] overflow-hidden">
+    <section id="launcher" className="relative py-24 md:py-32 bg-[#050505] overflow-hidden">
       <div className="mx-auto max-w-[90rem] px-4 md:px-8">
-        <div className="mb-16 md:mb-24 opacity-60">
-          <span className="text-[11px] uppercase tracking-widest text-stone-400">02 / 9FLIP</span>
+        
+        {/* Soft Section Marker */}
+        <div className="mb-12 md:mb-16 opacity-80">
+          <span className="text-xs md:text-sm font-semibold tracking-widest text-stone-500">PHẦN MỀM NỔI BẬT</span>
         </div>
 
-        <div className="flex flex-col items-center text-center mb-16 md:mb-24">
-          <motion.h2
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
+          
+          {/* Text Content */}
+          <motion.div 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[clamp(3rem,8vw,7rem)] font-light text-stone-50 leading-[1] tracking-tight mb-8 text-balance"
+            className="col-span-1 md:col-span-5 flex flex-col"
           >
-            {data.title}
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: 0.1 }}
-            className="text-sm font-light text-stone-400 max-w-2xl leading-relaxed text-balance"
-          >
-            {data.description}
-          </motion.p>
-        </div>
+            <h2 className="text-3xl md:text-5xl font-medium text-stone-100 leading-[1.1] tracking-tight mb-6">
+              {data.title}
+            </h2>
+            <p className="text-base md:text-lg text-stone-400 leading-relaxed mb-8">
+              {data.description}
+            </p>
 
-        <div className="relative w-full max-w-4xl mx-auto aspect-[3/4] md:aspect-square flex items-center justify-center mt-8 md:mt-16">
-           <motion.div
-             initial="hidden"
-             whileInView="visible"
-             viewport={{ once: true, margin: "-10%" }}
-             transition={{ staggerChildren: 0.15, duration: 1.2 }}
-             className="relative w-full h-full flex items-center justify-center"
-           >
-            <motion.div variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }} className="absolute inset-4 md:inset-16 border border-stone-800/40 bg-stone-900/20 backdrop-blur-sm z-10 flex items-center justify-center">
-              <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-stone-500/50" />
-              <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-stone-500/50" />
-              <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-stone-500/50" />
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-stone-500/50" />
-              <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-                <div className="w-[1px] h-full bg-stone-600" />
-              </div>
-            </motion.div>
-
-            <motion.div variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }} className="absolute inset-12 md:inset-24 z-20">
-              <Image src={data.image} alt="9Flip Launcher Interface" fill className="object-contain filter grayscale-[5%] contrast-110 drop-shadow-2xl" />
-            </motion.div>
-
-            {/* Tech Annotations */}
-            <div className="absolute inset-0 pointer-events-none hidden md:block">
-              {data.features.map((feature: any, i: number) => {
-                const positions = ["top-[10%] left-[5%]", "bottom-[20%] left-[5%]", "top-[20%] right-[5%]", "bottom-[10%] right-[5%]"];
-                return (
-                  <motion.div
-                    key={i}
-                    variants={{ hidden: { opacity: 0, y: 6 }, visible: { opacity: 1, y: 0 } }}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 + i * 0.15 }}
-                    className={`absolute ${positions[i]} w-[22%] flex flex-col items-${i < 2 ? "start" : "end"} gap-1 z-30`}
-                  >
-                    <div className="text-[10px] tracking-widest px-2 py-1 bg-[#0a0a0a]/90 backdrop-blur-sm text-stone-300 border border-stone-800/50 shadow-lg whitespace-nowrap">
-                      0{i + 1} / {feature.icon}
-                    </div>
-                    <p className={`text-xs text-stone-400 font-light leading-relaxed ${i < 2 ? "text-left" : "text-right"}`}>
-                      {feature.text}
-                    </p>
-                  </motion.div>
-                );
-              })}
+            {/* Trust Row */}
+            <div className="flex flex-wrap gap-x-4 gap-y-2 mb-10">
+              {data.trust && data.trust.map((item: string, i: number) => (
+                <div key={i} className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-stone-500" />
+                  <span className="text-xs font-semibold tracking-wide text-stone-300">{item}</span>
+                </div>
+              ))}
             </div>
-          </motion.div>
-        </div>
 
-        {/* Mobile */}
-        <div className="grid grid-cols-1 md:hidden gap-8 mt-16 pt-12">
-          {data.features.map((feature: any, i: number) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1 }} className="flex flex-col gap-2">
-              <div className="text-[10px] tracking-widest border border-stone-800/50 px-2 py-1 w-max text-stone-300 opacity-80">
-                0{i + 1} / {feature.icon}
-              </div>
-              <p className="text-sm font-light text-stone-400 leading-relaxed">{feature.text}</p>
-            </motion.div>
-          ))}
-        </div>
+            {/* Features List */}
+            <div className="flex flex-col gap-6 mb-12">
+              {data.features.map((feature: any, i: number) => (
+                <div key={i} className="flex flex-col gap-1">
+                  <h3 className="text-sm font-semibold text-stone-200">{feature.title}</h3>
+                  <p className="text-sm text-stone-400">{feature.desc}</p>
+                </div>
+              ))}
+            </div>
 
-        <div className="mt-24 flex justify-center">
-          <a href={data.playStoreLink} target="_blank" rel="noopener noreferrer" className="group flex flex-col w-max cursor-pointer pointer-events-auto">
-            <span className="text-[11px] uppercase tracking-widest text-stone-400 group-hover:text-stone-100 transition-colors duration-500 mb-1 flex items-center gap-2">
+            <a 
+              href={data.playStoreLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center justify-center w-full md:w-max px-8 py-4 bg-stone-100 text-[#0a0a0a] font-medium text-sm tracking-wide hover:bg-stone-300 transition-colors duration-300"
+            >
               {data.cta}
-              <span className="transform transition-transform duration-500 group-hover:translate-x-1">&#8594;</span>
-            </span>
-          </a>
+            </a>
+          </motion.div>
+
+          {/* Visual Presentation */}
+          <div className="col-span-1 md:col-span-7 relative flex items-center justify-center mt-8 md:mt-0">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2 }}
+              className="relative w-full max-w-lg aspect-[3/4] md:aspect-square flex items-center justify-center p-4 md:p-8"
+            >
+              {/* Background Frame / Pedestal */}
+              <div className="absolute inset-0 border border-stone-800/40 bg-stone-900/20 backdrop-blur-sm z-10 flex items-center justify-center">
+                 <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-stone-500/50" />
+                 <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-stone-500/50" />
+                 <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-stone-500/50" />
+                 <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-stone-500/50" />
+              </div>
+
+              {/* Device Mockup */}
+              <div className="absolute inset-8 md:inset-12 z-20">
+                 <Image 
+                  src={data.image} 
+                  alt="9Flip Launcher Interface" 
+                  fill 
+                  className="object-contain drop-shadow-2xl" 
+                />
+              </div>
+            </motion.div>
+          </div>
+
         </div>
       </div>
     </section>
