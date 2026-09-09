@@ -1,4 +1,13 @@
 {
+  "layout": {
+    "navHeight": "72px",
+    "heroHeight": "100svh",
+    "baseFontSize": "16px",
+    "fontFamily": "var(--font-geist-sans)",
+    "productAspectRatio": "4/3",
+    "heroImageAspectRatio": "3/4",
+    "launcherImageAspectRatio": "3/4"
+  },
   "links": {
     "facebook": "https://www.facebook.com/profile.php?id=61590708082215",
     "zalo": "https://zalo.me/"
@@ -11,12 +20,14 @@
   },
   "hero": {
     "headline": "Technology re-engineered for practical use.",
+    "headlineFontSize": "text-4xl md:text-5xl",
     "subheadline": "Software solutions and bespoke hardware modifications for those who want more from their devices.",
     "cta": "EXPLORE PRODUCTS"
   },
   "launcher": {
     "sectionTitle": "FEATURED SOFTWARE",
     "title": "9 Flip Launcher",
+    "titleFontSize": "text-3xl md:text-5xl",
     "description": "Launch apps on your Galaxy Z Flip cover screen. Seamless mirroring, fast operation, and completely safe.",
     "trust": ["NO ROOT", "GOOGLE PLAY", "NO ADS", "NO DATA COLLECTION"],
     "features": [
@@ -35,37 +46,43 @@
         "id": 1,
         "name": "Z Flip 5 x BlackBerry 9981/9983",
         "desc": "Porsche Design legacy meets modern foldable smartphone. Elegant and compact.",
-        "labels": ["Keyboard: Physical", "Frame: Stainless Steel"]
+        "labels": ["Keyboard: Physical", "Frame: Stainless Steel"],
+        "aspectRatio": ""
       },
       {
         "id": 2,
         "name": "Z Flip 5 Ultra Thin Mod",
         "desc": "Not for the masses. A choice for those with distinct taste.",
-        "labels": ["Thickness: Reduced by 2mm", "Back: Carbon Fiber"]
+        "labels": ["Thickness: Reduced by 2mm", "Back: Carbon Fiber"],
+        "aspectRatio": ""
       },
       {
         "id": 3,
         "name": "Z Fold 2 CNC Red Mod",
         "desc": "CNC machined not just to stand out, but for millimeter-perfect rigidity.",
-        "labels": ["Material: Solid Aluminum", "Process: Precision CNC"]
+        "labels": ["Material: Solid Aluminum", "Process: Precision CNC"],
+        "aspectRatio": ""
       },
       {
         "id": 4,
         "name": "Z Fold 1 Mini Gaming Mod",
         "desc": "Optimized ergonomics and thermals for extended gaming sessions.",
-        "labels": ["Cooling: Upgraded Copper", "Display: 120Hz Mod"]
+        "labels": ["Cooling: Upgraded Copper", "Display: 120Hz Mod"],
+        "aspectRatio": ""
       },
       {
         "id": 5,
         "name": "iPhone SE 3 Custom",
         "desc": "Compact footprint with upgraded hardware for modern demands.",
-        "labels": ["Battery: Increased Capacity", "Port: Type-C"]
+        "labels": ["Battery: Increased Capacity", "Port: Type-C"],
+        "aspectRatio": ""
       },
       {
         "id": 6,
         "name": "Oppo Find N2 to Pad Mini",
         "desc": "Experience the foldable from a completely different perspective.",
-        "labels": ["Hinge: Custom Adjusted", "Weight: Optimized"]
+        "labels": ["Hinge: Custom Adjusted", "Weight: Optimized"],
+        "aspectRatio": ""
       }
     ]
   },

@@ -34,13 +34,23 @@ export function LanguageProvider({ children, vi, en }: { children: React.ReactNo
   const t = lang === "en" ? en : vi;
   const images = vi.images;
   const links = vi.links;
+  const layout = vi.layout || {};
 
-  // Prevent hydration mismatch by keeping it hidden until mounted?
-  // Actually, to avoid full page flash, we can just render i on server, 
-  // and hydrate with i, then swap to en if needed.
-  
   return (
     <LanguageContext.Provider value={{ lang, setLang, t, images, links }}>
+      <style suppressHydrationWarning dangerouslySetInnerHTML={{ __html: `
+        :root {
+          --nav-height: ${layout.navHeight || '72px'};
+          --hero-height: ${layout.heroHeight || '100svh'};
+          --base-font-size: ${layout.baseFontSize || '16px'};
+          --custom-font-family: ${layout.fontFamily || 'var(--font-geist-sans)'};
+          --product-aspect-ratio: ${layout.productAspectRatio || '4/3'};
+        }
+        body {
+          font-family: var(--custom-font-family), sans-serif;
+          font-size: var(--base-font-size);
+        }
+      `}} />
       <div style={{ opacity: mounted ? 1 : 0.99 }}>
         {children}
       </div>

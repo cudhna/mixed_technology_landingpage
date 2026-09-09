@@ -1,4 +1,13 @@
 {
+  "layout": {
+    "navHeight": "72px",
+    "heroHeight": "100svh",
+    "baseFontSize": "16px",
+    "fontFamily": "var(--font-geist-sans)",
+    "productAspectRatio": "4/3",
+    "heroImageAspectRatio": "3/4",
+    "launcherImageAspectRatio": "3/4"
+  },
   "links": {
     "facebook": "https://www.facebook.com/profile.php?id=61590708082215",
     "zalo": "https://zalo.me/"
@@ -31,14 +40,16 @@
   },
   "hero": {
     "headline": "Công nghệ được làm lại theo cách thiết thực hơn.",
+    "headlineFontSize": "text-4xl md:text-5xl",
     "subheadline": "Phần mềm và những dự án phần cứng độc bản dành cho những người muốn khai thác nhiều hơn từ thiết bị của mình.",
     "cta": "KHÁM PHÁ SẢN PHẨM"
   },
   "launcher": {
     "sectionTitle": "PHẦN MỀM NỔI BẬT",
     "title": "9 Flip Launcher",
+    "titleFontSize": "text-3xl md:text-5xl",
     "description": "Mở ứng dụng trên màn hình ngoài Galaxy Z Flip. Phản chiếu linh hoạt, thao tác nhanh chóng và an toàn tuyệt đối.",
-    "trust": ["KHÔNG ROOT", "GOOGLE PLAY", "KHÔNG QUẢNG CÁO", "KHÔNG THU THẬP DỮ LIỆU"],
+    // "trust": ["KHÔNG ROOT", "GOOGLE PLAY", "KHÔNG QUẢNG CÁO", "KHÔNG THU THẬP DỮ LIỆU"],
     "features": [
       { "title": "Không Root", "desc": "Giữ nguyên bảo hành, Knox nguyên vẹn." },
       { "title": "Dễ cài đặt", "desc": "Có sẵn trên Google Play, vài phút là dùng được." },
@@ -55,37 +66,43 @@
         "id": 1,
         "name": "Z Flip 5 x BlackBerry 9981/9983",
         "desc": "Di sản Porsche Design gặp gỡ smartphone gập hiện đại, sang trọng và nhỏ gọn.",
-        "labels": ["Bàn phím: Vật lý", "Khung: Thép không gỉ"]
+        "labels": ["Bàn phím: Vật lý", "Khung: Thép không gỉ"],
+        "aspectRatio": ""
       },
       {
         "id": 2,
         "name": "Z Flip 5 mod mỏng",
         "desc": "Không phải sản phẩm cho số đông, mà là lựa chọn của người có gu.",
-        "labels": ["Độ dày: Giảm 2mm", "Mặt lưng: Sợi Carbon"]
+        "labels": ["Độ dày: Giảm 2mm", "Mặt lưng: Sợi Carbon"],
+        "aspectRatio": ""
       },
       {
         "id": 3,
         "name": "Z Fold 2 CNC đỏ mod thanh",
         "desc": "Gia công CNC không chỉ để nổi bật, mà để chắc chắn trên từng milimet.",
-        "labels": ["Chất liệu: Nhôm nguyên khối", "Gia công: CNC chính xác"]
+        "labels": ["Chất liệu: Nhôm nguyên khối", "Gia công: CNC chính xác"],
+        "aspectRatio": ""
       },
       {
         "id": 4,
         "name": "Z Fold 1 mod mini gaming",
         "desc": "Tối ưu cảm giác cầm và tản nhiệt cho những giờ chơi game dài.",
-        "labels": ["Tản nhiệt: Nâng cấp đồng", "Màn hình: 120Hz mod"]
+        "labels": ["Tản nhiệt: Nâng cấp đồng", "Màn hình: 120Hz mod"],
+        "aspectRatio": ""
       },
       {
         "id": 5,
         "name": "iPhone SE 3 độ",
         "desc": "Ngoại hình nhỏ gọn nhưng phần cứng được nâng cấp cho nhu cầu hiện nay.",
-        "labels": ["Pin: Tăng dung lượng", "Cổng kết nối: Type-C"]
+        "labels": ["Pin: Tăng dung lượng", "Cổng kết nối: Type-C"],
+        "aspectRatio": ""
       },
       {
         "id": 6,
         "name": "Oppo Find N2 độ Oppo Pad Mini",
         "desc": "Trải nghiệm gập mở theo một góc nhìn hoàn toàn khác.",
-        "labels": ["Bản lề: Tùy chỉnh", "Trọng lượng: Tối ưu"]
+        "labels": ["Bản lề: Tùy chỉnh", "Trọng lượng: Tối ưu"],
+        "aspectRatio": ""
       }
     ]
   },

@@ -14,12 +14,27 @@ export default async function AdminPage() {
     return null;
   };
 
+  const layout = config.layout || {};
+
   return (
     <div className="min-h-screen bg-stone-50 p-8">
       <div className="mx-auto max-w-4xl">
         <h1 className="font-display text-3xl font-bold text-stone-950 mb-8">Mixed Technology Admin Panel</h1>
         
         <form action={saveConfigAction} className="space-y-8">
+          
+          {/* Layout & Sizing */}
+          <div className="rounded-2xl bg-white p-6 shadow-sm border border-stone-200">
+            <h2 className="font-display text-xl font-bold text-stone-950 mb-4">Layout & Typography Sizes</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Input label="Nav Height (e.g. 72px)" name="layout.navHeight" defaultValue={layout.navHeight || "72px"} />
+              <Input label="Hero Min Height (e.g. 100svh)" name="layout.heroHeight" defaultValue={layout.heroHeight || "100svh"} />
+              <Input label="Base Font Size (e.g. 16px)" name="layout.baseFontSize" defaultValue={layout.baseFontSize || "16px"} />
+              <Input label="Font Family (e.g. var(--font-inter))" name="layout.fontFamily" defaultValue={layout.fontFamily || "var(--font-geist-sans)"} />
+              <Input label="Product Image Ratio (e.g. 4/3, 16/9, 1)" name="layout.productAspectRatio" defaultValue={layout.productAspectRatio || "4/3"} />
+            </div>
+          </div>
+
           {/* Links */}
           <div className="rounded-2xl bg-white p-6 shadow-sm border border-stone-200">
             <h2 className="font-display text-xl font-bold text-stone-950 mb-4">Social Links</h2>
@@ -67,8 +82,8 @@ export default async function AdminPage() {
                 <div key={id} className="mb-6 pb-4 border-b border-stone-100 last:border-0">
                   <h3 className="font-semibold text-stone-700 mb-3">Product {id}</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Input label={"Name "} name={"product.name"} defaultValue={p?.name || ""} />
-                    <Textarea label={"Description "} name={"product.desc"} defaultValue={p?.desc || ""} />
+                    <Input label={"Name "} name={"product\.name"} defaultValue={p?.name || ""} />
+                    <Textarea label={"Description "} name={"product\.desc"} defaultValue={p?.desc || ""} />
                   </div>
                 </div>
               );

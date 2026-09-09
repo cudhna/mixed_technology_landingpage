@@ -40,7 +40,7 @@ export default function LauncherSection() {
             transition={{ duration: 0.7, ease: "easeOut", delay: shouldReduceMotion ? 0 : 0.1 }}
             className="col-span-1 md:col-span-5 flex flex-col"
           >
-            <h2 className="text-3xl md:text-5xl font-medium text-stone-100 leading-[1.1] tracking-tight mb-6">
+            <h2 className={`${data.titleFontSize || "text-3xl md:text-5xl"} font-medium text-stone-100 leading-[1.1] tracking-tight mb-6`}>
               {data.title}
             </h2>
             <p className="text-base md:text-lg text-stone-400 leading-relaxed mb-8">
@@ -81,7 +81,7 @@ export default function LauncherSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: "easeOut", delay: shouldReduceMotion ? 0 : 0.2 }}
-              className="relative w-full max-w-lg aspect-[3/4] md:aspect-square flex items-center justify-center p-4 md:p-8"
+              className="relative w-full max-w-lg flex items-center justify-center p-4 md:p-8" style={{ aspectRatio: data.imageAspectRatio || "var(--launcher-image-aspect-ratio, 3/4)" }}
             >
               <div className="absolute inset-0 border border-stone-800/40 bg-stone-900/20 backdrop-blur-sm z-10 flex items-center justify-center">
                  <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-stone-500/50" />

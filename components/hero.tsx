@@ -86,7 +86,7 @@ export default function Hero() {
               MIXED TECHNOLOGY
             </motion.span>
             
-            <h1 className="font-medium text-stone-100 leading-[1.2] tracking-tight text-3xl md:text-5xl mb-6 md:mb-8 text-balance min-h-[3em]">
+            <h1 className={`font-medium text-stone-100 leading-[1.2] tracking-tight ${data.headlineFontSize || "text-3xl md:text-5xl"} mb-6 md:mb-8 text-balance min-h-[3em]`}>
               {mounted ? <TerminalText text={data.headline} reducedMotion={shouldReduceMotion} /> : data.headline}
             </h1>
             
@@ -133,7 +133,7 @@ export default function Hero() {
                  </div>
               </div>
 
-              <div className="relative w-full aspect-[3/4] z-20">
+              <div className="relative w-full z-20" style={{ aspectRatio: data.heroImageAspectRatio || "var(--hero-image-aspect-ratio, 3/4)" }}>
                 <Image 
                   src={images.hero} 
                   alt="Mixed Technology Product" 

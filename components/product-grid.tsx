@@ -84,7 +84,7 @@ export default function ProductGrid() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: revealDelay }}
                 className="group flex flex-col"
               >
-                <div className="relative w-full overflow-hidden bg-[#111] border border-stone-800/40 rounded-sm mb-4 aspect-[4/3]">
+                <div className="relative w-full overflow-hidden bg-[#111] border border-stone-800/40 rounded-sm mb-4" style={{ aspectRatio: product.aspectRatio || "var(--product-aspect-ratio, 4/3)" }}>
                   {mounted && (
                     <>
                       <CameraCorner pos="tl" delay={0} reducedMotion={shouldReduceMotion} />
@@ -126,7 +126,7 @@ export default function ProductGrid() {
                         }
                         return (
                           <div key={i} className="text-xs text-stone-500 uppercase">
-                            • {lbl}
+                            â€¢ {lbl}
                           </div>
                         );
                       })}
