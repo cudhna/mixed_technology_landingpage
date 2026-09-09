@@ -24,23 +24,23 @@
     "border": "#d1c5b3"
   },
   "hero": {
-    "headline": "Kết tinh giữa kỹ nghệ phần cứng và giải pháp phần mềm tối ưu",
+    "headline": "KẾT TINH GIỮA KỸ NGHỆ PHẦN CỨNG VÀ GIẢI PHÁP PHẦN MỀM TỐI ƯU",
     "subheadline": "Mixed Technology là nơi những chiếc điện thoại gập được khai phá trọn vẹn tiềm năng, từ phần mềm tối ưu đến từng tác phẩm độ máy thủ công.",
     "image": "/images/hero.jpg",
-    "ctaFacebook": "Nhắn tin Fanpage",
-    "ctaZalo": "Liên hệ Zalo"
+    "ctaFacebook": "NHẮN TIN FANPAGE",
+    "ctaZalo": "LIÊN HỆ ZALO"
   },
   "launcher": {
-    "title": "Mở khóa trọn vẹn màn hình ngoài Galaxy Z Flip",
-    "description": "Tự động hiển thị và mở hầu hết ứng dụng ngay trên màn ngoài, phản chiếu màn trong linh hoạt — không cần Root, không quảng cáo, không thu thập dữ liệu.",
+    "title": "MỞ KHÓA TRỌN VẸN MÀN HÌNH NGOÀI GALAXY Z FLIP",
+    "description": "Tự động hiển thị và mở hầu hết ứng dụng ngay trên màn ngoài, phản chiếu màn trong linh hoạt mà không cần Root, không quảng cáo, không thu thập dữ liệu.",
     "image": "/images/launcher-mockup.jpg",
     "features": [
-      { "icon": "🔒", "text": "100% No-Root — giữ nguyên bảo hành, Knox nguyên vẹn" },
-      { "icon": "📱", "text": "Có sẵn trên Google Play — cài đặt an toàn, vài phút là dùng được" },
-      { "icon": "⭐", "text": "Premium theo tài khoản Google — lên đời máy vẫn dùng tiếp" },
-      { "icon": "👥", "text": "Cộng đồng người dùng đông đảo, liên tục cập nhật" }
+      { "icon": "KNOX", "text": "100% No-Root giữ nguyên bảo hành, Knox nguyên vẹn." },
+      { "icon": "PLAY", "text": "Có sẵn trên Google Play, cài đặt an toàn và sử dụng ngay." },
+      { "icon": "ACC", "text": "Premium theo tài khoản Google, lên đời máy vẫn dùng tiếp." },
+      { "icon": "COM", "text": "Cộng đồng người dùng đông đảo và liên tục cập nhật." }
     ],
-    "cta": "Tải xuống",
+    "cta": "TẢI XUỐNG",
     "playStoreLink": "https://play.google.com/store/search?q=9+flip+launcher&c=apps&hl=vi"
   },
   "products": [
@@ -60,7 +60,7 @@
     },
     {
       "id": 3,
-      "name": "Z Fold 2 CNC màu đỏ mod thanh",
+      "name": "Z Fold 2 CNC đỏ mod thanh",
       "desc": "Gia công CNC không chỉ để nổi bật, mà để chắc chắn trên từng milimet.",
       "image": "/images/product-3.jpg",
       "alt": "Z Fold 2 CNC đỏ mod thanh"
@@ -90,13 +90,18 @@
   "brandStory": {
     "title": "Mỗi dự án đều bắt đầu từ rất nhiều bản phác thảo trước khi có một sản phẩm hoàn chỉnh. Chúng tôi tin rằng công nghệ hoàn mỹ nhất là công nghệ mang lại sự tự do và tiện lợi tối đa cho người dùng.",
     "description": "Tại Mixed Technology, chúng tôi không chỉ tạo ra sản phẩm, chúng tôi kiến tạo trải nghiệm. Từ phần mềm tối ưu cho thiết bị di động đến từng tác phẩm độ máy thủ công tỉ mỉ, mỗi chi tiết đều được chăm chút đến hoàn thiện.",
-    "image": "/images/story.jpg"
+    "image": "/images/story.jpg",
+    "stats": [
+      { "value": "6+", "label": "NĂM KINH NGHIỆM" },
+      { "value": "50+", "label": "DỰ ÁN HOÀN THÀNH" },
+      { "value": "2K+", "label": "KHÁCH HÀNG" }
+    ]
   },
   "cta": {
-    "title": "Sẵn sàng trải nghiệm cùng Mixed Technology?",
+    "title": "SẴN SÀNG TRẢI NGHIỆM CÙNG MIXED TECHNOLOGY?",
     "description": "Dù bạn đang tìm kiếm giải pháp phần mềm tối ưu cho thiết bị gập, hay một tác phẩm độ máy độc bản, Mixed Technology luôn sẵn sàng đồng hành cùng bạn.",
-    "ctaFacebook": "Nhắn tin Fanpage",
-    "ctaZalo": "Kết bạn Zalo"
+    "ctaFacebook": "NHẮN TIN FANPAGE",
+    "ctaZalo": "KẾT BẠN ZALO"
   },
   "footer": {
     "copyright": "Mixed Technology"

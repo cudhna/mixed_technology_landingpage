@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -10,7 +10,7 @@ export default function BrandStory({ data }: { data: any }) {
         
         {/* Soft Section Marker */}
         <div className="mb-16 md:mb-24 opacity-60">
-          <span className="text-[11px] uppercase tracking-widest text-stone-400">03 / Giới thiệu</span>
+          <span className="text-[11px] uppercase tracking-widest text-stone-400">03 / GIỚI THIỆU</span>
         </div>
 
         {/* Manifesto Statement */}
@@ -22,7 +22,7 @@ export default function BrandStory({ data }: { data: any }) {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="col-span-1 md:col-span-8"
           >
-<h2 className="text-[clamp(2rem,4vw,3.5rem)] font-light text-stone-100 leading-[1.2] tracking-tight text-balance">
+            <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-light text-stone-100 leading-[1.2] tracking-tight text-balance">
               {data.title}
             </h2>
           </motion.div>
@@ -58,7 +58,7 @@ export default function BrandStory({ data }: { data: any }) {
           </motion.div>
         </div>
 
-{data.stats && data.stats.length > 0 && (
+        {data.stats && data.stats.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 pt-8">
             {data.stats.map((stat: any, index: number) => (
               <motion.div
