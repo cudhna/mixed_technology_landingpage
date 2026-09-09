@@ -97,7 +97,7 @@ export default function ProductGrid({ products }: { products: any[] }) {
                 aspectClass = "aspect-[4/5]";
               }
 
-              const orbitR = 80 + (index % 3) * 20;
+              const orbitR = 180 + (index % 3) * 30;
               const speed = 0.015 + index * 0.003;
 
               return (
@@ -109,7 +109,7 @@ export default function ProductGrid({ products }: { products: any[] }) {
                   transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                   className={`group flex flex-col ${gridClass}`}
                 >
-                  <div className="relative mb-6 md:mb-8">
+                  <div className="relative mb-6 md:mb-8 pb-16">
                     <div className={`overflow-hidden bg-[#0f0f0f] ${aspectClass}`}>
                       <Image
                         src={product.image}
@@ -119,8 +119,9 @@ export default function ProductGrid({ products }: { products: any[] }) {
                         sizes={isFeatured ? "(max-width: 768px) 100vw, 60vw" : "(max-width: 768px) 50vw, 33vw"}
                       />
                     </div>
-                    {/* Orbiting labels — around the image, not inside */}
-                    <OrbitingLabels count={5} radius={orbitR} speed={speed} color="rgba(255,255,255,0.12)" />
+                    <div className="absolute inset-0" style={{ margin: "80px" }}>
+                      <OrbitingLabels count={5} radius={orbitR} speed={speed} color="rgba(255,255,255,0.1)" />
+                    </div>
                   </div>
 
                   <div className="flex flex-col gap-2">
