@@ -31,7 +31,7 @@ export default function Hero({ data, links }: { data: any, links: { facebook: st
           <div className="col-span-1 md:col-span-7 relative order-1 md:order-2 flex items-center justify-center">
             <motion.div
               style={{ scale: imageScale, opacity: imageOpacity }}
-              className="relative w-full max-w-3xl mx-auto p-4 md:p-8 flex items-center justify-center"
+              className="relative w-full max-w-2xl mx-auto p-4 md:p-8 flex items-center justify-center"
             >
               {/* Technical Decorative Frame */}
               <div className="absolute inset-0 border border-stone-800/40 bg-stone-900/10 pointer-events-none z-10">
@@ -48,7 +48,7 @@ export default function Hero({ data, links }: { data: any, links: { facebook: st
               </div>
 
               {/* Image Inside Frame */}
-              <div className="relative w-full aspect-[4/3] md:aspect-[16/9] z-20">
+              <div className="relative w-full aspect-[3/4] md:aspect-[3/4] z-20">
                 <Image 
                   src={data.image} 
                   alt="Mixed Technology Product" 
