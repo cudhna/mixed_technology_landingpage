@@ -3,17 +3,54 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+const orbitLabels = [
+  { text: "PREMIUM", offset: -30 },
+  { text: "LIMITED", offset: -15 },
+  { text: "ARTISAN", offset: 0 },
+  { text: "EXCLUSIVE", offset: 15 },
+  { text: "MADE", offset: 30 },
+];
+
 export default function ProductGrid({ products }: { products: any[] }) {
   return (
-    <section id="work" className="relative py-24 md:py-32 bg-[#0a0a0a]">
+    <section id="work" className="relative py-24 md:py-32 bg-[#0a0a0a] overflow-hidden">
       <div className="mx-auto max-w-[90rem] px-4 md:px-8">
-        
-        {/* Soft Section Marker */}
         <div className="mb-16 md:mb-24 opacity-60">
           <span className="text-[11px] uppercase tracking-widest text-stone-400">01 / Dự án</span>
         </div>
 
-        {/* Softened CSS Grid Pattern */}
+        <style>{`
+          @keyframes orbit-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+          .orbit-ring {
+            position: absolute;
+            inset: -20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 50%;
+            animation: orbit-spin 60s linear infinite;
+            pointer-events: none;
+          }
+          .orbit-ring-reverse {
+            position: absolute;
+            inset: -10px;
+            border: 1px dashed rgba(255,255,255,0.03);
+            border-radius: 50%;
+            animation: orbit-spin 40s linear infinite reverse;
+            pointer-events: none;
+          }
+          .orbit-label {
+            position: absolute;
+            font-size: 9px;
+            font-family: monospace;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.2);
+            white-space: nowrap;
+          }
+        `}</style>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-x-4 md:gap-x-12 gap-y-16 md:gap-y-32">
           {products.map((product: any, index: number) => {
             const isFeatured = index === 0;
@@ -51,15 +88,35 @@ export default function ProductGrid({ products }: { products: any[] }) {
                 className={`group flex flex-col ${gridClass}`}
               >
                 <div className={`relative overflow-hidden bg-[#0f0f0f] mb-6 md:mb-8 ${aspectClass}`}>
-                  <Image 
-                    src={product.image} 
-                    alt={product.alt || product.name} 
-                    fill 
-                    className="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0" 
-                    sizes={isFeatured ? "(max-width: 768px) 100vw, 60vw" : "(max-width: 768px) 50vw, 33vw"} 
+                  <Image
+                    src={product.image}
+                    alt={product.alt || product.name}
+                    fill
+                    className="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0"
+                    sizes={isFeatured ? "(max-width: 768px) 100vw, 60vw" : "(max-width: 768px) 50vw, 33vw"}
                   />
+
+                  {/* Orbiting text labels */}
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <div className="orbit-ring" />
+                    <div className="orbit-ring-reverse" />
+                    {orbitLabels.map((label, i) => (
+                      <span
+                        key={i}
+                        className="orbit-label"
+                        style={{
+                          top: "50%",
+                          left: "50%",
+                          transform: `translate(-50%, -50%) rotate(${i * 72 + index * 15}deg) translateY(${-60 + label.offset}px)`,
+                          animation: `orbit-spin ${20 + index * 3}s linear infinite ${-index * 2}s`,
+                        }}
+                      >
+                        {label.text}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                
+
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-col gap-1">
                     <span className="text-[10px] tracking-widest text-stone-500 opacity-70">DA.{numberString}</span>
@@ -67,14 +124,13 @@ export default function ProductGrid({ products }: { products: any[] }) {
                       {product.name}
                     </h3>
                   </div>
-                  
                   <div className="flex flex-col gap-4 mt-2">
                     <p className="text-sm font-light text-stone-400 max-w-sm leading-relaxed text-balance">
                       {product.desc}
                     </p>
-                    
                     <div className="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">
-                      XEM CHI TIẾT                      <span className="transform transition-transform duration-500 md:group-hover:translate-x-1">&#8594;</span>
+                      XEM CHI TIẾT
+                      <span className="transform transition-transform duration-500 md:group-hover:translate-x-1">&#8594;</span>
                     </div>
                   </div>
                 </div>
