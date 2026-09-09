@@ -18,8 +18,10 @@ export default function BrandStory({ data }: { data: any }) {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="col-span-1 md:col-span-8"
           >
-            <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-light text-stone-100 leading-[1.2] tracking-tight text-balance">
-              {data.title}
+            <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-light text-stone-100 leading-[1.2] tracking-tight text-balance">
+              CHÚNG TÔI KHÔNG CHỈ TẠO RA CÔNG NGHỆ. <br />
+              CHÚNG TÔI QUAN TÂM ĐẾN CẢM GIÁC <br />
+              <span className="text-stone-400 italic">KHI BẠN SỬ DỤNG NÓ.</span>
             </h2>
           </motion.div>
           <motion.div
