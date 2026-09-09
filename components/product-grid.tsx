@@ -5,6 +5,40 @@ import Image from "next/image";
 
 const orbitLabels = ["PREMIUM", "LIMITED", "ARTISAN", "EXCLUSIVE", "MADE"];
 
+function OrbitingLabels({ count, radius, duration, delay, color }: { count: number; radius: number; duration: number; delay: number; color: string }) {
+  const labels = orbitLabels.slice(0, count);
+
+  return (
+    <>
+      {labels.map((text, i) => {
+        const angle = i * (360 / count);
+        const style: React.CSSProperties = {
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: `rotate(${angle}deg) translateY(${-radius}px) rotate(-${angle}deg)`,
+          animation: `orbit ${duration}s linear infinite ${-delay}s`,
+          animationFillMode: "both",
+          fontSize: "8px",
+          fontFamily: "monospace",
+          letterSpacing: "0.25em",
+          textTransform: "uppercase" as const,
+          color: color,
+          whiteSpace: "nowrap",
+          transformOrigin: "0px 0px",
+          pointerEvents: "none" as const,
+        };
+        return (
+          <span key={i} style={style}>
+            {text}
+          </span>
+        );
+      })}
+      <style>{`@keyframes orbit { from { transform: rotate(0deg) translateY(${-radius}px) rotate(0deg); } to { transform: rotate(360deg) translateY(${-radius}px) rotate(-360deg); } }`}</style>
+    </>
+  );
+}
+
 export default function ProductGrid({ products }: { products: any[] }) {
   return (
     <section id="work" className="relative py-24 md:py-32 bg-[#0a0a0a] overflow-hidden">
@@ -12,43 +46,6 @@ export default function ProductGrid({ products }: { products: any[] }) {
         <div className="mb-16 md:mb-24 opacity-60">
           <span className="text-[11px] uppercase tracking-widest text-stone-400">01 / Dự án</span>
         </div>
-
-        <style>{`
-          @keyframes orbit-label {
-            from { transform: rotate(0deg) translateY(-55px) rotate(0deg); }
-            to { transform: rotate(360deg) translateY(-55px) rotate(-360deg); }
-          }
-          .orbit-label {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            font-size: 8px;
-            font-family: monospace;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.15);
-            white-space: nowrap;
-            transform-origin: 0 0;
-          }
-          .orbit-ring-1 {
-            position: absolute;
-            inset: 15%;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 50%;
-            animation: spin 40s linear infinite;
-          }
-          .orbit-ring-2 {
-            position: absolute;
-            inset: 10%;
-            border: 1px dashed rgba(255,255,255,0.04);
-            border-radius: 50%;
-            animation: spin 25s linear infinite reverse;
-          }
-          @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-          }
-        `}</style>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-x-4 md:gap-x-12 gap-y-16 md:gap-y-32">
           {products.map((product: any, index: number) => {
@@ -77,7 +74,9 @@ export default function ProductGrid({ products }: { products: any[] }) {
               aspectClass = "aspect-[4/5]";
             }
 
-            const orbitR = 55 + (index % 3) * 5;
+            const orbitR = 50 + (index % 3) * 10;
+            const duration = 20 + index * 5;
+            const delay = index * 2;
 
             return (
               <motion.div
@@ -97,28 +96,14 @@ export default function ProductGrid({ products }: { products: any[] }) {
                     sizes={isFeatured ? "(max-width: 768px) 100vw, 60vw" : "(max-width: 768px) 50vw, 33vw"}
                   />
 
-                  <div className="relative w-full h-full">
-                    <div className="orbit-ring-1" />
-                    <div className="orbit-ring-2" />
-                    {orbitLabels.map((text, i) => {
-                      const angle = i * 72;
-                      const delay = -index * 2 - i * 0.5;
-                      const duration = 20 + index * 5;
-                      return (
-                        <span
-                          key={i}
-                          className="orbit-label"
-                          style={{
-                            transform: `rotate(${angle}deg) translateY(${-orbitR}px) rotate(-${angle}deg)`,
-                            animation: `orbit-label ${duration}s linear infinite ${delay}s`,
-                          }}
-                        >
-                          {text}
-                        </span>
-                      );
-                    })}
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <div className="absolute inset-[15%] border border-white/10 rounded-full" style={{ animation: `spin 40s linear infinite ${index}s` }} />
+                    <div className="absolute inset-[10%] border border-white/5 rounded-full border-dashed" style={{ animation: `spin 25s linear infinite reverse ${index * 2}s` }} />
+                    <OrbitingLabels count={5} radius={orbitR} duration={duration} delay={delay} color="rgba(255,255,255,0.15)" />
                   </div>
                 </div>
+
+                <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
 
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-col gap-1">
