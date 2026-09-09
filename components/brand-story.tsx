@@ -58,40 +58,27 @@ export default function BrandStory({ data }: { data: any }) {
           </motion.div>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 pt-8">
-          {data.stats?.map((stat: any, index: number) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, delay: index * 0.1 }}
-              className="flex flex-col gap-2"
-            >
-              <span className="text-3xl md:text-4xl font-light text-stone-100 tracking-tight">
-                {stat.value}
-              </span>
-              <span className="text-[10px] uppercase tracking-widest text-stone-500 opacity-80">
-                {stat.label}
-              </span>
-            </motion.div>
-          ))}
-          <motion.div 
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: 0.3 }}
-            className="flex flex-col gap-2"
-          >
-            <span className="text-3xl md:text-4xl font-light text-stone-100 tracking-tight">
-              100%
-            </span>
-            <span className="text-[10px] uppercase tracking-widest text-stone-500 opacity-80">
-              Chế tác tại VN
-            </span>
-          </motion.div>
-        </div>
+{data.stats && data.stats.length > 0 && (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 pt-8">
+            {data.stats.map((stat: any, index: number) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, delay: index * 0.1 }}
+                className="flex flex-col gap-2"
+              >
+                <span className="text-3xl md:text-4xl font-light text-stone-100 tracking-tight">
+                  {stat.value}
+                </span>
+                <span className="text-[10px] uppercase tracking-widest text-stone-500 opacity-80">
+                  {stat.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        )}
 
       </div>
     </section>

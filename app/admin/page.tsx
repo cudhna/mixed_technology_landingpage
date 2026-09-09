@@ -96,14 +96,6 @@ export default async function AdminPage() {
               <Textarea label="Title" name="brandStory.title" defaultValue={config.brandStory.title} />
               <Textarea label="Description" name="brandStory.description" defaultValue={config.brandStory.description} />
               <Input label="Ảnh (URL)" name="brandStory.image" defaultValue={config.brandStory.image} />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <Input label="Stat 1 Value" name="brandStory.stat1.value" defaultValue={config.brandStory.stats[0]?.value || ""} />
-                <Input label="Stat 1 Label" name="brandStory.stat1.label" defaultValue={config.brandStory.stats[0]?.label || ""} />
-                <Input label="Stat 2 Value" name="brandStory.stat2.value" defaultValue={config.brandStory.stats[1]?.value || ""} />
-                <Input label="Stat 2 Label" name="brandStory.stat2.label" defaultValue={config.brandStory.stats[1]?.label || ""} />
-                <Input label="Stat 3 Value" name="brandStory.stat3.value" defaultValue={config.brandStory.stats[2]?.value || ""} />
-                <Input label="Stat 3 Label" name="brandStory.stat3.label" defaultValue={config.brandStory.stats[2]?.label || ""} />
-              </div>
             </div>
           </div>
 

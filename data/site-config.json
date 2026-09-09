@@ -25,7 +25,7 @@
   },
   "hero": {
     "headline": "Kết tinh giữa kỹ nghệ phần cứng và giải pháp phần mềm tối ưu",
-    "subheadline": "Mixed Technology — nơi những chiếc điện thoại gập được khai phá trọn vẹn tiềm năng, từ phần mềm tối ưu đến từng tác phẩm độ máy thủ công.",
+    "subheadline": "Mixed Technology là nơi những chiếc điện thoại gập được khai phá trọn vẹn tiềm năng, từ phần mềm tối ưu đến từng tác phẩm độ máy thủ công.",
     "image": "/images/hero.jpg",
     "ctaFacebook": "Nhắn tin Fanpage",
     "ctaZalo": "Liên hệ Zalo"
@@ -90,12 +90,7 @@
   "brandStory": {
     "title": "Mỗi dự án đều bắt đầu từ rất nhiều bản phác thảo trước khi có một sản phẩm hoàn chỉnh. Chúng tôi tin rằng công nghệ hoàn mỹ nhất là công nghệ mang lại sự tự do và tiện lợi tối đa cho người dùng.",
     "description": "Tại Mixed Technology, chúng tôi không chỉ tạo ra sản phẩm, chúng tôi kiến tạo trải nghiệm. Từ phần mềm tối ưu cho thiết bị di động đến từng tác phẩm độ máy thủ công tỉ mỉ, mỗi chi tiết đều được chăm chút đến hoàn thiện.",
-    "image": "/images/story.jpg",
-    "stats": [
-      { "value": "6+", "label": "Năm kinh nghiệm" },
-      { "value": "50+", "label": "Dự án hoàn thành" },
-      { "value": "2k+", "label": "Khách hàng" }
-    ]
+    "image": "/images/story.jpg"
   },
   "cta": {
     "title": "Sẵn sàng trải nghiệm cùng Mixed Technology?",
