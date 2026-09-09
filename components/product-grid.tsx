@@ -11,21 +11,21 @@ function OrbitingLabels({ count, radius, speed, color }: { count: number; radius
   const angleRef = useRef(0);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    const labels = container.children;
+    const labels = containerRef.current?.children;
+    if (!labels || labels.length === 0) return;
     let animId = 0;
+    let t = 0;
 
     const animate = () => {
-      angleRef.current += speed;
+      t += speed;
       for (let i = 0; i < labels.length; i++) {
         const el = labels[i] as HTMLElement;
         if (el) {
-          const angle = angleRef.current + i * (360 / count);
-          const rad = (angle * Math.PI) / 180;
-          const x = Math.cos(rad) * radius;
-          const y = Math.sin(rad) * radius;
+          const angle = t + (i * Math.PI * 2) / labels.length;
+          const x = Math.cos(angle) * radius;
+          const y = Math.sin(angle) * radius;
           el.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+          el.style.opacity = String(0.5 + Math.sin(t + i) * 0.4);
         }
       }
       animId = requestAnimationFrame(animate);
@@ -36,7 +36,7 @@ function OrbitingLabels({ count, radius, speed, color }: { count: number; radius
   }, [count, radius, speed]);
 
   return (
-    <div ref={containerRef} className="absolute inset-0">
+    <div ref={containerRef} className="absolute inset-0 pointer-events-none">
       {orbitLabels.slice(0, count).map((text, i) => (
         <span
           key={i}
@@ -44,9 +44,9 @@ function OrbitingLabels({ count, radius, speed, color }: { count: number; radius
             position: "absolute",
             left: "50%",
             top: "50%",
-            fontSize: "8px",
+            fontSize: "9px",
             fontFamily: "monospace",
-            letterSpacing: "0.25em",
+            letterSpacing: "0.3em",
             textTransform: "uppercase",
             color: color,
             whiteSpace: "nowrap",
@@ -97,8 +97,8 @@ export default function ProductGrid({ products }: { products: any[] }) {
                 aspectClass = "aspect-[4/5]";
               }
 
-              const orbitR = 50 + (index % 3) * 10;
-              const speed = 0.3 + index * 0.1;
+              const orbitR = 60 + (index % 3) * 15;
+              const speed = 0.2 + index * 0.08;
 
               return (
                 <motion.div
@@ -109,20 +109,18 @@ export default function ProductGrid({ products }: { products: any[] }) {
                   transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                   className={`group flex flex-col ${gridClass}`}
                 >
-                  <div className={`relative overflow-hidden bg-[#0f0f0f] mb-6 md:mb-8 ${aspectClass}`}>
-                    <Image
-                      src={product.image}
-                      alt={product.alt || product.name}
-                      fill
-                      className="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0"
-                      sizes={isFeatured ? "(max-width: 768px) 100vw, 60vw" : "(max-width: 768px) 50vw, 33vw"}
-                    />
-
-                    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                      <div className="absolute inset-[15%] border border-white/10 rounded-full" style={{ animation: `spin 40s linear infinite ${index}s` }} />
-                      <div className="absolute inset-[10%] border border-white/5 rounded-full border-dashed" style={{ animation: `spin 25s linear infinite reverse ${index * 2}s` }} />
-                      <OrbitingLabels count={5} radius={orbitR} speed={speed} color="rgba(255,255,255,0.15)" />
+                  <div className="relative mb-6 md:mb-8">
+                    <div className={`overflow-hidden bg-[#0f0f0f] ${aspectClass}`}>
+                      <Image
+                        src={product.image}
+                        alt={product.alt || product.name}
+                        fill
+                        className="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0"
+                        sizes={isFeatured ? "(max-width: 768px) 100vw, 60vw" : "(max-width: 768px) 50vw, 33vw"}
+                      />
                     </div>
+                    {/* Orbiting labels — around the image, not inside */}
+                    <OrbitingLabels count={5} radius={orbitR} speed={speed} color="rgba(255,255,255,0.12)" />
                   </div>
 
                   <div className="flex flex-col gap-2">
