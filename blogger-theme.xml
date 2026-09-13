@@ -8,154 +8,154 @@
 <title><data:blog.title/></title>
 <b:skin><![CDATA[
 
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; padding: 72px 0 0 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; background-color: #0a0a0a !important; color: #fafaf9 !important; -webkit-font-smoothing: antialiased; }
-body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50; background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.04"/></svg>'); }
-h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-spacing: -0.025em; line-height: 1; }
-.relative { position: relative; }
-.absolute { position: absolute; }
-.fixed { position: fixed; }
-.inset-0 { inset: 0; top: 0; left: 0; right: 0; bottom: 0; }
-.top-0 { top: 0; } .bottom-0 { bottom: 0; } .left-0 { left: 0; } .right-0 { right: 0; }
-.top-2 { top: 0.5rem; } .bottom-2 { bottom: 0.5rem; } .left-2 { left: 0.5rem; } .right-2 { right: 0.5rem; }
-.z-10 { z-index: 10; } .z-20 { z-index: 20; } .z-30 { z-index: 30; } .z-50 { z-index: 50; }
-.inset-4 { inset: 1rem; } .inset-8 { inset: 2rem; } .inset-12 { inset: 3rem; } .inset-16 { inset: 4rem; }
-.p-4 { padding: 1rem; } .p-6 { padding: 1.5rem; } .p-8 { padding: 2rem; }
-.px-4 { padding-left: 1rem; padding-right: 1rem; } .px-8 { padding-left: 2rem; padding-right: 2rem; }
-.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
-.py-24 { padding-top: 6rem; padding-bottom: 6rem; }
-.py-32 { padding-top: 8rem; padding-bottom: 8rem; }
-.pt-4 { padding-top: 1rem; } .pt-8 { padding-top: 2rem; } .pt-12 { padding-top: 3rem; } .pt-16 { padding-top: 4rem; }
-.pb-2 { padding-bottom: 0.5rem; } .pb-8 { padding-bottom: 2rem; }
-.mt-2 { margin-top: 0.5rem; } .mt-4 { margin-top: 1rem; } .mt-8 { margin-top: 2rem; } .mt-12 { margin-top: 3rem; } .mt-16 { margin-top: 4rem; }
-.mb-2 { margin-bottom: 0.5rem; } .mb-4 { margin-bottom: 1rem; } .mb-6 { margin-bottom: 1.5rem; } .mb-8 { margin-bottom: 2rem; } .mb-12 { margin-bottom: 3rem; } .mb-16 { margin-bottom: 4rem; } .mb-24 { margin-bottom: 6rem; } .mb-32 { margin-bottom: 8rem; }
-.mx-auto { margin-left: auto; margin-right: auto; }
-.-mt-8 { margin-top: -2rem; } .-mt-16 { margin-top: -4rem; } .-mt-24 { margin-top: -6rem; }
-.w-full { width: 100%; } .w-3 { width: 0.75rem; } .w-8 { width: 2rem; } .w-px { width: 1px; } .w-max { width: max-content; }
-.h-full { height: 100%; } .h-3 { height: 0.75rem; } .h-px { height: 1px; }
-.max-w-3xl { max-width: 48rem; } .max-w-4xl { max-width: 56rem; } .max-w-6xl { max-width: 72rem; } .max-w-lg { max-width: 32rem; } .max-w-2xl { max-width: 42rem; } .max-w-xl { max-width: 36rem; } .max-w-90rem { max-width: 90rem; }
-.overflow-hidden { overflow: hidden; }
-.pointer-events-none { pointer-events: none; } .pointer-events-auto { pointer-events: auto; }
-.flex { display: flex; } .inline-flex { display: inline-flex; } .grid { display: grid; } .block { display: block; } .hidden { display: none; }
-.flex-col { flex-direction: column; } .flex-row { flex-direction: row; } .flex-wrap { flex-wrap: wrap; }
-.items-center { align-items: center; } .items-start { align-items: flex-start; } .items-end { align-items: flex-end; }
-.justify-center { justify-content: center; } .justify-between { justify-content: space-between; }
-.flex-grow { flex-grow: 1; } .flex-1 { flex: 1; }
-.gap-1 { gap: 0.25rem; } .gap-2 { gap: 0.5rem; } .gap-4 { gap: 1rem; } .gap-6 { gap: 1.5rem; } .gap-8 { gap: 2rem; } .gap-12 { gap: 3rem; } .gap-16 { gap: 4rem; }
-.gap-x-2 { column-gap: 0.5rem; } .gap-x-4 { column-gap: 1rem; } .gap-x-6 { column-gap: 1.5rem; } .gap-x-8 { column-gap: 2rem; } .gap-x-12 { column-gap: 3rem; }
-.gap-y-2 { row-gap: 0.5rem; } .gap-y-8 { row-gap: 2rem; }
-.col-span-1 { grid-column: span 1; } .col-span-2 { grid-column: span 2; } .col-span-4 { grid-column: span 4; } .col-span-5 { grid-column: span 5; } .col-span-6 { grid-column: span 6; } .col-span-7 { grid-column: span 7; } .col-span-8 { grid-column: span 8; } .col-span-12 { grid-column: span 12; }
-.col-start-1 { grid-column-start: 1; } .col-start-2 { grid-column-start: 2; } .col-start-7 { grid-column-start: 7; } .col-start-8 { grid-column-start: 8; } .col-start-9 { grid-column-start: 9; }
-.grid-cols-1 { grid-template-columns: repeat(1, minmax(0,1fr)); } .grid-cols-2 { grid-template-columns: repeat(2, minmax(0,1fr)); } .grid-cols-12 { grid-template-columns: repeat(12, minmax(0,1fr)); }
-.space-y-2 > * + * { margin-top: 0.5rem; } .space-y-4 > * + * { margin-top: 1rem; } .space-y-6 > * + * { margin-top: 1.5rem; } .space-y-8 > * + * { margin-top: 2rem; }
-.order-1 { order: 1; } .order-2 { order: 2; }
-.text-left { text-align: left; } .text-right { text-align: right; } .text-center { text-align: center; }
-.italic { font-style: italic; } .uppercase { text-transform: uppercase; }
-.antialiased { -webkit-font-smoothing: antialiased; }
-.whitespace-nowrap { white-space: nowrap; }
-.leading-none { line-height: 1; } .leading-snug { line-height: 1.375; } .leading-relaxed { line-height: 1.625; } .leading-\[1\.1\] { line-height: 1.1; } .leading-\[1\.2\] { line-height: 1.2; } .leading-\[1\.3\] { line-height: 1.3; }
-.text-balance { text-wrap: balance; }
-.bg-0a0a0a { background-color: #0a0a0a; } .bg-050505 { background-color: #050505; }
-.bg-stone-100 { background-color: #e8e2d8; } .bg-stone-900\/10 { background-color: rgba(58,54,46,0.1); } .bg-stone-900\/20 { background-color: rgba(58,54,46,0.2); } .bg-stone-900\/90 { background-color: rgba(10,10,10,0.9); }
-.text-stone-50 { color: #fafaf9; } .text-stone-100 { color: #e8e2d8; } .text-stone-200 { color: #d1c5b3; } .text-stone-300 { color: #b4a18e; } .text-stone-400 { color: #9a836e; } .text-stone-500 { color: #836d5a; } .text-stone-600 { color: #6e584a; }
-.border-stone-800\/20 { border-color: rgba(90,70,60,0.2); } .border-stone-800\/30 { border-color: rgba(90,70,60,0.3); } .border-stone-800\/40 { border-color: rgba(90,70,60,0.4); } .border-stone-800 { border-color: #4a3a33; } .border-white\/5 { border-color: rgba(255,255,255,0.05); } .border-white\/10 { border-color: rgba(255,255,255,0.1); } .border-stone-700 { border-color: #5a463c; } .border-stone-500\/30 { border-color: rgba(148,130,110,0.3); }
-.text-stone-500\/20 { color: rgba(131,109,90,0.2); } .text-stone-400\/70 { color: rgba(154,131,110,0.7); } .text-stone-800\/50 { color: rgba(90,70,60,0.5); } .text-stone-600 { color: #6e584a; }
-.text-3xl { font-size: 1.875rem; } .text-4xl { font-size: 2.25rem; } .text-5xl { font-size: 3rem; } .text-xl { font-size: 1.25rem; } .text-lg { font-size: 1.125rem; } .text-base { font-size: 1rem; } .text-sm { font-size: 0.875rem; } .text-xs { font-size: 0.75rem; } .text-2xl { font-size: 1.5rem; }
-.font-light { font-weight: 300; } .font-medium { font-weight: 400; } .font-semibold { font-weight: 600; }
-.tracking-tight { letter-spacing: -0.025em; } .tracking-wide { letter-spacing: 0.05em; } .tracking-widest { letter-spacing: 0.15em; } .tracking-\[0\.2em\] { letter-spacing: 0.2em; }
-.text-balance { text-wrap: balance; }
-.font-body { font-family: 'Inter', sans-serif; } .font-mono { font-family: 'Courier New', monospace; }
-.object-contain { object-fit: contain; } .object-cover { object-fit: cover; } .filter { filter: var(--tw-filter); } .grayscale-\[15\%\] { filter: grayscale(15%); } .grayscale-\[40\%\] { filter: grayscale(40%); } .grayscale-\[5\%\] { filter: grayscale(5%); } .contrast-110 { filter: contrast(1.1); } .contrast-105 { filter: contrast(1.05); }
-.drop-shadow-2xl { filter: drop-shadow(0 20px 13px rgba(0,0,0,0.3)); }
-.backdrop-blur-sm { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-.rounded { border-radius: 0.375rem; } .rounded-sm { border-radius: 2px; } .rounded-full { border-radius: 9999px; }
-.transition-all { transition: all 0.3s ease; } .transition-colors { transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; } .transition-transform { transition: transform 0.3s ease; } .transition-opacity { transition: opacity 0.3s ease; }
-.duration-200 { transition-duration: 200ms; } .duration-300 { transition-duration: 300ms; } .duration-500 { transition-duration: 500ms; }
-.ease-out { transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
-.hover\:bg-stone-300:hover { background-color: #d1c5b3; } .hover\:bg-stone-100:hover { background-color: #e8e2d8; } .hover\:text-stone-100:hover { color: #e8e2d8; } .hover\:text-stone-300:hover { color: #b4a18e; } .group:hover .group-hover\:translate-x-1 { transform: translateX(0.25rem); }
-.aspect-\[16\/10\] { aspect-ratio: 16/10; } .aspect-\[3\/4\] { aspect-ratio: 3/4; } .aspect-\[4\/3\] { aspect-ratio: 4/3; } .aspect-square { aspect-ratio: 1/1; } .aspect-\[16\/9\] { aspect-ratio: 16/9; } .aspect-\[4\/5\] { aspect-ratio: 4/5; } .aspect-\[21\/9\] { aspect-ratio: 21/9; }
-@media (min-width: 768px) {
-  .md\:col-span-1 { grid-column: span 1; } .md\:col-span-2 { grid-column: span 2; } .md\:col-span-4 { grid-column: span 4; } .md\:col-span-5 { grid-column: span 5; } .md\:col-span-6 { grid-column: span 6; } .md\:col-span-7 { grid-column: span 7; } .md\:col-span-8 { grid-column: span 8; } .md\:col-span-12 { grid-column: span 12; }
-  .md\:col-start-1 { grid-column-start: 1; } .md\:col-start-2 { grid-column-start: 2; } .md\:col-start-7 { grid-column-start: 7; } .md\:col-start-8 { grid-column-start: 8; } .md\:col-start-9 { grid-column-start: 9; }
-  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0,1fr)); } .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); } .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0,1fr)); } .md\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0,1fr)); } .md\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0,1fr)); } .md\:grid-cols-7 { grid-template-columns: repeat(7, minmax(0,1fr)); } .md\:grid-cols-8 { grid-template-columns: repeat(8, minmax(0,1fr)); } .md\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0,1fr)); }
-  .md\:flex { display: flex; } .md\:hidden { display: none; }
-  .md\:text-3xl { font-size: 1.875rem; } .md\:text-4xl { font-size: 2.25rem; } .md\:text-5xl { font-size: 3rem; } .md\:text-xl { font-size: 1.25rem; } .md\:text-lg { font-size: 1.125rem; } .md\:text-base { font-size: 1rem; } .md\:text-sm { font-size: 0.875rem; } .md\:text-xs { font-size: 0.75rem; }
-  .md\:gap-4 { gap: 1rem; } .md\:gap-6 { gap: 1.5rem; } .md\:gap-8 { gap: 2rem; } .md\:gap-12 { gap: 3rem; } .md\:gap-16 { gap: 4rem; }
-  .md\:px-8 { padding-left: 2rem; padding-right: 2rem; }
-  .md\:py-24 { padding-top: 6rem; padding-bottom: 6rem; } .md\:py-32 { padding-top: 8rem; padding-bottom: 8rem; }
-  .md\:mt-8 { margin-top: 2rem; } .md\:mt-12 { margin-top: 3rem; } .md\:mt-16 { margin-top: 4rem; }
-  .md\:mt-0 { margin-top: 0; }
-  .md\:inset-8 { inset: 2rem; } .md\:inset-12 { inset: 3rem; } .md\:inset-16 { inset: 4rem; }
-  .md\:order-1 { order: 1; } .md\:order-2 { order: 2; }
-  .md\:aspect-\[3\/4\] { aspect-ratio: 3/4; } .md\:aspect-\[21\/9\] { aspect-ratio: 21/9; } .md\:aspect-square { aspect-ratio: 1/1; } .md\:aspect-\[4\/5\] { aspect-ratio: 4/5; }
-  .md\:p-4 { padding: 1rem; } .md\:p-8 { padding: 2rem; }
-  .md\:text-left { text-align: left; } .md\:text-right { text-align: right; }
-  .md\:w-full { width: 100%; } .md\:max-w-lg { max-width: 32rem; }
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;padding:72px 0 0 0;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;background-color:#0a0a0a!important;color:#fafaf9!important;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;background-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.04"/></svg>')}
+h1,h2,h3,h4,h5,h6{font-family:'Inter',sans-serif;font-weight:300;letter-spacing:-0.025em;line-height:1}
+.relative{position:relative}.absolute{position:absolute}.fixed{position:fixed}
+.inset-0{inset:0;top:0;left:0;right:0;bottom:0}
+.top-0{top:0}.bottom-0{bottom:0}.left-0{left:0}.right-0{right:0}
+.top-2{top:0.5rem}.bottom-2{bottom:0.5rem}.left-2{left:0.5rem}.right-2{right:0.5rem}
+.z-10{z-index:10}.z-20{z-index:20}.z-30{z-index:30}.z-50{z-index:50}
+.inset-4{inset:1rem}.inset-8{inset:2rem}.inset-12{inset:3rem}.inset-16{inset:4rem}
+.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}
+.px-4{padding-left:1rem;padding-right:1rem}.px-8{padding-left:2rem;padding-right:2rem}
+.py-8{padding-top:2rem;padding-bottom:2rem}
+.py-24{padding-top:6rem;padding-bottom:6rem}
+.py-32{padding-top:8rem;padding-bottom:8rem}
+.pt-4{padding-top:1rem}.pt-8{padding-top:2rem}.pt-12{padding-top:3rem}.pt-16{padding-top:4rem}
+.pb-2{padding-bottom:0.5rem}.pb-8{padding-bottom:2rem}
+.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-8{margin-top:2rem}.mt-12{margin-top:3rem}.mt-16{margin-top:4rem}
+.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-24{margin-bottom:6rem}.mb-32{margin-bottom:8rem}
+.mx-auto{margin-left:auto;margin-right:auto}
+.-mt-8{margin-top:-2rem}.-mt-16{margin-top:-4rem}.-mt-24{margin-top:-6rem}
+.w-full{width:100%}.w-3{width:0.75rem}.w-8{width:2rem}.w-px{width:1px}.w-max{width:max-content}
+.h-full{height:100%}.h-3{height:0.75rem}.h-px{height:1px}
+.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-lg{max-width:32rem}.max-w-2xl{max-width:42rem}.max-w-xl{max-width:36rem}.max-w-90rem{max-width:90rem}
+.overflow-hidden{overflow:hidden}
+.pointer-events-none{pointer-events:none}.pointer-events-auto{pointer-events:auto}
+.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.block{display:block}.hidden{display:none}
+.flex-col{flex-direction:column}.flex-row{flex-direction:row}.flex-wrap{flex-wrap:wrap}
+.items-center{align-items:center}.items-start{align-items:flex-start}.items-end{align-items:flex-end}
+.justify-center{justify-content:center}.justify-between{justify-content:space-between}
+.flex-grow{flex-grow:1}.flex-1{flex:1}
+.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-12{gap:3rem}.gap-16{gap:4rem}
+.gap-x-2{column-gap:0.5rem}.gap-x-4{column-gap:1rem}.gap-x-6{column-gap:1.5rem}.gap-x-8{column-gap:2rem}.gap-x-12{column-gap:3rem}
+.gap-y-2{row-gap:0.5rem}.gap-y-8{row-gap:2rem}
+.col-span-1{grid-column:span 1}.col-span-2{grid-column:span 2}.col-span-4{grid-column:span 4}.col-span-5{grid-column:span 5}.col-span-6{grid-column:span 6}.col-span-7{grid-column:span 7}.col-span-8{grid-column:span 8}.col-span-12{grid-column:span 12}
+.col-start-1{grid-column-start:1}.col-start-2{grid-column-start:2}.col-start-7{grid-column-start:7}.col-start-8{grid-column-start:8}.col-start-9{grid-column-start:9}
+.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}
+.space-y-2>*+*{margin-top:0.5rem}.space-y-4>*+*{margin-top:1rem}.space-y-6>*+*{margin-top:1.5rem}.space-y-8>*+*{margin-top:2rem}
+.order-1{order:1}.order-2{order:2}
+.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}
+.italic{font-style:italic}.uppercase{text-transform:uppercase}
+.antialiased{-webkit-font-smoothing:antialiased}
+.whitespace-nowrap{white-space:nowrap}
+.leading-none{line-height:1}.leading-snug{line-height:1.375}.leading-relaxed{line-height:1.625}
+.text-balance{text-wrap:balance}
+.bg-0a0a0a{background-color:#0a0a0a}.bg-050505{background-color:#050505}
+.bg-stone-100{background-color:#e8e2d8}.bg-stone-900\/10{background-color:rgba(58,54,46,0.1)}.bg-stone-900\/20{background-color:rgba(58,54,46,0.2)}.bg-stone-900\/90{background-color:rgba(10,10,10,0.9)}
+.text-stone-50{color:#fafaf9}.text-stone-100{color:#e8e2d8}.text-stone-200{color:#d1c5b3}.text-stone-300{color:#b4a18e}.text-stone-400{color:#9a836e}.text-stone-500{color:#836d5a}.text-stone-600{color:#6e584a}
+.border-stone-800\/20{border-color:rgba(90,70,60,0.2)}.border-stone-800\/30{border-color:rgba(90,70,60,0.3)}.border-stone-800\/40{border-color:rgba(90,70,60,0.4)}.border-stone-800{border-color:#4a3a33}.border-white\/5{border-color:rgba(255,255,255,0.05)}.border-white\/10{border-color:rgba(255,255,255,0.1)}.border-stone-700{border-color:#5a463c}.border-stone-500\/30{border-color:rgba(148,130,110,0.3)}
+.text-stone-500\/20{color:rgba(131,109,90,0.2)}.text-stone-400\/70{color:rgba(154,131,110,0.7)}.text-stone-800\/50{color:rgba(90,70,60,0.5)}
+.text-3xl{font-size:1.875rem}.text-4xl{font-size:2.25rem}.text-5xl{font-size:3rem}.text-xl{font-size:1.25rem}.text-lg{font-size:1.125rem}.text-base{font-size:1rem}.text-sm{font-size:0.875rem}.text-xs{font-size:0.75rem}.text-2xl{font-size:1.5rem}
+.font-light{font-weight:300}.font-medium{font-weight:400}.font-semibold{font-weight:600}
+.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.15em}.tracking-\[0.2em\]{letter-spacing:0.2em}
+.text-balance{text-wrap:balance}
+.font-body{font-family:'Inter',sans-serif}.font-mono{font-family:'Courier New',monospace}
+.object-contain{object-fit:contain}.object-cover{object-fit:cover}.filter{filter:var(--tw-filter)}.grayscale-\[15%\]{filter:grayscale(15%)}.grayscale-\[40%\]{filter:grayscale(40%)}.grayscale-\[5%\]{filter:grayscale(5%)}.contrast-110{filter:contrast(1.1)}.contrast-105{filter:contrast(1.05)}
+.drop-shadow-2xl{filter:drop-shadow(0 20px 13px rgba(0,0,0,0.3))}
+.backdrop-blur-sm{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.rounded{border-radius:0.375rem}.rounded-sm{border-radius:2px}.rounded-full{border-radius:9999px}
+.transition-all{transition:all 0.3s ease}.transition-colors{transition:color 0.3s ease,background-color 0.3s ease,border-color 0.3s ease}.transition-transform{transition:transform 0.3s ease}.transition-opacity{transition:opacity 0.3s ease}
+.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}
+.ease-out{transition-timing-function:cubic-bezier(0.16,1,0.3,1)}
+.hover\:bg-stone-300:hover{background-color:#d1c5b3}.hover\:bg-stone-100:hover{background-color:#e8e2d8}.hover\:text-stone-100:hover{color:#e8e2d8}.hover\:text-stone-300:hover{color:#b4a18e}.group:hover .group-hover\:translate-x-1{transform:translateX(0.25rem)}
+.aspect-\[16\/10\]{aspect-ratio:16/10}.aspect-\[3\/4\]{aspect-ratio:3/4}.aspect-\[4\/3\]{aspect-ratio:4/3}.aspect-square{aspect-ratio:1/1}.aspect-\[16\/9\]{aspect-ratio:16/9}.aspect-\[4\/5\]{aspect-ratio:4/5}.aspect-\[21\/9\]{aspect-ratio:21/9}
+
+/* LANGUAGE TOGGLE */
+body[data-lang="en"] .lang-vi{display:none!important}
+body[data-lang="en"] .lang-en{display:inline!important}
+body[data-lang="vi"] .lang-vi{display:inline!important}
+body[data-lang="vi"] .lang-en{display:none!important}
+
+/* NAV LINKS — fix spacing */
+.header-fixed{position:fixed;top:0;left:0;right:0;z-index:50;transition:all 0.5s ease;background-color:rgba(10,10,10,0.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);height:72px;display:flex;align-items:center}
+.header-scrolled{background-color:rgba(10,10,10,0.95);backdrop-filter:blur(10px)}
+.nav-link{font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#9a836e;text-decoration:none;transition:color 0.3s ease;padding:0 0.5rem}
+.nav-link:hover{color:#fafaf9}
+.nav-divider{width:1px;height:4px;background-color:#4a3a33;margin:0 0.25rem}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;padding:1rem 2rem;background-color:#e8e2d8;color:#0a0a0a;font-weight:500;font-size:0.875rem;letter-spacing:0.05em;transition:background-color 0.3s ease;text-decoration:none;cursor:pointer}
+.btn-primary:hover{background-color:#d1c5b3}
+.btn-secondary{display:inline-flex;align-items:center;justify-content:center;padding:1rem 2rem;border:1px solid #4a3a33;color:#d1c5b3;font-weight:500;font-size:0.875rem;letter-spacing:0.05em;transition:all 0.3s ease;text-decoration:none;cursor:pointer;background:transparent}
+.btn-secondary:hover{background-color:#4a3a33}
+
+/* PRODUCT CARDS — consistent spacing */
+.product-card{display:flex;flex-direction:column;gap:1rem;transition:all 0.3s ease}
+@media(min-width:768px){
+.product-card{gap:1.5rem}
 }
-@media (min-width: 1024px) { .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); } }
-@media (min-width: 640px) { .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-.header-fixed { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transition: all 0.5s ease; }
-.header-scrolled { background-color: rgba(10,10,10,0.95); backdrop-filter: blur(10px); }
-.nav-link { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #9a836e; text-decoration: none; transition: color 0.3s ease; }
-.nav-link:hover { color: #fafaf9; }
-.btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; background-color: #e8e2d8; color: #0a0a0a; font-weight: 500; font-size: 0.875rem; letter-spacing: 0.05em; transition: background-color 0.3s ease; text-decoration: none; cursor: pointer; }
-.btn-primary:hover { background-color: #d1c5b3; }
-.btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; border: 1px solid #4a3a33; color: #d1c5b3; font-weight: 500; font-size: 0.875rem; letter-spacing: 0.05em; transition: all 0.3s ease; text-decoration: none; cursor: pointer; background: transparent; }
-.btn-secondary:hover { background-color: #4a3a33; }
-.tech-label-corner { position: absolute; font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.2em; padding: 0.25rem 0.5rem; background-color: rgba(10,10,10,0.9); backdrop-filter: blur(8px); color: #9a836e; border: 1px solid rgba(90,70,60,0.5); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); font-family: 'Courier New', monospace; z-index: 20; pointer-events: none; white-space: nowrap; }
-.tech-label-tl { top: 0.5rem; left: 0.5rem; } .tech-label-br { bottom: 0.5rem; right: 0.5rem; }
-.product-frame-border { position: absolute; inset: -4px; border: 1px solid rgba(90,70,60,0.2); pointer-events: none; }
-.product-corner-bracket { position: absolute; width: 12px; height: 12px; pointer-events: none; }
-.product-corner-tl { top: -1px; left: -1px; border-top: 1px solid rgba(148,130,110,0.3); border-left: 1px solid rgba(148,130,110,0.3); }
-.product-corner-tr { top: -1px; right: -1px; border-top: 1px solid rgba(148,130,110,0.3); border-right: 1px solid rgba(148,130,110,0.3); }
-.product-corner-bl { bottom: -1px; left: -1px; border-bottom: 1px solid rgba(148,130,110,0.3); border-left: 1px solid rgba(148,130,110,0.3); }
-.product-corner-br { bottom: -1px; right: -1px; border-bottom: 1px solid rgba(148,130,110,0.3); border-right: 1px solid rgba(148,130,110,0.3); }
-.product-cross-line { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0.1; pointer-events: none; }
-.product-cross-line::before { content: ""; width: 1px; height: 100%; background-color: #6e584a; }
-.section-label { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.625rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #9a836e; }
-.section-label::before { content: ""; display: block; width: 2rem; height: 1px; background-color: #4a3a33; }
-@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes scanLine { 0% { top: 0; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
-@keyframes cornerPulse { 0%,100% { opacity: 0.35; } 50% { opacity: 0.7; } }
-@keyframes floatUp { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
-.animate-spin { animation: spin 1s linear infinite; }
-.animate-fade-in { animation: fadeIn 0.8s ease-out; }
-.animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
-.animate-scan { animation: scanLine 4s linear infinite; }
-.animate-corner { animation: cornerPulse 3.5s ease-in-out infinite; }
-.animate-float { animation: floatUp 4s ease-in-out infinite; }
-.scan-line { position: absolute; left: 0; right: 0; height: 1px; background-color: rgba(148,130,110,0.2); z-index: 30; animation: scanLine 4s linear infinite; }
-.mobile-menu-overlay { position: fixed; inset: 0; z-index: 60; background-color: #0a0a0a; display: flex; flex-direction: column; padding: 1.5rem; }
-.lang-toggle { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; }
-.lang-btn { cursor: pointer; color: #9a836e; transition: color 0.2s ease; background: none; border: none; padding: 0; font-size: inherit; font-family: inherit; }
-.lang-btn:hover { color: #fafaf9; } .lang-btn-active { color: #fafaf9; }
-.lang-separator { color: #4a3a33; }
-.hero-section { min-height: 100svh; background-color: #0a0a0a; padding-top: 72px; padding-bottom: 4rem; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
-.launcher-section { position: relative; padding-top: 6rem; padding-bottom: 8rem; background-color: #050505; overflow: hidden; }
-.cta-section { position: relative; padding-top: 6rem; padding-bottom: 8rem; background-color: #0a0a0a; border-top: 1px solid rgba(90,70,60,0.3); overflow: hidden; }
-.footer-section { padding-top: 2rem; padding-bottom: 2rem; background-color: #0a0a0a; border-top: 1px solid rgba(90,70,60,0.3); }
-::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #0a0a0a; } ::-webkit-scrollbar-thumb { background: #4a3a33; } ::-webkit-scrollbar-thumb:hover { background: #5a463c; }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } html { scroll-behavior: auto; } }
+.product-card .product-image-wrap{position:relative;margin-bottom:1rem}
+@media(min-width:768px){
+.product-card .product-image-wrap{margin-bottom:1.5rem}
+}
+.product-card .product-info{display:flex;flex-direction:column;gap:0.5rem}
+
+.tech-label-corner{position:absolute;font-size:0.625rem;text-transform:uppercase;letter-spacing:0.2em;padding:0.25rem 0.5rem;background-color:rgba(10,10,10,0.9);backdrop-filter:blur(8px);color:#9a836e;border:1px solid rgba(90,70,60,0.5);box-shadow:0 10px 15px -3px rgba(0,0,0,0.1);font-family:'Courier New',monospace;z-index:20;pointer-events:none;white-space:nowrap}
+.tech-label-tl{top:0.5rem;left:0.5rem}.tech-label-br{bottom:0.5rem;right:0.5rem}
+.product-frame-border{position:absolute;inset:-4px;border:1px solid rgba(90,70,60,0.2);pointer-events:none}
+.product-corner-bracket{position:absolute;width:12px;height:12px;pointer-events:none}
+.product-corner-tl{top:-1px;left:-1px;border-top:1px solid rgba(148,130,110,0.3);border-left:1px solid rgba(148,130,110,0.3)}
+.product-corner-tr{top:-1px;right:-1px;border-top:1px solid rgba(148,130,110,0.3);border-right:1px solid rgba(148,130,110,0.3)}
+.product-corner-bl{bottom:-1px;left:-1px;border-bottom:1px solid rgba(148,130,110,0.3);border-left:1px solid rgba(148,130,110,0.3)}
+.product-corner-br{bottom:-1px;right:-1px;border-bottom:1px solid rgba(148,130,110,0.3);border-right:1px solid rgba(148,130,110,0.3)}
+.product-cross-line{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.1;pointer-events:none}
+.product-cross-line::before{content:"";width:1px;height:100%;background-color:#6e584a}
+.section-label{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.625rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#9a836e}
+.section-label::before{content:"";display:block;width:2rem;height:1px;background-color:#4a3a33}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scanLine{0%{top:0;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:100%;opacity:0}}
+@keyframes cornerPulse{0%,100%{opacity:0.35}50%{opacity:0.7}}
+@keyframes floatUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.animate-spin{animation:spin 1s linear infinite}
+.animate-fade-in{animation:fadeIn 0.8s ease-out}
+.animate-fade-in-up{animation:fadeInUp 0.6s ease-out}
+.animate-scan{animation:scanLine 4s linear infinite}
+.animate-corner{animation:cornerPulse 3.5s ease-in-out infinite}
+.animate-float{animation:floatUp 4s ease-in-out infinite}
+.scan-line{position:absolute;left:0;right:0;height:1px;background-color:rgba(148,130,110,0.2);z-index:30;animation:scanLine 4s linear infinite}
+.mobile-menu-overlay{position:fixed;inset:0;z-index:60;background-color:#0a0a0a;display:flex;flex-direction:column;padding:1.5rem}
+#mobile-menu.hidden{display:none}
+.lang-toggle{display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;font-weight:600;letter-spacing:0.15em}
+.lang-btn{cursor:pointer;color:#9a836e;transition:color 0.2s ease;background:none;border:none;padding:0;font-size:inherit;font-family:inherit}
+.lang-btn:hover{color:#fafaf9}.lang-btn-active{color:#fafaf9}
+.lang-separator{color:#4a3a33}
+.hero-section{min-height:100svh;background-color:#0a0a0a;padding-top:72px;padding-bottom:4rem;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.launcher-section{position:relative;padding-top:6rem;padding-bottom:8rem;background-color:#050505;overflow:hidden}
+.footer-section{padding-top:2rem;padding-bottom:2rem;background-color:#0a0a0a;border-top:1px solid rgba(90,70,60,0.3)}
+.facebook-btn{display:inline-flex;align-items:center;justify-content:center;padding:0.75rem 1.5rem;background-color:#1877F2;color:#fff;font-weight:500;font-size:0.875rem;letter-spacing:0.05em;text-decoration:none;transition:background-color 0.3s ease;border-radius:0.375rem;cursor:pointer}
+.facebook-btn:hover{background-color:#166fe5}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#0a0a0a}::-webkit-scrollbar-thumb{background:#4a3a33}::-webkit-scrollbar-thumb:hover{background:#5a463c}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}html{scroll-behavior:auto}}
 
 ]]></b:skin>
 </head>
-<body>
+<body data-lang="vi">
+
 <b:section id='header' showaddelement='no'>
 <b:widget id='Header1' locked='false' title='Mixed Technology' type='Header' renderable='true'>
   <b:includable id='main'>
     <div class='widget-content'>
 <!-- HEADER -->
 <header id="header" class="header-fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-  <div class="mx-auto max-w-[90rem] px-4 md:px-8 flex items-center justify-between">
+  <div class="mx-auto max-w-[90rem] px-4 md:px-8 flex items-center justify-between w-full">
     <a href="#" class="text-sm font-semibold tracking-widest text-stone-100 uppercase">Mixed Tech.</a>
-    <nav class="hidden md:flex items-center gap-8">
-      <a href="#work" class="nav-link">Dự án</a>
-      <a href="#launcher" class="nav-link">9Flip</a>
-      <a href="#story" class="nav-link">Giới thiệu</a>
-      <a href="https://www.facebook.com/profile.php?id=61590708082215" class="nav-link" target="_blank" rel="noopener noreferrer">Liên hệ</a>
+    <nav class="hidden md:flex items-center gap-3">
+      <a href="#work" class="nav-link lang-vi">Dự án</a><a href="#launcher" class="nav-link lang-vi">9Flip</a><div class="nav-divider"></div><a href="#about" class="nav-link lang-vi">Giới thiệu</a><a href="#contact" class="nav-link lang-vi">Liên hệ</a>
+      <a href="#work" class="nav-link lang-en" style="display:none">Projects</a><a href="#launcher" class="nav-link lang-en" style="display:none">9Flip</a><div class="nav-divider"></div><a href="#about" class="nav-link lang-en" style="display:none">About</a><a href="#contact" class="nav-link lang-en" style="display:none">Contact</a>
       <div class="w-px h-4 bg-stone-800"></div>
       <div class="lang-toggle">
         <button onclick="setLang('vi')" id="lang-vi" class="lang-btn lang-btn-active">VI</button>
@@ -176,10 +176,10 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-s
     </button>
   </div>
   <nav class="flex flex-col gap-8">
-    <a href="#work" class="text-xl font-medium tracking-wide text-stone-300 hover:text-white uppercase" onclick="toggleMobileMenu()">Dự án</a>
-    <a href="#launcher" class="text-xl font-medium tracking-wide text-stone-300 hover:text-white uppercase" onclick="toggleMobileMenu()">9Flip</a>
-    <a href="#story" class="text-xl font-medium tracking-wide text-stone-300 hover:text-white uppercase" onclick="toggleMobileMenu()">Giới thiệu</a>
-    <a href="https://www.facebook.com/profile.php?id=61590708082215" class="text-xl font-medium tracking-wide text-stone-300 hover:text-white uppercase" onclick="toggleMobileMenu()" target="_blank" rel="noopener noreferrer">Liên hệ</a>
+    <a href="#work" class="text-xl font-medium tracking-wide text-stone-300 hover:text-white uppercase lang-vi">Dự án</a>
+    <a href="#launcher" class="text-xl font-medium tracking-wide text-stone-300 hover:text-white uppercase lang-vi">9Flip</a>
+    <a href="#about" class="text-xl font-medium tracking-wide text-stone-300 hover:text-white uppercase lang-vi">Giới thiệu</a>
+    <a href="#contact" class="text-xl font-medium tracking-wide text-stone-300 hover:text-white uppercase lang-vi">Liên hệ</a>
   </nav>
   <div class="mt-12 pt-12 border-t border-stone-800">
     <div class="lang-toggle">
@@ -193,6 +193,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-s
   </b:includable>
 </b:widget>
 </b:section>
+
 <b:section id='hero' showaddelement='yes'>
 <b:widget id='HTML1' locked='false' title='Hero Section' type='HTML' renderable='true'>
   <b:includable id='main'>
@@ -202,15 +203,15 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-s
   <div class="relative z-20 mx-auto w-full max-w-[90rem] px-4 md:px-8 flex flex-col flex-grow py-8 md:py-12">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center flex-grow">
       <div class="col-span-1 md:col-span-5 flex flex-col order-2 md:order-1 pt-4 md:pt-0">
-        <span class="text-xs md:text-sm font-semibold tracking-widest text-stone-500 mb-4 md:mb-6">MIXED TECHNOLOGY</span>
-        <h1 class="font-medium text-stone-100 leading-[1.2] tracking-tight text-3xl md:text-5xl mb-6 md:mb-8 text-balance min-h-[3em]">Công nghệ được làm lại theo cách thiết thực hơn.</h1>
+        <span class="text-xs md:text-sm font-semibold tracking-widest text-stone-500 mb-4 md:mb-6 lang-vi">MIXED TECHNOLOGY</span><span class="text-xs md:text-sm font-semibold tracking-widest text-stone-500 mb-4 md:mb-6 lang-en" style="display:none">MIXED TECHNOLOGY</span>
+        <h1 class="font-medium text-stone-100 leading-[1.2] tracking-tight text-3xl md:text-5xl mb-6 md:mb-8 text-balance min-h-[3em] lang-vi">Công nghệ được làm lại theo cách thiết thực hơn.</h1><h1 class="font-medium text-stone-100 leading-[1.2] tracking-tight text-3xl md:text-5xl mb-6 md:mb-8 text-balance min-h-[3em] lang-en" style="display:none">Technology re-engineered for practical use.</h1>
         <div class="flex flex-col gap-8 md:gap-12">
-          <p class="text-base md:text-lg text-stone-400 leading-relaxed max-w-md">Phần mềm và những dự án phần cứng độc bản dành cho những người muốn khai thác nhiều hơn từ thiết bị của mình.</p>
-          <a href="#launcher" class="btn-primary">KHÁM PHÁ SẢN PHẨM</a>
+          <p class="text-base md:text-lg text-stone-400 leading-relaxed max-w-md lang-vi">Phần mềm và những dự án phần cứng độc bản dành cho những người muốn khai thác nhiều hơn từ thiết bị của mình.</p><p class="text-base md:text-lg text-stone-400 leading-relaxed max-w-md lang-en" style="display:none">Software solutions and bespoke hardware modifications for those who want more from their devices.</p>
+          <a href="#launcher" class="btn-primary lang-vi">KHÁM PHÁ SẢN PHẨM</a><a href="#launcher" class="btn-primary lang-en" style="display:none">EXPLORE PRODUCTS</a>
         </div>
       </div>
       <div class="col-span-1 md:col-span-7 relative order-1 md:order-2 flex items-center justify-center">
-        <div class="relative w-full max-w-xl mx-auto p-4 md:p-8 flex items-center justify-center">
+        <div class="relative w-full max-w-xl mx-auto p-4 sm:p-6 md:p-8 flex items-center justify-center">
           <div class="absolute inset-0 border border-stone-800/40 bg-stone-900/10 pointer-events-none z-10 overflow-hidden">
             <div class="scan-line"></div>
             <div class="product-corner-bracket product-corner-tl"></div>
@@ -219,8 +220,8 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-s
             <div class="product-corner-bracket product-corner-br"></div>
             <div class="product-cross-line"><div class="w-px h-full bg-stone-600"></div><div class="h-px w-full bg-stone-600 absolute"></div></div>
           </div>
-          <div class="relative w-full z-20" style="aspect-ratio: 3/4;">
-            <img src="/images/hero.jpg" alt="Mixed Technology Product" class="object-contain filter grayscale-[15%] contrast-105 drop-shadow-2xl w-full h-full" style="opacity: 1; transition: opacity 0.8s ease-in-out;" loading="eager"/>
+          <div class="relative w-full z-20" style="aspect-ratio:3/4;">
+            <img src="/images/hero.jpg" alt="Mixed Technology Product" class="object-contain filter grayscale-[15%] contrast-105 drop-shadow-2xl w-full h-full" style="opacity:1;transition:opacity 0.8s ease-in-out;" loading="eager"/>
           </div>
         </div>
       </div>
@@ -231,6 +232,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-s
   </b:includable>
 </b:widget>
 </b:section>
+
 <b:section id='launcher' showaddelement='yes'>
 <b:widget id='HTML2' locked='false' title='9FLIP Launcher' type='HTML' renderable='true'>
   <b:includable id='main'>
@@ -239,28 +241,22 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-s
 <section id="launcher" class="launcher-section">
   <div class="mx-auto max-w-[90rem] px-4 md:px-8">
     <div class="mb-12 md:mb-16 opacity-80">
-      <span class="section-label">PHẦN MỀM NỔI BẬT</span>
+      <span class="section-label lang-vi">PHẦN MỀM NỔI BẬT</span><span class="section-label lang-en" style="display:none">FEATURED SOFTWARE</span>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
       <div class="col-span-1 md:col-span-5 flex flex-col">
-        <h2 class="text-3xl md:text-5xl font-medium text-stone-100 leading-[1.1] tracking-tight mb-6">9 Flip Launcher</h2>
-        <p class="text-base md:text-lg text-stone-400 leading-relaxed mb-8">Mở ứng dụng trên màn hình ngoài Galaxy Z Flip. Phản chiếu linh hoạt, thao tác nhanh chóng và an toàn tuyệt đối.</p>
+        <h2 class="text-3xl md:text-5xl font-medium text-stone-100 leading-[1.1] tracking-tight mb-6 lang-vi">9 Flip Launcher</h2><h2 class="text-3xl md:text-5xl font-medium text-stone-100 leading-[1.1] tracking-tight mb-6 lang-en" style="display:none">9 Flip Launcher</h2>
+        <p class="text-base md:text-lg text-stone-400 leading-relaxed mb-8 lang-vi">Mở ứng dụng trên màn hình ngoài Galaxy Z Flip. Phản chiếu linh hoạt, thao tác nhanh chóng và an toàn tuyệt đối.</p><p class="text-base md:text-lg text-stone-400 leading-relaxed mb-8 lang-en" style="display:none">Launch apps on your Galaxy Z Flip cover screen. Seamless mirroring, fast operation, and completely safe.</p>
         <div class="flex flex-wrap gap-x-4 gap-y-2 mb-10">
-          <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-stone-500"></div><span class="text-xs font-semibold tracking-wide text-stone-300">NO ROOT</span></div>
-          <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-stone-500"></div><span class="text-xs font-semibold tracking-wide text-stone-300">GOOGLE PLAY</span></div>
-          <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-stone-500"></div><span class="text-xs font-semibold tracking-wide text-stone-300">NO ADS</span></div>
-          <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-stone-500"></div><span class="text-xs font-semibold tracking-wide text-stone-300">NO DATA COLLECTION</span></div>
+          <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-stone-500"></div><span class="text-xs font-semibold tracking-wide text-stone-300 lang-vi">NO ROOT</span><span class="text-xs font-semibold tracking-wide text-stone-300 lang-en" style="display:none">NO ROOT</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-stone-500"></div><span class="text-xs font-semibold tracking-wide text-stone-300 lang-vi">GOOGLE PLAY</span><span class="text-xs font-semibold tracking-wide text-stone-300 lang-en" style="display:none">GOOGLE PLAY</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-stone-500"></div><span class="text-xs font-semibold tracking-wide text-stone-300 lang-vi">NO ADS</span><span class="text-xs font-semibold tracking-wide text-stone-300 lang-en" style="display:none">NO ADS</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-stone-500"></div><span class="text-xs font-semibold tracking-wide text-stone-300 lang-vi">NO DATA COLLECTION</span><span class="text-xs font-semibold tracking-wide text-stone-300 lang-en" style="display:none">NO DATA COLLECTION</span></div>
         </div>
         <div class="flex flex-col gap-6 mb-12">
-          <div class="flex flex-col gap-1"><h3 class="text-sm font-semibold text-stone-200">Không Root Required</h3><p class="text-sm text-stone-400">Giữ nguyên bảo hành, Knox nguyên vẹn.</p></div>
-          <div class="flex flex-col gap-1"><h3 class="text-sm font-semibold text-stone-200">Easy Installation</h3><p class="text-sm text-stone-400">Có sẵn trên Google Play, vài phút là dùng được.</p></div>
-          <div class="flex flex-col gap-1"><h3 class="text-sm font-semibold text-stone-200">Google Account</h3><p class="text-sm text-stone-400">Premium theo tài khoản, lên đời máy vẫn dùng tiếp.</p></div>
-          <div class="flex flex-col gap-1"><h3 class="text-sm font-semibold text-stone-200">Large Community</h3><p class="text-sm text-stone-400">Cộng đồng đông đảo, liên tục cập nhật tính năng mới.</p></div>
+          <div class="flex flex-col gap-1"><h3 class="text-sm font-semibold text-stone-200 lang-vi">Không Root</h3><p class="text-sm text-stone-400 lang-vi">Giữ nguyên bảo hành, Knox nguyên vẹn.</p><h3 class="text-sm font-semibold text-stone-200 lang-en" style="display:none">No Root Required</h3><p class="text-sm text-stone-400 lang-en" style="display:none">Keeps your warranty and Knox intact.</p></div><div class="flex flex-col gap-1"><h3 class="text-sm font-semibold text-stone-200 lang-vi">Dễ cài đặt</h3><p class="text-sm text-stone-400 lang-vi">Có sẵn trên Google Play, vài phút là dùng được.</p><h3 class="text-sm font-semibold text-stone-200 lang-en" style="display:none">Easy Installation</h3><p class="text-sm text-stone-400 lang-en" style="display:none">Available on Google Play, ready in minutes.</p></div><div class="flex flex-col gap-1"><h3 class="text-sm font-semibold text-stone-200 lang-vi">Tài khoản Google</h3><p class="text-sm text-stone-400 lang-vi">Premium theo tài khoản, lên đời máy vẫn dùng tiếp.</p><h3 class="text-sm font-semibold text-stone-200 lang-en" style="display:none">Google Account</h3><p class="text-sm text-stone-400 lang-en" style="display:none">Premium tied to your account, transfers to new devices.</p></div><div class="flex flex-col gap-1"><h3 class="text-sm font-semibold text-stone-200 lang-vi">Cộng đồng lớn</h3><p class="text-sm text-stone-400 lang-vi">Cộng đồng đông đảo, liên tục cập nhật tính năng mới.</p><h3 class="text-sm font-semibold text-stone-200 lang-en" style="display:none">Large Community</h3><p class="text-sm text-stone-400 lang-en" style="display:none">Active community and continuous updates.</p></div>
         </div>
-        <a href="https://play.google.com/store/search?q=9+flip+launcher&amp;c=apps&amp;hl=vi" target="_blank" rel="noopener noreferrer" class="btn-primary">TẢI TRÊN GOOGLE PLAY</a>
+        <a href="https://play.google.com/store/search?q=9+flip+launcher&amp;c=apps&amp;hl=vi" target="_blank" rel="noopener noreferrer" class="btn-primary lang-vi">TẢI TRÊN GOOGLE PLAY</a><a href="https://play.google.com/store/search?q=9+flip+launcher&amp;c=apps&amp;hl=en" target="_blank" rel="noopener noreferrer" class="btn-primary lang-en" style="display:none">GET IT ON GOOGLE PLAY</a>
       </div>
       <div class="col-span-1 md:col-span-7 relative flex items-center justify-center mt-8 md:mt-0">
-        <div class="relative w-full max-w-lg flex items-center justify-center p-4 md:p-8" style="aspect-ratio: 3/4;">
+        <div class="relative w-full max-w-lg mx-auto flex items-center justify-center p-4 sm:p-6 md:p-8" style="aspect-ratio:3/4;">
           <div class="absolute inset-0 border border-stone-800/40 bg-stone-900/20 backdrop-blur-sm z-10 flex items-center justify-center">
             <div class="product-corner-bracket product-corner-tl"></div>
             <div class="product-corner-bracket product-corner-tr"></div>
@@ -268,7 +264,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-s
             <div class="product-corner-bracket product-corner-br"></div>
           </div>
           <div class="absolute inset-8 md:inset-12 z-20">
-            <img src="/images/launcher-mockup.jpg" alt="9Flip Launcher Interface" class="object-contain drop-shadow-2xl w-full h-full" style="opacity: 1; transition: opacity 0.8s ease-in-out;" loading="lazy"/>
+            <img src="/images/launcher-mockup.jpg" alt="9Flip Launcher Interface" class="object-contain drop-shadow-2xl w-full h-full" style="opacity:1;transition:opacity 0.8s ease-in-out;" loading="lazy"/>
           </div>
         </div>
       </div>
@@ -279,6 +275,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-s
   </b:includable>
 </b:widget>
 </b:section>
+
 <b:section id='work' showaddelement='yes'>
 <b:widget id='HTML3' locked='false' title='Sản Phẩm' type='HTML' renderable='true'>
   <b:includable id='main'>
@@ -287,53 +284,129 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-s
 <section id="work" class="relative py-24 md:py-32 bg-[#0a0a0a] overflow-hidden">
   <div class="mx-auto max-w-[90rem] px-4 md:px-8">
     <div class="mb-16 md:mb-24 opacity-60">
-      <span class="section-label">DỰ ÁN PHẦN CỨNG</span>
+      <span class="section-label lang-vi">DỰ ÁN PHẦN CỨNG</span><span class="section-label lang-en" style="display:none">HARDWARE PROJECTS</span>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-x-4 md:gap-x-12 gap-y-16 md:gap-y-32">
-      <div class="product-card group col-span-1 sm:col-span-2 md:col-span-7 md:col-start-1">
-        <div class="relative mb-6 md:mb-8">
-          <div class="overflow-hidden bg-[#0f0f0f] border border-white/5 aspect-[16/10]"><img src="/images/product-1.jpg" alt="Z Flip 5 x BlackBerry" class="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0 w-full h-full" loading="lazy"/></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-16 md:gap-y-20">
+
+      <div class="product-card group">
+        <div class="relative">
+          <div class="overflow-hidden bg-[#0f0f0f] border border-white/5 aspect-[4/3]"><img src="/images/product-1.jpg" alt="Z Flip 5 x BlackBerry 9981/9983" class="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0 w-full h-full" loading="lazy"/></div>
           <div class="product-frame-border"></div>
           <div class="product-corner-bracket product-corner-tl"></div><div class="product-corner-bracket product-corner-tr"></div><div class="product-corner-bracket product-corner-bl"></div><div class="product-corner-bracket product-corner-br"></div>
           <div class="product-cross-line"><div class="w-px h-full bg-stone-600"></div></div>
-          <span class="tech-label-corner tech-label-tl">BÀN PHÍM: VẬT LÝ</span><span class="tech-label-corner tech-label-br">KHUNG: THÉP KHÔNG GỈ</span>
+          <span class="tech-label-corner tech-label-tl lang-vi">Bàn phím: Vật lý</span><span class="tech-label-corner tech-label-br lang-vi">Khung: Thép không gỉ</span>
         </div>
-        <div class="flex flex-col gap-2"><span class="text-[10px] tracking-widest text-stone-500 opacity-70">DA.01</span><h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl">Z Flip 5 x BlackBerry 9981/9983</h3><p class="text-sm font-light text-stone-400 leading-relaxed">Di sản Porsche Design gặp gỡ smartphone gập hiện đại.</p><div class="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">XEM CHI TIẾT<span class="transform transition-transform duration-500 md:group-hover/cta:translate-x-1">&#8594;</span></div></div>
+        <div class="flex flex-col gap-2">
+          <span class="text-[10px] tracking-widest text-stone-500 opacity-70">DA.01</span>
+          <h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl lang-vi">Z Flip 5 x BlackBerry 9981/9983</h3>
+          <h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl lang-en" style="display:none">Z Flip 5 x BlackBerry 9981/9983</h3>
+          <p class="text-sm font-light text-stone-400 leading-relaxed lang-vi">Di sản Porsche Design gặp gỡ smartphone gập hiện đại, sang trọng và nhỏ gọn.</p>
+          <p class="text-sm font-light text-stone-400 leading-relaxed lang-en" style="display:none">Porsche Design legacy meets modern foldable smartphone. Elegant and compact.</p>
+          <div class="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">
+            <span class="lang-vi">Xem chi tiết</span><span class="lang-en" style="display:none">View details</span>
+            <span class="transform transition-transform duration-500 md:group-hover/cta:translate-x-1">&#8594;</span>
+          </div>
+        </div>
       </div>
-      <div class="product-card group col-span-1 md:col-span-4 md:col-start-9 md:mt-16">
-        <div class="relative mb-6 md:mb-8"><div class="overflow-hidden bg-[#0f0f0f] border border-white/5 aspect-[3/4]"><img src="/images/product-2.jpg" alt="Z Flip 5 mod mỏng" class="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0 w-full h-full" loading="lazy"/></div>
-        <div class="product-frame-border"></div><div class="product-corner-bracket product-corner-tl"></div><div class="product-corner-bracket product-corner-tr"></div><div class="product-corner-bracket product-corner-bl"></div><div class="product-corner-bracket product-corner-br"></div>
-        <div class="product-cross-line"><div class="w-px h-full bg-stone-600"></div></div>
-        <span class="tech-label-corner tech-label-tl">ĐỘ DÀI: GIẢM 2MM</span><span class="tech-label-corner tech-label-br">MẶT LƯỢNG: SỢI CARBON</span></div>
-        <div class="flex flex-col gap-2"><span class="text-[10px] tracking-widest text-stone-500 opacity-70">DA.02</span><h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl">Z Flip 5 mod mỏng</h3><p class="text-sm font-light text-stone-400 leading-relaxed">Không phải sản phẩm cho số đông, mà là lựa chọn của người có gu.</p><div class="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">XEM CHI TIẾT<span class="transform transition-transform duration-500 md:group-hover/cta:translate-x-1">&#8594;</span></div></div>
+      <div class="product-card group">
+        <div class="relative">
+          <div class="overflow-hidden bg-[#0f0f0f] border border-white/5 aspect-[4/3]"><img src="/images/product-2.jpg" alt="Z Flip 5 mod mỏng" class="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0 w-full h-full" loading="lazy"/></div>
+          <div class="product-frame-border"></div>
+          <div class="product-corner-bracket product-corner-tl"></div><div class="product-corner-bracket product-corner-tr"></div><div class="product-corner-bracket product-corner-bl"></div><div class="product-corner-bracket product-corner-br"></div>
+          <div class="product-cross-line"><div class="w-px h-full bg-stone-600"></div></div>
+          <span class="tech-label-corner tech-label-tl lang-vi">Độ dày: Giảm 2mm</span><span class="tech-label-corner tech-label-br lang-vi">Mặt lưng: Sợi Carbon</span>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-[10px] tracking-widest text-stone-500 opacity-70">DA.02</span>
+          <h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl lang-vi">Z Flip 5 mod mỏng</h3>
+          <h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl lang-en" style="display:none">Z Flip 5 Ultra Thin Mod</h3>
+          <p class="text-sm font-light text-stone-400 leading-relaxed lang-vi">Không phải sản phẩm cho số đông, mà là lựa chọn của người có gu.</p>
+          <p class="text-sm font-light text-stone-400 leading-relaxed lang-en" style="display:none">Not for the masses. A choice for those with distinct taste.</p>
+          <div class="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">
+            <span class="lang-vi">Xem chi tiết</span><span class="lang-en" style="display:none">View details</span>
+            <span class="transform transition-transform duration-500 md:group-hover/cta:translate-x-1">&#8594;</span>
+          </div>
+        </div>
       </div>
-      <div class="product-card group col-span-1 md:col-span-4 md:col-start-2">
-        <div class="relative mb-6 md:mb-8"><div class="overflow-hidden bg-[#0f0f0f] border border-white/5 aspect-[4/3]"><img src="/images/product-3.jpg" alt="Z Fold 2 CNC đỏ" class="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0 w-full h-full" loading="lazy"/></div>
-        <div class="product-frame-border"></div><div class="product-corner-bracket product-corner-tl"></div><div class="product-corner-bracket product-corner-tr"></div><div class="product-corner-bracket product-corner-bl"></div><div class="product-corner-bracket product-corner-br"></div>
-        <div class="product-cross-line"><div class="w-px h-full bg-stone-600"></div></div>
-        <span class="tech-label-corner tech-label-tl">CHẤT LIỆU: NHÔM NGUYÊN KHỐI</span><span class="tech-label-corner tech-label-br">GIA CÔNG: CNC CHÍNH XÁC</span></div>
-        <div class="flex flex-col gap-2"><span class="text-[10px] tracking-widest text-stone-500 opacity-70">DA.03</span><h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl">Z Fold 2 CNC đỏ mod thanh</h3><p class="text-sm font-light text-stone-400 leading-relaxed">Gia công CNC không chỉ để nổi bật, mà để chắc chắn.</p><div class="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">XEM CHI TIẾT<span class="transform transition-transform duration-500 md:group-hover/cta:translate-x-1">&#8594;</span></div></div>
+      <div class="product-card group">
+        <div class="relative">
+          <div class="overflow-hidden bg-[#0f0f0f] border border-white/5 aspect-[4/3]"><img src="/images/product-3.jpg" alt="Z Fold 2 CNC đỏ mod thanh" class="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0 w-full h-full" loading="lazy"/></div>
+          <div class="product-frame-border"></div>
+          <div class="product-corner-bracket product-corner-tl"></div><div class="product-corner-bracket product-corner-tr"></div><div class="product-corner-bracket product-corner-bl"></div><div class="product-corner-bracket product-corner-br"></div>
+          <div class="product-cross-line"><div class="w-px h-full bg-stone-600"></div></div>
+          <span class="tech-label-corner tech-label-tl lang-vi">Chất liệu: Nhôm nguyên khối</span><span class="tech-label-corner tech-label-br lang-vi">Gia công: CNC chính xác</span>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-[10px] tracking-widest text-stone-500 opacity-70">DA.03</span>
+          <h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl lang-vi">Z Fold 2 CNC đỏ mod thanh</h3>
+          <h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl lang-en" style="display:none">Z Fold 2 CNC Red Mod</h3>
+          <p class="text-sm font-light text-stone-400 leading-relaxed lang-vi">Gia công CNC không chỉ để nổi bật, mà để chắc chắn trên từng milimet.</p>
+          <p class="text-sm font-light text-stone-400 leading-relaxed lang-en" style="display:none">CNC machined not just to stand out, but for millimeter-perfect rigidity.</p>
+          <div class="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">
+            <span class="lang-vi">Xem chi tiết</span><span class="lang-en" style="display:none">View details</span>
+            <span class="transform transition-transform duration-500 md:group-hover/cta:translate-x-1">&#8594;</span>
+          </div>
+        </div>
       </div>
-      <div class="product-card group col-span-1 md:col-span-5 md:col-start-7 md:-mt-24">
-        <div class="relative mb-6 md:mb-8"><div class="overflow-hidden bg-[#0f0f0f] border border-white/5 aspect-square"><img src="/images/product-4.jpg" alt="Z Fold 1 mod mini gaming" class="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0 w-full h-full" loading="lazy"/></div>
-        <div class="product-frame-border"></div><div class="product-corner-bracket product-corner-tl"></div><div class="product-corner-bracket product-corner-tr"></div><div class="product-corner-bracket product-corner-bl"></div><div class="product-corner-bracket product-corner-br"></div>
-        <div class="product-cross-line"><div class="w-px h-full bg-stone-600"></div></div>
-        <span class="tech-label-corner tech-label-tl">TẢN NHIỆT: NÂNG CẤP ĐỒNG</span><span class="tech-label-corner tech-label-br">MÀN HÌNH: 120HZ MOD</span></div>
-        <div class="flex flex-col gap-2"><span class="text-[10px] tracking-widest text-stone-500 opacity-70">DA.04</span><h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl">Z Fold 1 mod mini gaming</h3><p class="text-sm font-light text-stone-400 leading-relaxed">Tối ưu cảm giác cầm và tản nhiệt cho game dài.</p><div class="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">XEM CHI TIẾT<span class="transform transition-transform duration-500 md:group-hover/cta:translate-x-1">&#8594;</span></div></div>
+      <div class="product-card group">
+        <div class="relative">
+          <div class="overflow-hidden bg-[#0f0f0f] border border-white/5 aspect-[4/3]"><img src="/images/product-4.jpg" alt="Z Fold 1 mod mini gaming" class="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0 w-full h-full" loading="lazy"/></div>
+          <div class="product-frame-border"></div>
+          <div class="product-corner-bracket product-corner-tl"></div><div class="product-corner-bracket product-corner-tr"></div><div class="product-corner-bracket product-corner-bl"></div><div class="product-corner-bracket product-corner-br"></div>
+          <div class="product-cross-line"><div class="w-px h-full bg-stone-600"></div></div>
+          <span class="tech-label-corner tech-label-tl lang-vi">Tản nhiệt: Nâng cấp đồng</span><span class="tech-label-corner tech-label-br lang-vi">Màn hình: 120Hz mod</span>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-[10px] tracking-widest text-stone-500 opacity-70">DA.04</span>
+          <h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl lang-vi">Z Fold 1 mod mini gaming</h3>
+          <h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl lang-en" style="display:none">Z Fold 1 Mini Gaming Mod</h3>
+          <p class="text-sm font-light text-stone-400 leading-relaxed lang-vi">Tối ưu cảm giác cầm và tản nhiệt cho những giờ chơi game dài.</p>
+          <p class="text-sm font-light text-stone-400 leading-relaxed lang-en" style="display:none">Optimized ergonomics and thermals for extended gaming sessions.</p>
+          <div class="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">
+            <span class="lang-vi">Xem chi tiết</span><span class="lang-en" style="display:none">View details</span>
+            <span class="transform transition-transform duration-500 md:group-hover/cta:translate-x-1">&#8594;</span>
+          </div>
+        </div>
       </div>
-      <div class="product-card group col-span-1 md:col-span-6 md:col-start-1">
-        <div class="relative mb-6 md:mb-8"><div class="overflow-hidden bg-[#0f0f0f] border border-white/5 aspect-[16/9]"><img src="/images/product-5.jpg" alt="iPhone SE 3" class="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0 w-full h-full" loading="lazy"/></div>
-        <div class="product-frame-border"></div><div class="product-corner-bracket product-corner-tl"></div><div class="product-corner-bracket product-corner-tr"></div><div class="product-corner-bracket product-corner-bl"></div><div class="product-corner-bracket product-corner-br"></div>
-        <div class="product-cross-line"><div class="w-px h-full bg-stone-600"></div></div>
-        <span class="tech-label-corner tech-label-tl">PIN: TĂNG DUNG LƯỢNG</span><span class="tech-label-corner tech-label-br">CỔNG: TYPE-C</span></div>
-        <div class="flex flex-col gap-2"><span class="text-[10px] tracking-widest text-stone-500 opacity-70">DA.05</span><h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl">iPhone SE 3 độ</h3><p class="text-sm font-light text-stone-400 leading-relaxed">Ngoại hình nhỏ gọn nhưng phần cứng được nâng cấp.</p><div class="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">XEM CHI TIẾT<span class="transform transition-transform duration-500 md:group-hover/cta:translate-x-1">&#8594;</span></div></div>
+      <div class="product-card group">
+        <div class="relative">
+          <div class="overflow-hidden bg-[#0f0f0f] border border-white/5 aspect-[4/3]"><img src="/images/product-5.jpg" alt="iPhone SE 3 độ" class="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0 w-full h-full" loading="lazy"/></div>
+          <div class="product-frame-border"></div>
+          <div class="product-corner-bracket product-corner-tl"></div><div class="product-corner-bracket product-corner-tr"></div><div class="product-corner-bracket product-corner-bl"></div><div class="product-corner-bracket product-corner-br"></div>
+          <div class="product-cross-line"><div class="w-px h-full bg-stone-600"></div></div>
+          <span class="tech-label-corner tech-label-tl lang-vi">Pin: Tăng dung lượng</span><span class="tech-label-corner tech-label-br lang-vi">Cổng kết nối: Type-C</span>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-[10px] tracking-widest text-stone-500 opacity-70">DA.05</span>
+          <h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl lang-vi">iPhone SE 3 độ</h3>
+          <h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl lang-en" style="display:none">iPhone SE 3 Custom</h3>
+          <p class="text-sm font-light text-stone-400 leading-relaxed lang-vi">Ngoại hình nhỏ gọn nhưng phần cứng được nâng cấp cho nhu cầu hiện nay.</p>
+          <p class="text-sm font-light text-stone-400 leading-relaxed lang-en" style="display:none">Compact footprint with upgraded hardware for modern demands.</p>
+          <div class="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">
+            <span class="lang-vi">Xem chi tiết</span><span class="lang-en" style="display:none">View details</span>
+            <span class="transform transition-transform duration-500 md:group-hover/cta:translate-x-1">&#8594;</span>
+          </div>
+        </div>
       </div>
-      <div class="product-card group col-span-1 md:col-span-4 md:col-start-8 md:-mt-8">
-        <div class="relative mb-6 md:mb-8"><div class="overflow-hidden bg-[#0f0f0f] border border-white/5 aspect-[4/5]"><img src="/images/product-6.jpg" alt="Oppo Find N2" class="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0 w-full h-full" loading="lazy"/></div>
-        <div class="product-frame-border"></div><div class="product-corner-bracket product-corner-tl"></div><div class="product-corner-bracket product-corner-tr"></div><div class="product-corner-bracket product-corner-bl"></div><div class="product-corner-bracket product-corner-br"></div>
-        <div class="product-cross-line"><div class="w-px h-full bg-stone-600"></div></div>
-        <span class="tech-label-corner tech-label-tl">BẢN LỀ: TÙY CHỈNH</span><span class="tech-label-corner tech-label-br">TRỌNG LƯỢNG: TỐI ƯU</span></div>
-        <div class="flex flex-col gap-2"><span class="text-[10px] tracking-widest text-stone-500 opacity-70">DA.06</span><h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl">Oppo Find N2 độ Oppo Pad Mini</h3><p class="text-sm font-light text-stone-400 leading-relaxed">Trải nghiệm gập mở theo một góc nhìn hoàn toàn khác.</p><div class="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">XEM CHI TIẾT<span class="transform transition-transform duration-500 md:group-hover/cta:translate-x-1">&#8594;</span></div></div>
+      <div class="product-card group">
+        <div class="relative">
+          <div class="overflow-hidden bg-[#0f0f0f] border border-white/5 aspect-[4/3]"><img src="/images/product-6.jpg" alt="Oppo Find N2 độ Oppo Pad Mini" class="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-[1.015] filter grayscale-[15%] group-hover:grayscale-0 w-full h-full" loading="lazy"/></div>
+          <div class="product-frame-border"></div>
+          <div class="product-corner-bracket product-corner-tl"></div><div class="product-corner-bracket product-corner-tr"></div><div class="product-corner-bracket product-corner-bl"></div><div class="product-corner-bracket product-corner-br"></div>
+          <div class="product-cross-line"><div class="w-px h-full bg-stone-600"></div></div>
+          <span class="tech-label-corner tech-label-tl lang-vi">Bản lề: Tùy chỉnh</span><span class="tech-label-corner tech-label-br lang-vi">Trọng lượng: Tối ưu</span>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-[10px] tracking-widest text-stone-500 opacity-70">DA.06</span>
+          <h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl lang-vi">Oppo Find N2 độ Oppo Pad Mini</h3>
+          <h3 class="font-light text-stone-100 tracking-tight leading-snug text-lg md:text-xl lang-en" style="display:none">Oppo Find N2 to Pad Mini</h3>
+          <p class="text-sm font-light text-stone-400 leading-relaxed lang-vi">Trải nghiệm gập mở theo một góc nhìn hoàn toàn khác.</p>
+          <p class="text-sm font-light text-stone-400 leading-relaxed lang-en" style="display:none">Experience the foldable from a completely different perspective.</p>
+          <div class="flex items-center gap-2 group/cta cursor-pointer text-[11px] uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors duration-500 w-max mt-2">
+            <span class="lang-vi">Xem chi tiết</span><span class="lang-en" style="display:none">View details</span>
+            <span class="transform transition-transform duration-500 md:group-hover/cta:translate-x-1">&#8594;</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -342,24 +415,35 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-s
   </b:includable>
 </b:widget>
 </b:section>
+
 <b:section id='brand' showaddelement='yes'>
-<b:widget id='HTML4' locked='false' title='Về Chúng Tôi' type='HTML' renderable='true'>
+<b:widget id='HTML4' locked='false' title='Brand Story' type='HTML' renderable='true'>
   <b:includable id='main'>
     <div class='widget-content'>
 <!-- BRAND STORY -->
-<section id="story" class="relative py-24 md:py-32 bg-[#050505] overflow-hidden">
+<section id="brand" class="relative py-24 md:py-32 bg-[#0a0a0a] overflow-hidden">
   <div class="mx-auto max-w-[90rem] px-4 md:px-8">
-    <div class="mb-16 md:mb-24 opacity-60"><span class="section-label">VỀ MIXED TECHNOLOGY</span></div>
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-20 md:mb-24">
-      <div class="col-span-1 md:col-span-8"><h2 class="text-3xl md:text-4xl font-medium text-stone-100 leading-[1.3] tracking-tight text-balance">Mỗi dự án đều bắt đầu từ rất nhiều bản phác thảo trước khi có một sản phẩm hoàn chỉnh. Chúng tôi tin rằng công nghệ hoàn mỹ nhất là công nghệ mang lại sự tự do và tiện lợi tối đa cho người dùng.</h2></div>
-      <div class="col-span-1 md:col-span-4 flex items-end pb-2"><p class="text-base text-stone-400 leading-relaxed text-balance">Tại Mixed Technology, chúng tôi không chỉ tạo ra sản phẩm, chúng tôi kiến tạo trải nghiệm. Từ phần mềm tối ưu cho thiết bị di động đến từng tác phẩm độ máy thủ công tỉ mỉ, mỗi chi tiết đều được chăm chút đến hoàn thiện.</p></div>
+    <div class="mb-16 md:mb-24 opacity-60">
+      <span class="section-label lang-vi">VỀ MIXED TECHNOLOGY</span><span class="section-label lang-en" style="display:none">ABOUT MIXED TECHNOLOGY</span>
     </div>
-    <div class="relative w-full max-w-6xl mx-auto flex items-center justify-center p-4 md:p-8">
-      <div class="absolute inset-0 border border-stone-800/40 bg-stone-900/10 pointer-events-none z-10">
-        <div class="product-corner-bracket product-corner-tl"></div><div class="product-corner-bracket product-corner-tr"></div><div class="product-corner-bracket product-corner-bl"></div><div class="product-corner-bracket product-corner-br"></div>
-        <div class="product-cross-line"><div class="w-px h-full bg-stone-600"></div><div class="h-px w-full bg-stone-600 absolute"></div></div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
+      <div class="col-span-1 md:col-span-5 relative flex items-center justify-center">
+        <div class="relative w-full" style="aspect-ratio:1;">
+          <div class="absolute inset-0 border border-stone-800/40 bg-stone-900/10 pointer-events-none z-10 overflow-hidden">
+            <div class="product-corner-bracket product-corner-tl"></div>
+            <div class="product-corner-bracket product-corner-tr"></div>
+            <div class="product-corner-bracket product-corner-bl"></div>
+            <div class="product-corner-bracket product-corner-br"></div>
+          </div>
+          <div class="absolute inset-8 md:inset-12 z-20">
+            <img src="/images/story.jpg" alt="Brand Story" class="object-contain drop-shadow-2xl w-full h-full" style="opacity:1;transition:opacity 0.8s ease-in-out;" loading="lazy"/>
+          </div>
+        </div>
       </div>
-      <div class="relative w-full aspect-[4/3] md:aspect-[21/9] z-20"><img src="/images/story.jpg" alt="Mixed Technology Workshop" class="object-cover filter grayscale-[40%] contrast-110 drop-shadow-2xl w-full h-full" loading="lazy"/></div>
+      <div class="col-span-1 md:col-span-7 flex flex-col order-1 md:order-2">
+        <h2 class="text-3xl md:text-5xl font-medium text-stone-100 leading-[1.1] tracking-tight mb-6 lang-vi">Mỗi dự án đều bắt đầu từ rất nhiều bản phác thảo trước khi có một sản phẩm hoàn chỉnh. Chúng tôi tin rằng công nghệ hoàn mỹ nhất là công nghệ mang lại sự tự do và tiện lợi tối đa cho người dùng.</h2><h2 class="text-3xl md:text-5xl font-medium text-stone-100 leading-[1.1] tracking-tight mb-6 lang-en" style="display:none">Every project begins with countless sketches before becoming a finished product. We believe perfect technology brings maximum freedom and convenience to users.</h2>
+        <p class="text-base md:text-lg text-stone-400 leading-relaxed lang-vi">Tại Mixed Technology, chúng tôi không chỉ tạo ra sản phẩm, chúng tôi kiến tạo trải nghiệm. Từ phần mềm tối ưu cho thiết bị di động đến từng tác phẩm độ máy thủ công tỉ mỉ, mỗi chi tiết đều được chăm chút đến hoàn thiện.</p><p class="text-base md:text-lg text-stone-400 leading-relaxed lang-en" style="display:none">At Mixed Technology, we do not just create products; we craft experiences. From optimized software for foldables to meticulously handcrafted hardware, every detail is refined to perfection.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -367,18 +451,21 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-s
   </b:includable>
 </b:widget>
 </b:section>
+
 <b:section id='cta' showaddelement='yes'>
-<b:widget id='HTML5' locked='false' title='Liên Hệ' type='HTML' renderable='true'>
+<b:widget id='HTML5' locked='false' title='CTA Section' type='HTML' renderable='true'>
   <b:includable id='main'>
     <div class='widget-content'>
 <!-- CTA -->
-<section class="relative py-24 md:py-32 bg-[#0a0a0a] border-t border-stone-800/30 overflow-hidden">
-  <div class="mx-auto max-w-4xl px-4 md:px-8 text-center flex flex-col items-center">
-    <h2 class="text-3xl md:text-5xl font-medium text-stone-100 leading-[1.1] tracking-tight mb-6">SẴN SÀNG TRẢI NGHIỆM CÙNG MIXED TECHNOLOGY?</h2>
-    <p class="text-base text-stone-400 max-w-2xl leading-relaxed mb-12">Dù bạn đang tìm kiếm giải pháp phần mềm tối ưu cho thiết bị gập, hay một tác phẩm độ máy độc bản, Mixed Technology luôn sẵn sàng đồng hành cùng bạn.</p>
-    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-      <a href="https://www.facebook.com/profile.php?id=61590708082215" target="_blank" rel="noopener noreferrer" class="btn-primary">NHẮN TIN FANPAGE</a>
-      <a href="https://zalo.me/" target="_blank" rel="noopener noreferrer" class="btn-secondary">KẾT BẠN ZALO</a>
+<section id="cta" class="relative py-24 md:py-32 bg-[#0a0a0a] overflow-hidden">
+  <div class="mx-auto max-w-[90rem] px-4 md:px-8 text-center">
+    <h2 class="text-3xl md:text-5xl font-medium text-stone-100 leading-[1.1] tracking-tight mb-6 lang-vi">SẴN SÀNG TRẢI NGHIỆM CÙNG MIXED TECHNOLOGY?</h2><h2 class="text-3xl md:text-5xl font-medium text-stone-100 leading-[1.1] tracking-tight mb-6 lang-en" style="display:none">READY TO EXPERIENCE MIXED TECHNOLOGY?</h2>
+    <p class="text-base md:text-lg text-stone-400 leading-relaxed max-w-xl mx-auto mb-12 lang-vi">Dù bạn đang tìm kiếm giải pháp phần mềm tối ưu cho thiết bị gập, hay một tác phẩm độ máy độc bản, Mixed Technology luôn sẵn sàng đồng hành cùng bạn.</p><p class="text-base md:text-lg text-stone-400 leading-relaxed max-w-xl mx-auto mb-12 lang-en" style="display:none">Whether you are looking for an optimized software solution or a bespoke hardware modification, Mixed Technology is here to help.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="https://www.facebook.com/profile.php?id=61590708082215" target="_blank" rel="noopener noreferrer" class="facebook-btn lang-vi">NHẮN TIN FANPAGE</a>
+      <a href="https://www.facebook.com/profile.php?id=61590708082215" target="_blank" rel="noopener noreferrer" class="facebook-btn lang-en" style="display:none">NHẮN TIN FANPAGE</a>
+      <a href="https://zalo.me/" target="_blank" rel="noopener noreferrer" class="btn-secondary lang-vi">KẾT BẠN ZALO</a>
+      <a href="https://zalo.me/" target="_blank" rel="noopener noreferrer" class="btn-secondary lang-en" style="display:none">KẾT BẠN ZALO</a>
     </div>
   </div>
 </section>
@@ -386,6 +473,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-s
   </b:includable>
 </b:widget>
 </b:section>
+
 <b:section id='footer' showaddelement='no'>
 <b:widget id='HTML6' locked='false' title='Footer' type='HTML' renderable='true'>
   <b:includable id='main'>
@@ -393,24 +481,47 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Inter', sans-serif; font-weight: 300; letter-s
 <!-- FOOTER -->
 <footer class="footer-section">
   <div class="mx-auto max-w-[90rem] px-4 md:px-8 text-center">
-    <p class="text-xs text-stone-600">© 2026 Mixed Technology. All rights reserved.</p>
+    <p class="text-xs text-stone-600 lang-vi">© 2026 Mixed Technology. All rights reserved.</p>
+    <p class="text-xs text-stone-600 lang-en" style="display:none">© 2026 Mixed Technology. All rights reserved.</p>
   </div>
 </footer>
     </div>
   </b:includable>
 </b:widget>
 </b:section>
+
 <script type="text/javascript"><![CDATA[
 (function() {
-  var viData = {"layout":{"navHeight":"72px","heroHeight":"100svh","baseFontSize":"16px"},"links":{"facebook":"https://www.facebook.com/profile.php?id=61590708082215","zalo":"https://zalo.me/"},"nav":{"projects":"Dự án","launcher":"9Flip","about":"Giới thiệu","contact":"Liên hệ"},"hero":{"headline":"Công nghệ được làm lại theo cách thiết thực hơn.","subheadline":"Phần mềm và những dự án phần cứng độc bản","cta":"KHÁM PHÁ SẢN PHẨM"},"launcher":{"sectionTitle":"PHẦN MỀM NỔI BẬT","title":"9 Flip Launcher","description":"Mở ứng dụng trên màn hình ngoài Galaxy Z Flip.","features":[{"title":"Không Root","desc":"Giữ nguyên bảo hành, Knox nguyên vẹn."},{"title":"Dễ cài đặt","desc":"Có sẵn trên Google Play."},{"title":"Google Account","desc":"Premium theo tài khoản."},{"title":"Large Community","desc":"Cộng đồng đông đảo."}],"cta":"TẢI TRÊN GOOGLE PLAY"},"products":{"sectionTitle":"DỰ ÁN PHẦN CỨNG","viewDetails":"Xem chi tiết"},"brandStory":{"sectionTitle":"VỀ MIXED TECHNOLOGY","title":"Mỗi dự án đều bắt đầu từ rất nhiều bản phác thảo","description":"Tại Mixed Technology, chúng tôi kiến tạo trải nghiệm."},"cta":{"title":"SẴN SÀNG TRẢI NGHIỆM CÙNG MIXED TECHNOLOGY?","description":"Dù bạn đang tìm kiếm giải pháp","ctaFacebook":"NHẮN TIN FANPAGE","ctaZalo":"KẾT BẠN ZALO"},"footer":{"copyright":"Mixed Technology"},"images":{"hero":"/images/hero.jpg","launcher":"/images/launcher-mockup.jpg","story":"/images/story.jpg","products":["/images/product-1.jpg","/images/product-2.jpg","/images/product-3.jpg","/images/product-4.jpg","/images/product-5.jpg","/images/product-6.jpg"]}};
+  var viData = {
+    "layout":{"navHeight":"72px","heroHeight":"100svh","baseFontSize":"16px"},
+    "nav":{"projects":"Dự án","launcher":"9Flip","about":"Giới thiệu","contact":"Liên hệ"},
+    "hero":{"headline":"Công nghệ được làm lại theo cách thiết thực hơn.","subheadline":"Phần mềm và những dự án phần cứng độc bản","cta":"KHÁM PHÁ SẢN PHẨM"},
+    "launcher":{"sectionTitle":"PHẦN MỀM NỔI BẬT","title":"9 Flip Launcher","description":"Mở ứng dụng trên màn hình ngoài Galaxy Z Flip.","trust":["NO ROOT","GOOGLE PLAY","NO ADS","NO DATA COLLECTION"],"features":[{"title":"Không Root","desc":"Giữ nguyên bảo hành, Knox nguyên vẹn."},{"title":"Dễ cài đặt","desc":"Có sẵn trên Google Play."},{"title":"Tài khoản Google","desc":"Premium theo tài khoản."},{"title":"Cộng đồng lớn","desc":"Cộng đồng đông đảo."}],"cta":"TẢI TRÊN GOOGLE PLAY"},
+    "products":{"sectionTitle":"DỰ ÁN PHẦN CỨNG","viewDetails":"Xem chi tiết"},
+    "footer":{"copyright":"Mixed Technology"}
+  };
+  var enData = {
+    "layout":{"navHeight":"72px","heroHeight":"100svh","baseFontSize":"16px"},
+    "nav":{"projects":"Projects","launcher":"9Flip","about":"About","contact":"Contact"},
+    "hero":{"headline":"Technology re-engineered for practical use.","subheadline":"Software solutions and bespoke hardware modifications for those who want more from their devices.","cta":"EXPLORE PRODUCTS"},
+    "launcher":{"sectionTitle":"FEATURED SOFTWARE","title":"9 Flip Launcher","description":"Launch apps on your Galaxy Z Flip cover screen.","trust":["NO ROOT","GOOGLE PLAY","NO ADS","NO DATA COLLECTION"],"features":[{"title":"No Root Required","desc":"Keeps your warranty and Knox intact."},{"title":"Easy Installation","desc":"Available on Google Play, ready in minutes."},{"title":"Google Account","desc":"Premium tied to your account."},{"title":"Large Community","desc":"Active community and continuous updates."}],"cta":"GET IT ON GOOGLE PLAY"},
+    "products":{"sectionTitle":"HARDWARE PROJECTS","viewDetails":"View details"},
+    "footer":{"copyright":"Mixed Technology"}
+  };
   var currentLang = localStorage.getItem('mixed_lang') || 'vi';
-  function setLang(lang) { localStorage.setItem('mixed_lang', lang); location.reload(); }
-  var viBtn = document.getElementById('lang-vi'); var enBtn = document.getElementById('lang-en');
-  if (viBtn) viBtn.className = 'lang-btn' + (currentLang === 'vi' ? ' lang-btn-active' : '');
-  if (enBtn) enBtn.className = 'lang-btn' + (currentLang === 'en' ? ' lang-btn-active' : '');
+  function setLang(lang) {
+    localStorage.setItem('mixed_lang', lang);
+    document.body.setAttribute('data-lang', lang);
+    var viBtn = document.getElementById('lang-vi');
+    var enBtn = document.getElementById('lang-en');
+    if (viBtn) viBtn.className = 'lang-btn' + (lang === 'vi' ? ' lang-btn-active' : '');
+    if (enBtn) enBtn.className = 'lang-btn' + (lang === 'en' ? ' lang-btn-active' : '');
+  }
+  setLang(currentLang);
   window.toggleMobileMenu = function() { var m = document.getElementById('mobile-menu'); if (m) m.classList.toggle('hidden'); };
   window.addEventListener('scroll', function() { var h = document.getElementById('header'); if (h) { if (window.scrollY > 20) h.classList.add('header-scrolled'); else h.classList.remove('header-scrolled'); } });
 })();
 ]]></script>
+
 </body>
 </html>
